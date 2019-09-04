@@ -1,4 +1,4 @@
-# Readings and Notes - Valikanov
+# Readings and Notes - Valikhanov
 
 ## pp. 2 to pp. 13
 

@@ -25,14 +25,14 @@
 - warrior shall leave the khan and seek out Manas, as the khan sees his potential
 - by holding a Great Feast, warrior may be freed from his obligation to the khan
 - again the "Nogay teeming like shadows at nightfall"
-- even the trees weeped as the khan died, so did the Nogay
+- even the trees weep as the khan died, so did the Nogay
 - the Nogay build a huge mausoleum for the khan, just like he had asked of them
 - the horse Kok-ala, ridden by Er-Kokco, son of khans, won the race and was showered with
   gifts
 - the warrior does as the khan bade him and holds a feast and cares for men of other
   tribes
-- now "Nogay that that turn up their beaver-brims" is repeated
-- the warrior did not leave the khan yet, he had to care for the foudling
+- now "Nogay that turn up their beaver-brims" is repeated
+- the warrior did not leave the khan yet, he had to care for the foundling 
 - the boy went to school and got a saddle with a golden pommel, riding with the Nogay
 - the boy, even though the warrior is highly esteemed, wants to take over the reign from
   his adoptive father
@@ -47,6 +47,16 @@
 
 ### Observations
 
+- the narrator uses a lot of repetitions of the exact same phrases, like "Nogay teeming
+  like shadows" or "when my hazel eyes have passed beyond", "Nogay that turn their up
+  their beaver brims"
+- the khan is a Muslim, as indicated by the talk of infidels
+- the khan takes in an orphan boy and makes him his successor
+- the khan was apparently 199 years old, he is buried in a mound like a palace with ample gifts
+- he was highly respected and thus honored in death with feasts and gifts
+- the boy is only 8-10 when he is made khan
+- Manas already has a reputation for being a ferocious warrior at the time the khan is
+  alive
 
 ## pp. 58 to pp. 61
 
@@ -65,6 +75,10 @@
 
 ### Observations
 
+- Manas behavior suggests that he had to struggle for a long time, not having enough food
+  and money to live comfortably
+- the Chieftainess is of the opinion that her status gives her the right to take the
+  camel
 
 ## pp. 82 to pp.89
 
@@ -87,7 +101,7 @@
 - they shall either die or turn around and fight Manas to avenge the dead
 - he goes back and tells Manas that they shall fight with all that they have
 - the Kitay attacks Manas, hits his helmet/crown
-- the battel axes are as broad as yurt doors
+- the battle axes are as broad as yurt doors
 - Manas strikes back and puts him to the ground
 - again addressing the listeners, as their dear hero Manas does something
 - Manas returns, rades with his companions and them returns home
@@ -102,5 +116,17 @@
 
 ### Observations
 
-
+- cremating khans was not common everywhere, some consider it to be dishonorable, as
+  it leaves nothing to be buried
+- warriors are bound to their khan in life and in death, so they follow him when they
+  failed to protect him
+- Manas is also Muslim, his companions slaughter infidels
+- the tribe of Manas is characterized as the good ones, as the storyteller says "your
+  dear hero Manas" or "your dear elder ...", also addressing the listeners directly
+- the horse of the Kitay can talk?
+- the warriors are characterized as fearsome and strong, with door-sized battle axes
+- Manas is a good fighter, beating the Kitay without much effort
+- Manas and his companions like looting
+- then all of Manas' victories are talked about, also one against the Kirgiz
+- __Manas is not Kirgiz__
 

@@ -1,0 +1,24 @@
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\bin\Debug\Project2.exe.config
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\bin\Debug\Project2.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\bin\Debug\Project2.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\bin\Debug\ZedGraph.dll
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.csprojAssemblyReference.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.NumericalIntegration.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.Properties.Resources.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.csproj.GenerateResource.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.csproj.CopyComplete
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\obj\Debug\Project2.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Numerical Integration\Project2\Project2\bin\Debug\ZedGraph.Web.dll
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\bin\Debug\Project2.exe.config
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\bin\Debug\Project2.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\bin\Debug\Project2.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.csprojAssemblyReference.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.NumericalIntegration.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.Properties.Resources.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.csproj.GenerateResource.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.csproj.CopyComplete
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Projects\Integration\Project2\Project2\obj\Debug\Project2.pdb

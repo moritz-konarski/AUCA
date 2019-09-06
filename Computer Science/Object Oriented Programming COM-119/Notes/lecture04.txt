@@ -1,0 +1,144 @@
+#Objects
+Constructors do not have any return types, not even void
+
+#Availability Modifiers
+
+##STATIC
+What does the "public static" in front of void main() mean?
+
+###Variables
+Example:
+  
+  class Circle {
+    int x, y, r;
+  }
+  Circle c1 = new Circle(10, 5, 3);
+  Circle c2 = new Circle(2, 3, 4);
+  //each of these takes 12 bytes, given that all of the values are int (32bit, 4 bytes)
+  c1.print(); //10, 5, 3
+  c2.print(); //2, 3, 4
+
+but if there is static
+
+  class Circle(){
+    static int x, y, r;
+  }
+  //now all of them have the same three ints
+  Circle c1 = new Circle(8, 5, 3);
+  Circle c2 = new Circle(2, 3, 4);
+  c1.x = 10;
+  c1.print(); //10, 3, 4
+  c2.print(); //10, 3, 4
+
+static means that all the variables occupy the exact same area in memory -> if you change
+it for one, you change it for all because they all use the same areas of memory
+it can mean that you share information
+but with multicore machines it is an issue because it causes a lot of pain with
+synchornization etc
+  
+  Circle c3 = new Circle(9, 9, 9);
+  c3.print(); //9, 9, 9
+  
+Most of the time you try to avoid it and do not use it 
+Maybe you want to track the number of objects that exist in your program
+
+  class Circle {
+    int x, y, r;
+    static int circleCount = 0;
+    //in constructor: circleCount++;
+    //with a print function for all the variables
+  }
+
+  Circle c1 = new Circle(1, 2, 3);
+  c1.print(); //1, 2, 3
+              //cc: 1
+  Circle c2 = new Circle(3, 4, 5);
+  c1.print(); //1, 2, 3
+              //cc: 2
+  c2.print(); //3. 4. 5
+              //cc: 2
+  
+###Constants
+One Application of "static"
+
+  class Circle {
+    final static double PI = 3.141592653589793;
+    int x, y, r;
+    static int circleCount = 0;
+    }
+
+For constants it makes a lot of sense, because it never changes, it cant. So it makes
+sense to make it a static varible also known as class variables
+
+###Methods
+if you put static in front of a method, you can never use instance variables in them
+
+  class Circle {
+  
+    static int circleCount = 0;
+
+    static void printUsage(){
+      System.out.println(circleCount);
+    }
+  }
+
+Now you may just call it like this
+
+  Circle.printUsage(); //0
+
+if a method does not use an instance variable: USE THE STATIC KEYWORD
+it helps with readability and usage
+
+#Packages
+Split into methods, classes, one class one file-> different files, and finally Packages(basically just
+directories)
+
+  package packageName;  //includes the designated package in the program
+  package user.moritz.Documents.AUCA.Programming.OOP.Project.Drawing; //as one example
+
+if there is no package specified, java assumes that you are using the default package
+
+#Visibility Modifiers
+
+There are three to four pillars of object oriented programming
+
+##Encapsulation
+it means that when designing objects we want to be able to hide the inner workings of the
+object from the outside, while the actual output should be visible
+somewhat similar to Black Boxes
+It is not really important to know how it works, but it is supposed to work. That's it 
+Internals hidden -- Services open
+
+  class Circle {
+    int x, y, r;
+  
+  
+  
+  }
+
+  Circle c1 = new Circle(1, 2, 3);
+  c1.x = 10;
+  c1.print(); //10, 2, 3
+
+breaks encapsulation rules. Two options:
+1. you do not change them at all, if that is possible
+  use: 
+    private int x, y, r;
+    //this means that one can not read or write it directly, but you can still print it
+    for example.
+  it can also be used for methods, so it can not be used from the outside. it can only be
+  called from inside the class.
+2. only set it to be read and not written -> you create a getter method
+  you may also create setter methods, where you can perform input validation
+
+  private int x, y, r;
+  int getX(){
+    return x;  
+  }
+  int setR(int newR){
+    //perform some input validation, for r>0;
+    r = newR;
+  }
+
+##
+

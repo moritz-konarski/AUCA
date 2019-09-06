@@ -1,0 +1,75 @@
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\bin\Debug\Lagranj.exe
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\bin\Debug\Lagranj.pdb
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\Lagranj.exe
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\obj\x86\Debug\Lagranj.pdb
+c:\users\admin\documents\visual studio 2010\Projects\Lagranj\Lagranj\bin\Debug\ZedGraph.dll
+F:\KRSU\Sklyar_KRSU_2016-2017\3й курс\Осень\Lab-2\Ахмаджанова Мадина\Lagranj\Lagranj\obj\x86\Debug\Lagranj.exe
+F:\KRSU\Sklyar_KRSU_2016-2017\3й курс\Осень\Lab-2\Ахмаджанова Мадина\Lagranj\Lagranj\obj\x86\Debug\Lagranj.pdb
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\Lagranj.exe
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\Lagranj.pdb
+C:\Users\Admin\Desktop\Lagranj\Lagranj\bin\Debug\Lagranj.exe
+C:\Users\Admin\Desktop\Lagranj\Lagranj\bin\Debug\Lagranj.pdb
+C:\Users\Admin\Desktop\Lagranj\Lagranj\bin\Debug\ZedGraph.dll
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Admin\Desktop\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.write.1.tlog
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\Lagranj.exe
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\Lagranj.pdb
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\bin\Debug\Lagranj.exe
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\bin\Debug\Lagranj.pdb
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\bin\Debug\ZedGraph.dll
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.read.1.tlog
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Lagranj\Lagranj\obj\x86\Debug\GenerateResource.write.1.tlog
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+J:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Программа\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.exe
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.pdb
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\ZedGraph.dll
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.exe
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.pdb
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\bin\Debug\ZedGraph.dll
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csprojResolveAssemblyReference.cache
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+I:\SPRING_2017\Numerical Methods_Spring-2017\SKLYAR_S-2017\Labs\Lab_1\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csproj.GenerateResource.Cache
+H:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+H:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.exe
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.pdb
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\ZedGraph.dll
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csprojResolveAssemblyReference.cache
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+G:\AUCA_Spring-2018\Numerical Methods_Spring-2018\SKLYAR_S\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csproj.GenerateResource.Cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csprojAssemblyReference.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Form1.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.Properties.Resources.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csproj.GenerateResource.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csproj.CoreCompileInputs.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\Lagranj.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\bin\Debug\ZedGraph.dll
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\Lab_I\Основа для программы\Лагранж\Lagranj\obj\x86\Debug\Lagranj.csproj.CopyComplete

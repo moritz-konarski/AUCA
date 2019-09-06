@@ -1,0 +1,13 @@
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\bin\Debug\Lagrange1.1.exe.config
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\bin\Debug\Lagrange1.1.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\bin\Debug\Lagrange1.1.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.csprojAssemblyReference.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1._1.Form1.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1._1.Properties.Resources.resources
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.csproj.GenerateResource.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.csproj.CoreCompileInputs.cache
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.exe
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.pdb
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\bin\Debug\ZedGraph.dll
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\bin\Debug\ZedGraph.Web.dll
+C:\Users\morit\Documents\Code\AUCA\NumericalMethods\Labs\SolutionLab1.1\Lagrange1.1\Lagrange1.1\obj\Debug\Lagrange1.1.csproj.CopyComplete

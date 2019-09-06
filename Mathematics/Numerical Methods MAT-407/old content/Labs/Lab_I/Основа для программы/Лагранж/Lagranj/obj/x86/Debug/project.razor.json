@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\morit\\Documents\\Code\\AUCA\\NumericalMethods\\Labs\\Lab_I\\Основа для программы\\Лагранж\\Lagranj\\Lagranj.csproj",
+  "TargetFramework": "v4.0",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

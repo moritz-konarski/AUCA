@@ -1,0 +1,33 @@
+.messagehead {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 3px; BACKGROUND: #f0f0f0; PADDING-BOTTOM: 0px; MARGIN: 1em 0px 0px; BORDER-LEFT: #ccc 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ccc 1px solid
+}
+.messageitem {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #f7f7f7; PADDING-BOTTOM: 3px; MARGIN: 0px; BORDER-LEFT: #ccc 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #ccc 1px solid
+}
+.messagehead H5 {
+	MARGIN: 0.25em 0px 0px
+}
+.messagehead H4 {
+	MARGIN: 0.25em 0px 0px
+}
+.inputbutton {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 5px; PADDING-TOP: 0px
+}
+.inputtext {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BACKGROUND: #f7f7f7; MARGIN: 0px 0px 3px; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+.foxdelbutton {
+	DISPLAY: inline; MARGIN: 0px
+}
+.foxdelbutton INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 80%; PADDING-BOTTOM: 0px; MARGIN: 0px; CURSOR: hand; PADDING-TOP: 0px
+}
+.foxdelbutton INPUT:hover {
+	COLOR: #990000
+}
+A.foxdellink {
+	FONT-SIZE: 85%; FONT-FAMILY: Arial
+}
+A.foxdellink:hover {
+	TEXT-DECORATION: none
+}

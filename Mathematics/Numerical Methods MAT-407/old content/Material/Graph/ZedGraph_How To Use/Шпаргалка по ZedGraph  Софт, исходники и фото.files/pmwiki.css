@@ -1,0 +1,238 @@
+BODY {
+	FONT-SIZE: 11pt; MARGIN: 0px; FONT-FAMILY: Arial,Helvetica,Verdana,sans-serif; BACKGROUND-COLOR: #f7f7f7
+}
+TEXTAREA {
+	FONT-SIZE: 0.9em
+}
+PRE {
+	FONT-SIZE: 0.9em
+}
+CODE {
+	FONT-SIZE: 0.9em
+}
+PRE {
+	FONT-FAMILY: 'Lucida Console','Andale Mono','Courier New',Courier,monospace
+}
+CODE {
+	FONT-FAMILY: 'Lucida Console','Andale Mono','Courier New',Courier,monospace
+}
+PRE {
+	LINE-HEIGHT: 1.2em
+}
+PRE CODE {
+	FONT-SIZE: 100%
+}
+CODE CODE {
+	FONT-SIZE: 100%
+}
+PRE PRE {
+	FONT-SIZE: 100%
+}
+H1 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H2 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H3 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H4 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H5 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H6 {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 0.6em
+}
+H1 {
+	FONT-WEIGHT: normal
+}
+H2 {
+	FONT-WEIGHT: normal
+}
+H3 {
+	FONT-WEIGHT: normal
+}
+H6 {
+	FONT-WEIGHT: normal
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+H1 CODE {
+	FONT-SIZE: 1em
+}
+H2 CODE {
+	FONT-SIZE: 1em
+}
+H3 CODE {
+	FONT-SIZE: 1em
+}
+H4 CODE {
+	FONT-SIZE: 1em
+}
+H1 {
+	FONT-SIZE: 1.8em
+}
+H2 {
+	FONT-SIZE: 1.44em
+}
+H3 {
+	FONT-SIZE: 1.22em
+}
+H4 {
+	FONT-SIZE: 1.07em
+}
+H5 {
+	FONT-SIZE: 1em
+}
+H6 {
+	FONT-SIZE: 1em
+}
+#wikilogo {
+	PADDING-RIGHT: 6px; MARGIN-TOP: 4px; PADDING-LEFT: 6px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; BORDER-BOTTOM: #cccccc 1px solid
+}
+#wikihead {
+	FONT-SIZE: 85%; RIGHT: 10px; FONT-FAMILY: Verdana,sans-serif; POSITION: absolute; TOP: 10px
+}
+#wikihead INPUT {
+	FONT-SIZE: 85%
+}
+#wikileft {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; FONT-SIZE: 9.4pt; PADDING-BOTTOM: 6px; WIDTH: 155px; LINE-HEIGHT: 1.33em; PADDING-TOP: 6px; FONT-FAMILY: Verdana,sans-serif
+}
+#wikileft .vspace {
+	MARGIN-TOP: 1.12em
+}
+#wikileft A {
+	COLOR: black; TEXT-DECORATION: none
+}
+#wikileft A:hover {
+	COLOR: blue; TEXT-DECORATION: underline
+}
+#wikileft UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#wikileft LI {
+	PADDING-LEFT: 6px; MARGIN: 0px
+}
+.sidehead {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 11pt; PADDING-BOTTOM: 2px; MARGIN: 0px; PADDING-TOP: 4px; FONT-STYLE: normal
+}
+.sidehead A {
+	FONT-WEIGHT: bold; COLOR: #505050; FONT-STYLE: normal
+}
+#wikibody {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 11pt; PADDING-BOTTOM: 10px; PADDING-TOP: 0px; BACKGROUND-COLOR: white
+}
+#wikicmds {
+	FONT-SIZE: 80%; FLOAT: right; FONT-FAMILY: Verdana,sans-serif; WHITE-SPACE: nowrap
+}
+#wikicmds UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#wikicmds LI {
+	DISPLAY: inline; MARGIN: 0px 5px
+}
+#wikicmds LI A {
+	COLOR: black; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-DECORATION: none; BORDER-BOTTOM-STYLE: none
+}
+#wikicmds LI A.createlink {
+	DISPLAY: none
+}
+#wikicmds LI A:hover {
+	COLOR: blue; TEXT-DECORATION: underline
+}
+.pagegroup {
+	MARGIN-TOP: 8px; MARGIN-BOTTOM: 2px
+}
+.pagetitle {
+	FONT-WEIGHT: normal; FONT-SIZE: 1.6em; MARGIN: 0px; LINE-HEIGHT: 1em
+}
+.wikiaction {
+	MARGIN-TOP: 4px; MARGIN-BOTTOM: 4px
+}
+#wikitext {
+	MARGIN-TOP: 12px; LINE-HEIGHT: 1.33em
+}
+#wikitext TABLE {
+	FONT-SIZE: 100%; LINE-HEIGHT: 1.33em
+}
+#wikiedit FORM {
+	MARGIN: 0px; WIDTH: 100%
+}
+#wikiedit TEXTAREA {
+	WIDTH: 100%
+}
+.wikimessage {
+	MARGIN-TOP: 4px; MARGIN-BOTTOM: 4px; FONT-STYLE: italic
+}
+#wikifoot {
+	BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 178px; FONT-SIZE: 80%; PADDING-BOTTOM: 4px; FONT-FAMILY: Verdana,sans-serif
+}
+
+@media Print    
+{
+BODY {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.5em; MARGIN: 0px; WIDTH: auto; PADDING-TOP: 0.5em
+}
+#wikihead {
+	DISPLAY: none
+}
+#wikileft {
+	DISPLAY: none
+}
+#wikicmds {
+	DISPLAY: none
+}
+.footnav {
+	DISPLAY: none
+}
+#wikifoot {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+    }
+.messagehead {
+	BACKGROUND: #c2e1ff
+}
+.messageitem {
+	BACKGROUND: #ebf5ff
+}
+IMG.thumbs {
+	BORDER-RIGHT: #dddddd 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; MARGIN: 2px; VERTICAL-ALIGN: middle; BORDER-LEFT: #dddddd 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #dddddd 1px solid
+}
+IMG.thumbs:hover {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid
+}
+TABLE.thumbtable TD.thumbtd DIV.img:hover {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid
+}
+TABLE.thumbtable IMG.thumbs {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+TABLE.thumbtable TD.thumbtd {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 4px; PADDING-TOP: 2px
+}
+TABLE.thumbtable TD.thumbtd:hover {
+	BORDER-LEFT-COLOR: red; BORDER-BOTTOM-COLOR: red; BORDER-TOP-COLOR: red; BORDER-RIGHT-COLOR: red
+}
+TABLE.thumbtable {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+TABLE.thumbtable TD.thumbtd DIV.img {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid; TEXT-ALIGN: center
+}
+.caption {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.8em; PADDING-BOTTOM: 0px; OVERFLOW: hidden; LINE-HEIGHT: 1.1em; PADDING-TOP: 0px
+}
+IMG.current {
+	BORDER-LEFT-COLOR: #ff0000; BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-RIGHT-COLOR: #ff0000
+}
+TABLE.thumbtable TD.thumbtd DIV.current {
+	BORDER-LEFT-COLOR: #ff0000; BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-RIGHT-COLOR: #ff0000
+}

@@ -1,0 +1,472 @@
+<HTML>
+<HEAD>
+	<TITLE>Тема 3 - ИНТЕРПОЛИРОВАНИЕ СЕТОЧНЫХ ФУНКЦИЙ</TITLE>
+<!--Всплывающие подсказки-картинки-->
+<style type="text/css">
+.navtext {
+width:250px;
+font-size:12pt;
+border-width:1px;
+border-style:outset;
+border-color:black;
+layer-background-color:red;
+background-color:#EAE8F7;
+color:black;
+}
+</style>
+<script language="javascript" src="../script/alttxt.js">
+</script>
+<!--конец-->
+
+</HEAD>
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../css/html.css">
+
+<BODY bgcolor="d8d7e9" background="../image/frame/bg_tp3.jpg"  bgproperties=fixed>
+	<P><CENTER><FONT><B>III. ИНТЕРПОЛИРОВАНИЕ СЕТОЧНЫХ ФУНКЦИЙ</B></FONT></CENTER></P>
+	<P><FONT>На отрезке <img src="../image/topic_3/image001.gif" align="top"> рассмотрим ”n”  произвольных точек, удовлетворяющих условию:</P>
+	<CENTER><img src="../image/topic_3/image002.gif" align="top">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Пусть 
+	<img src="../image/topic_3/image003.gif" align="middle"> - произвольная сеточная функция со значениями в точках 
+	<img src="../image/topic_3/image004.gif" align="top">, которые будем называть <I>узлами интерполяции. Задача интерполяции</I> сеточной функции <img src="../image/topic_3/image005.gif" align="top"> состоит в том, чтобы найти такую функцию 
+	<img src="../image/topic_3/image006.gif" align="top">, которая удовлетворяет соотношениям: 
+	<img src="../image/topic_3/image007.gif" align="top"> (i=1,2,…n). Иными словами, это задача непрерывного продолжения функции
+	<img src="../image/topic_3/image005.gif" align="top"> со множества узлов 
+	<img src="../image/topic_3/image008.gif" align="top"> на весь отрезок 
+	<img src="../image/topic_3/image009.gif" align="top">. Очевидно, что такая задача обратна задаче проектирования пространства 
+	<img src="../image/topic_3/image010.gif" align="top"> в пространство сеточных функций 
+	<img src="../image/topic_3/image011.gif" align="top"> и имеет бесконечно много решений. Чтобы сделать задачу интерполирования однозначно разрешимой, необходимо ограничиться неким классом функций из 
+	<img src="../image/topic_3/image010.gif" align="top">, в котором это продолжение (интерполянт) будет искаться. В качестве таких классов будем рассматривать алгебраические многочлены и сплайн функции. Нижеприведенный материал, в ином изложении, можно также найти в 
+	
+	<a href="javascript:void(0)" onmouseover="writetxt('Калиткин Н.Н. Численные методы.  Москва «Наука», 1978, -512с.')" onmouseout="writetxt(0)">[1]</a> и 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А. Введение в численные методы. Москва «Наука», 1987, -288с.')" onmouseout="writetxt(0)">[2]</a>.
+	</P>
+	
+	<P><B>Интерполирование алгебраическими многочленами. </B>Символом 
+	<img src="../image/topic_3/image012.gif" align="top"> будем обозначать <I> множество алгебраических многочленов</I> на отрезке 
+	<img src="../image/topic_3/image009.gif" align="top">, степень которых не превосходит “m”. Рассмотрим многочлены:
+	<CENTER><img src="../image/topic_3/image013.gif" align="middle">;</CENTER>
+	<CENTER><img src="../image/topic_3/image014.gif" align="middle">, <img src="../image/topic_3/image015.gif" align="middle"></CENTER></p>
+	
+	<P style="text-align: justify; text-indent:0">Очевидно, что:</P>
+	<CENTER><img src="../image/topic_3/image016.gif" align="middle">, 
+	<img src="../image/topic_3/image017.gif" align="middle"> и 
+	<img src="../image/topic_3/image018.gif" align="middle"></CENTER>
+	
+	<P style="text-align: justify; text-indent:0">при 
+	<img src="../image/topic_3/image019.gif" align="top"> и любом фиксированном “k”. Многочлены
+	<img src="../image/topic_3/image020.gif" align="top"> называют <I>фундаментальными многочленами интерполяции</I> или <I>базисом интерполяции</I> Многочлен
+	<img src="../image/topic_3/image021.gif" align="top"> вида</P>
+	
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image022.gif" align="middle">,</center></td>
+			<td><font>(1)</font><td>
+			</tr>
+	</table>
+	
+	<P style="text-align: justify; text-indent:0">
+	очевидно, является решением задачи интерполирования сеточной функции 
+	<img src="../image/topic_3/image005.gif" align="top"> в пространстве 
+	<img src="../image/topic_3/image023.gif" align="top">. Решение это единственное, действительно, пусть 
+	<img src="../image/topic_3/image024.gif" align="top"> и 
+	<img src="../image/topic_3/image025.gif" align="top">, тогда
+	<img src="../image/topic_3/image026.gif" align="top">,
+	<img src="../image/topic_3/image027.gif" align="top">, значит
+	<img src="../image/topic_3/image028.gif" align="top">.</P>
+	
+	<P style="text-align: justify; text-indent:0">Многочлен (1) называется <I>интерполяционным многочленом в форме Лагранжа</I>, этой формой интерполяции многочлена удобно пользоваться, если набор интерполяционных узлов фиксирован и меняются интерполируемые функции. Если же число узлов интерполяции наращивается в процессе эксперимента, а функция 
+	<img src="../image/topic_3/image005.gif" align="top"> фиксирована, то удобнее пользоваться интерполяционным многочленом в форме Ньютона 
+	(см., например, 
+	<a href="javascript:void(0)" onmouseover="writetxt('Калиткин Н.Н. Численные методы.  Москва «Наука», 1978, -512с.')" onmouseout="writetxt(0)">[1, </a> 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А. Введение в численные методы. Москва «Наука», 1987, -288с.')" onmouseout="writetxt(0)">2]</a> или 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А., Гулин А.В. Численные методы. Москва «Наука», 1989, -430 с.')" onmouseout="writetxt(0)">[3]</a>).</P>
+	
+	<P><b>Оценка погрешности интерполяции.</B>
+	Пусть сеточная функция
+	<img src="../image/topic_3/image005.gif" align="top"> является результатом проекции некоторой функции f(x) в сеточное производство
+	<img src="../image/topic_3/image029.gif" align="top">, то есть 
+	<img src="../image/topic_3/image030.gif" align="top"> Функцию
+	</P>
+	<CENTER><img src="../image/topic_3/image032.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	будем называть <I>погрешностью интерполяции</I>, оценим эту погрешность. Очевидно, что 
+	<img src="../image/topic_3/image033.gif" align="top">, при 
+	<img src="../image/topic_3/image019.gif" align="top">; пусть
+	<img src="../image/topic_3/image034.gif" align="top"> и отлично от узлов интерполяции: 
+	<img src="../image/topic_3/image035.gif" align="top">. Рассмотрим при 
+	<img src="../image/topic_3/image036.gif" align="top"> функцию:
+	</P>
+	<CENTER><img src="../image/topic_3/image037.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">
+	Предположим, что 
+	<img src="../image/topic_3/image038.gif" align="top">, тогда то же самое можно сказать и про функцию g. Легко проверить, что функция g(y) имеет, по крайней мере, 
+	<img src="../image/topic_3/image039.gif" align="top"> нуль в точках:
+	<img src="../image/topic_3/image040.gif" align="top">. Поэтому производная 
+	<img src="../image/topic_3/image041.gif" align="top"> имеет на 
+	<img src="../image/topic_3/image009.gif" align="top">, по крайней мере, “n” нулей, и так далее, a 
+	<img src="../image/topic_3/image042.gif" align="top"> обращается в нуль хотя бы в одной точке
+	<img src="../image/topic_3/image043.gif" align="top">. Поскольку:
+	</P>
+	<CENTER><img src="../image/topic_3/image044.gif" align="middle">,</CENTER>
+	<P style="text-align: justify; text-indent:0">то
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image045.gif" align="middle">,</center></td>
+			<td><font>(2)</font><td>
+			</tr>
+	</table>
+	Представление (2) позволяет  получить оценку ошибки  интерполяции в произвольной точке:
+	<img src="../image/topic_3/image046.gif" align="top">:
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image047.gif" align="middle">,</center></td>
+			<td><font>(3)</font><td>
+			</tr>
+	</table>
+	где
+	<CENTER><img src="../image/topic_3/image048.gif" align="middle">.</CENTER>
+	</P>
+	
+	<P><B>Оптимальный выбор узлов интерполяции.</B> Сформулируем сначала общую постановку <i>проблемы оптимизации методов решения задач из некоторого класса.</I> Пусть
+	<img src="../image/topic_3/image049.gif" align="top"> - некоторый класс решаемых задач и 
+	<img src="../image/topic_3/image050.gif" align="top"> - множество методов решения этих задач. Обозначим: 
+	<img src="../image/topic_3/image051.gif" align="top"> - погрешность, которую дает метод “m” при решении задачи “p”. Величину
+	<img src="../image/topic_3/image051.gif" align="top"> - погрешность, которую дает метод “m” при решении задачи “p”. Величину
+	<CENTER><img src="../image/topic_3/image052.gif" align="top"></CENTER></P>
+	<P style="text-align: justify; text-indent:0">называют <I>погрешностью метода “m” на классе  задач “P”</I> Величину</P>
+	<CENTER><img src="../image/topic_3/image053.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">называют <I>оптимальной оценкой погрешности методов из множества М на классе задач P.</I> Если существует метод
+	<img src="../image/topic_3/image054.gif" align="top">, на котором эта оценка  достигается, т.е.</P>
+	<CENTER><img src="../image/topic_3/image055.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	то такой метод называется <I>оптимальным.</I></P>
+	
+	<P>Пусть теперь: Р - множество задач приближения функций, которые определены на отрезке 
+	<img src="../image/topic_3/image001.gif" align="top"> и удовлетворяют условию
+	<CENTER><img src="../image/topic_3/image056.gif" align="top">.</CENTER></P>
+	<P>Пусть М - множество методов приближения, состоящих в том, что функция заменяется ее интерполяционным многочленом 
+	<img src="../image/topic_3/image057.gif" align="top"> с узлами интерполяции 
+	<img src="../image/topic_3/image058.gif" align="top">. Таким образом, метод решения “m” <I>определяется выбором узлов интерполяции.</I> Определим погрешность:</P>
+	<CENTER><img src="../image/topic_3/image059.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	Согласно оценке 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image047.gif>')" onmouseout="writetxt(0)">(3)</a>
+	, имеем:</P>
+	<CENTER><img src="../image/topic_3/image060.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	С другой стороны, для задачи приближения многочлена
+	</P>
+	<CENTER><img src="../image/topic_3/image061.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	oтносящейся к рассматриваемому классу, имеем, в силу 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image045.gif>')" onmouseout="writetxt(0)">(2)</a>:
+	</P>
+	<CENTER><img src="../image/topic_3/image062.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Следовательно:</P>
+	<CENTER><img src="../image/topic_3/image063.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">Далее,</P>
+	<CENTER><img src="../image/topic_3/image064.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Известно (см. 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А., Гулин А.В. Численные методы. Москва «Наука», 1989, -430 с.')" onmouseout="writetxt(0)">[3]</a>
+	или 
+	<a href="javascript:void(0)" onmouseover="writetxt('Бахвалов Н.С. Численные методы-I. Москва «Наука», 1975, -631 с.')" onmouseout="writetxt(0)">[4]</a>), что величина
+	<img src="../image/topic_3/image065.gif" align="top"> достигается на множестве нулей полинома Чебышёва степени “n” на отрезке 
+	<img src="../image/topic_3/image001.gif" align="top">, который определяется формулой:</P>
+	<CENTER><img src="../image/topic_3/image066.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Эти нули легко вычисляются:</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image067.gif" align="middle"></center></td>
+			<td><font>(4)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">а полином
+	<img src="../image/topic_3/image068.gif" align="top"> в этом случае совпадает с 
+	<img src="../image/topic_3/image069.gif" align="top"> - полиномом "наименее уклоняющимся от нуля" в норме
+	<img src="../image/topic_3/image070.gif" align="top"> пространства 
+	<img src="../image/topic_3/image071.gif" align="top"> (см. 
+	<a href="javascript:void(0)" onmouseover="writetxt('Бахвалов Н.С. Численные методы-I. Москва «Наука», 1975, -631 с.')" onmouseout="writetxt(0)">[4]</a>). При этом</P>
+	<CENTER><img src="../image/topic_3/image072.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">
+	и, в силу 
+	<a href="javascript:void(0)" onmouseover="writetxt('<IMG src=../image/topic_3/image047.gif>')" onmouseout="writetxt(0)">(3)</a>,  имеем оценку ошибки  интерполяции с Чебышевскими узлами:
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image073.gif" align="middle">.</center></td>
+			<td><font>(5)</font><td>
+			</tr>
+	</table>
+	</P>
+	<P><B>О сходимости интерполяционного процесса.</B> До сих пор процесс интерполирования рассматривался на фиксированной сетке. Чтобы говорить о сходимости интерполяционного процесса, рассмотрим <I>семейство сеток</I> на
+	<img src="../image/topic_3/image001.gif" align="top"> с возрастающим числом узлов:</P>
+	<CENTER><img src="../image/topic_3/image074.gif" align="bottom">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Пусть 
+	<img src="../image/topic_3/image006.gif" align="top">, рассмотрим последовательность интерполяционных многочленов Лагранжа
+	<img src="../image/topic_3/image075.gif" align="top">, связанных с соответствующей сеткой 
+	<img src="../image/topic_3/image076.gif" align="middle">.</FONT></P>
+	
+	<P><FONT style="letter-spacing:20">Определение </FONT>
+	<FONT>1. Интерполяционный процесс для функции f <I>сходится в точке</I> 
+	<img src="../image/topic_3/image077.gif" align="top">, если существует</P>
+	<CENTER><img src="../image/topic_3/image078.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">
+	Говорят, что интерполяционный процесс <I>сходится равномерно</I> на 
+	<img src="../image/topic_3/image001.gif" align="top">, если
+	<img src="../image/topic_3/image079.gif" align="top"> <IMG src="../image/topic_2/square.gif" align="middle"></P>
+	<P style="text-align: justify; text-indent:0">Оценки 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image047.gif>')" onmouseout="writetxt(0)">(3)</a>	и 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image073.gif>')" onmouseout="writetxt(0)">(5)</a>
+	позволяют сделать вывод о том, что интерполяционный процесс для любой последовательности сеток сходится равномерно на  классе функций</P>
+	<CENTER><img src="../image/topic_3/image080.gif" align="middle">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Если же класс функций более широк, то даже для последовательности равномерных сеток погрешность интерполяции для функций из этого класса может стремиться к бесконечности с ростом числа узлов. Примером может служить функция из следующей задачи.</FONT></P>
+	<P><FONT style="letter-spacing: 20">Задача </FONT>
+	<FONT>1. Доказать, что для функции
+	<CENTER><img src="../image/topic_3/image081.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">в случае равномерной сетки 
+	<img src="../image/topic_3/image084.gif" align="middle">, i=2,3,… для некоторых M>0 и 
+	<img src="../image/topic_3/image085.gif" align="middle"> имеет место оценка:</P>
+	<CENTER><img src="../image/topic_3/image086.gif" align="middle"> <IMG src="../image/topic_2/square.gif" align="middle"></CENTER></P>
+	
+	<P><b>Итерационный метод построения многочлена Лагранжа (метод Невилле).</B> Пусть <img src="../image/topic_3/image184.gif" align="middle"> -натуральные числа, удовлетворяющие условиям:
+	<CENTER><img src="../image/topic_3/image186.gif" align="top"></CENTER></P>
+	<P style="text-align: justify; text-indent:0">Нам потребуется уточнить обозначение <a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image022.gif>')" onmouseout="writetxt(0)">(1)</a> для многочлена Лагранжа: если он построен по значениям сеточной функции <img src="../image/topic_3/image188.gif" align="bottom"> в узлах <img src="../image/topic_3/image190.gif" align="middle"> то этот многочлен будем обозначать символом: <img src="../image/topic_3/image192.gif" align="middle">.</P>
+	<P><FONT style="letter-spacing: 20">Теорема </FONT>
+	<FONT>1. Рассмотрим узлы <img src="../image/topic_3/image194.gif" align="middle"> и выберем <img src="../image/topic_3/image196.gif" align="middle"> - две различные точки из этого множества. Тогда:
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image198.gif" align="middle"></center></td>
+			<td><font>(6)</font><td>
+			</tr>
+	</table></P>
+	<P><FONT style="letter-spacing: 20">Доказательство</FONT>
+	<FONT>. Многочлен в правой части формулы (6), очевидно, принадлежит классу <IMG src="../image/topic_3/image200.gif" align="middle">. Докажем, что он интерполяционный для функции <IMG src="../image/topic_3/image005.gif" align="top"> (рассуждения проводим по индукции). Из (6) следует:
+	<CENTER><img src="../image/topic_3/image202.gif" align="top">
+	<img src="../image/topic_3/image204.gif" align="top"></CENTER></P>
+	<P style="text-align: justify; text-indent:0">Если <img src="../image/topic_3/image206.gif" align="top">, то
+	<CENTER><img src="../image/topic_3/image208.gif" align="top"></CENTER></P>
+	<P style="text-align: justify;text-indent:0">Теперь утверждение теоремы следует из единственности решения задачи интерполяции в <img src="../image/topic_3/image200.gif" align="top"> по узлам <img src="../image/topic_3/image194.gif" align="top"> <img src="../image/topic_3/square.gif" align="top"></p>
+	<P>Алгоритм метода Невилле основан на следующих рассуждениях. Чтобы вычислить значение <img src="../image/topic_3/image210.gif" align="top"> многочлена интерполяции по узлам <img src="../image/topic_3/image212.gif" align="top"> и фиксированном x, рассмотрим, опираясь на формулу (6), следующие цепочки значений в точке x:</P>
+	<OL type="1">
+			<LI><P>многочленов, построенных по одному узлу:
+			<CENTER><img src="../image/topic_3/image214.gif" align="top"></CENTER></P></LI>
+			<LI><P>многочленов, построенных по двум узлам:
+			<CENTER><img src="../image/topic_3/image216.gif" align="top"></CENTER></P></LI>
+			<LI><P>многочленов, построенных по трем узлам:
+			<CENTER><img src="../image/topic_3/image218.gif" align="top"></CENTER></P></LI>
+	</OL>
+	<P style="text-align: justify; text-indent:0">и так далее, и наконец, многочленов, построенных по k (<img src="../image/topic_3/image220.gif" align="top">) узлам:
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image222.gif" align="middle"></center></td>
+			<td><font>(7)</font><td>
+			</tr>
+	</table></P>
+	<P style="text-align: justify;text-indent:0">последним в этой цепочке будет значение в точке x интересующего нас многочлена <IMG src="../image/topic_3/image210.gif" align="top">:</P>
+	<P><CENTER><IMG src="../image/topic_3/image224.gif" align="middle"></CENTER></P>
+	<P style="text-align: justify;text-indent:0">Обозначим:
+	<CENTER><IMG src="../image/topic_3/image226.gif" align="middle"></CENTER></P>
+	<P style="text-align: justify;text-indent:0">Эти величины, вычисленные в соответствии с формулой (7), можно расположить в виде нижне-треугольной таблицы (матрицы):
+	<CENTER><IMG src="../image/topic_3/image228.gif" align="middle"></CENTER></P>
+	<P style="text-align: justify;text-indent:0">Вычисления осуществляются последовательно: сначала – по строкам, а внутри каждой строки – по столбцам, их можно формализовать в виде следующего псевдо-кода:</P>
+	<P><I><B>Алгоритм 1.</B> Позволяет вычислять значения многочлена Лагранжа <IMG src="../image/topic_3/image210.gif" align="top"> в фиксированной точке x.</I></P>
+	<P><IMG src="../image/topic_3/triangle_bottom.gif" align="bottom"> INPUT(<IMG src="../image/topic_3/image230.gif" align="middle">);</P>
+	<P style="text-align: justify;text-indent:60">for i = 1 to n do <IMG src="../image/topic_3/image232.gif" align="top"></P>
+	<P style="text-align: justify;text-indent:60">for i = 2 to n do</p>
+	<P style="text-align: justify;text-indent:95">for j = 2 to i do <IMG src="../image/topic_3/image234.gif" align="middle">;</P>
+	<P style="text-align: justify;text-indent:60">OUTPUT(<IMG src="../image/topic_3/image236.gif" align="top">) <IMG src="../image/topic_3/triangle_top.gif" align="middle"></p>
+	<P style="text-align: justify;text-indent:60"><IMG src="../image/topic_3/image210.gif" align="top">=<IMG src="../image/topic_3/image236.gif" align="top">.</P>
+
+	
+	
+	
+	
+	<p><B>Интерполирование сплайнами.</B> Предположим, что на отрезке
+	<img src="../image/topic_3/image001.gif" align="top"> задана сетка:
+	<CENTER><img src="../image/topic_3/image087.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0"> и на ней определена сеточная функция 
+	<img src="../image/topic_3/image088.gif" align="middle">.</FONT></P>
+	<P><FONT style="letter-spacing:20">Определение </FONT>
+	<FONT>2. <I>Интерполяционным сплайном</I> степени 
+	<img src="../image/topic_3/image089.gif" align="middle"> для сеточной  функции
+	<img src="../image/topic_3/image005.gif" align="top"> назовем функцию 
+	<img src="../image/topic_3/image090.gif" align="top">, определенную для 
+	<img src="../image/topic_3/image091.gif" align="middle"> и удовлетворяющую условиям:
+	<BR>
+	<OL type="1">
+		<LI>при	<img src="../image/topic_3/image092.gif" align="top">, <img src="../image/topic_3/image093.gif" align="top">, <img src="../image/topic_3/image094.gif" align="top">;
+		<LI><img src="../image/topic_3/image095.gif" align="top">;
+		<LI><img src="../image/topic_3/image096.gif" align="top"> <IMG src="../image/topic_2/square.gif" align="middle">
+	</OL></P>
+	<P>Рассмотрим для начала <I>сплайн степени один,</I> его называют также <I>“кусочно-линейным интерполянтом”</I> Обозначим:</P>
+	<CENTER><img src="../image/topic_3/image097.gif" align="middle">, <img src="../image/topic_3/image098.gif" align="middle">.</P>
+	<P style="text-align: justify; text-indent:0">Формулы для кусочно-линейного интерполянта выглядят следующим образом: при
+	<img src="../image/topic_3/image099.gif" align="top"></P>
+	<CENTER><img src="../image/topic_3/image100.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">Получим оценку сходимости для сплайна
+	<img src="../image/topic_3/image101.gif" align="top">. Предположим, что сеточная функция 
+	<img src="../image/topic_3/image005.gif" align="top"> является проекцией функции
+	<img src="../image/topic_3/image103.gif" align="top">, то есть 
+	<img src="../image/topic_3/image104.gif" align="top">. Так как на отрезке
+	<img src="../image/topic_3/image105.gif" align="top"> сплайн 
+	<img src="../image/topic_3/image106.gif" align="top"> является многочленом Лагранжа, построенным по узлам
+	<img src="../image/topic_3/image107.gif" align="top">, то, в силу неравенства
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image047.gif>')" onmouseout="writetxt(0)">(3)</a>, для 
+	<img src="../image/topic_3/image108.gif" align="top">, получим:</P>
+	<CENTER><img src="../image/topic_3/image109.gif" align="middle">,</CENTER>
+	<P style="text-align: justify; text-indent:0">где</P>
+	<CENTER><img src="../image/topic_3/image110.gif" align="middle">, <img src="../image/topic_3/image111.gif" align="middle"></CENTER>
+	<P style="text-align: justify; text-indent:0">Так как</P>
+	<CENTER><img src="../image/topic_3/image112.gif" align="middle">,</CENTER>
+	<P style="text-align: justify; text-indent:0">то</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image113.gif" align="middle"></center></td>
+			<td><font>(8)</font><td>
+			</tr>
+	</table>
+	
+	<P>Очевидно, что при 
+	<img src="../image/topic_3/image114.gif" align="top">, кусочно-линейный сплайн сходится к интерполируемой функции - это следствие оценки (8).</P>
+	<P>Построим <I>кубический сплайн </I><img src="../image/topic_3/image115.gif" align="top">, он позволяет аппроксимировать не только саму функцию f(x), но и ее производные
+	<img src="../image/topic_3/image116.gif" align="top">. Обозначим:	
+	<CENTER><img src="../image/topic_3/image117.gif" align="top">, <img src="../image/topic_3/image019.gif" align="top">.</CENTER>
+	<P style="text-align: justify; text-indent:0">Так как <img src="../image/topic_3/image118.gif" align="top"> - кубический полином на 
+	<img src="../image/topic_3/image105.gif" align="top"> (см. Определение 2, п.1), то функция 
+	<img src="../image/topic_3/image119.gif" align="top">, при 
+	<img src="../image/topic_3/image108.gif" align="top"> - линейна и ее можно записать в виде:</P>
+	<CENTER><img src="../image/topic_3/image120.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">Интегрируя это соотношение, получим:</FONT></P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image121.gif" align="middle">;</center></td>
+			<td><font>(9)</font><td>
+			</tr>
+	</table>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image122.gif" align="middle"></center></td>
+			<td><font>(10)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0"><FONT>Здесь 
+	<img src="../image/topic_3/image123.gif" align="top"> и 
+	<img src="../image/topic_3/image124.gif" align="top"> - некоторые константы. В силу п.3 Определения 2:</P>
+	<CENTER><img src="../image/topic_3/image125.gif" align="top"> <img src="../image/topic_3/image126.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">Эти условия и формула 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image122.gif>')" onmouseout="writetxt(0)">(10)</a> 
+	позволяют получить уравнения для определения неизвестных 
+	<img src="../image/topic_3/image123.gif" align="top"> и	<img src="../image/topic_3/image124.gif" align="top">:</P>
+	<CENTER><img src="../image/topic_3/image128.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">Найдем 
+	<img src="../image/topic_3/image123.gif" align="top"> и	<img src="../image/topic_3/image124.gif" align="top">, подставляя их в 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image121.gif>')" onmouseout="writetxt(0)">(9)</a> и 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image122.gif>')" onmouseout="writetxt(0)">(10)</a>, получим (при 
+	<img src="../image/topic_3/image129.gif" align="top">):</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image130.gif" align="middle"></center></td>
+			<td><font>(11)</font><td>
+			</tr>
+	</table>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image131.gif" align="middle"><br><img src="../image/topic_3/image132.gif" align="top"></center></td>
+			<td><font>(12)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">При 
+	<img src="../image/topic_3/image133.gif" align="top"> из (11), получим:</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image134.gif" align="middle"></center></td>
+			<td><font>(13)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">Аналогично, для 
+	<img src="../image/topic_3/image135.gif" align="top"> из (11) следует:</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image136.gif" align="middle"></center></td>
+			<td><font>(14)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">Из условия непрерывной ”склейки” производной (см. п.2 Определения 2):</P>
+	<CENTER><img src="../image/topic_3/image137.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">получим (N-2) уравнения для определения величин 
+	<img src="../image/topic_3/image138.gif" align="top">:</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image139.gif" align="middle">.</center></td>
+			<td><font>(15)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">Для замыкания системы (15) недостает двух уравнений. Если известны величины
+	<img src="../image/topic_3/image140.gif" align="top">, <img src="../image/topic_3/image141.gif" align="top"> то эти два уравнения получаются из условий:
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image142.gif" align="middle">.</center></td>
+			<td><font>(16)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">Пусть известны 
+	<img src="../image/topic_3/image140.gif" align="top"> и <img src="../image/topic_3/image143.gif" align="top"> полагая в
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image134.gif>')" onmouseout="writetxt(0)">(11)</a> i=1, a в 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image136.gif>')" onmouseout="writetxt(0)">(14)</a> i=n, приходим к уравнениям:</P>
+	<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_3/image144.gif" align="middle"></center></td>
+			<td><font>(17)</font><td>
+			</tr>
+	</table>
+	<P style="text-align: justify; text-indent:0">Можно определить величины
+	<img src="../image/topic_3/image145.gif" align="top"> из 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image139.gif>')" onmouseout="writetxt(0)">(15)</a>,
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image142.gif>')" onmouseout="writetxt(0)">(16)</a> или (15), (17), используя метод прогонки (см. 
+	<a href="javascript:void(0)" onmouseover="writetxt('Калиткин Н.Н. Численные методы.  Москва «Наука», 1978, -512с.')" onmouseout="writetxt(0)">[1, </a>
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А. Введение в численные методы. Москва «Наука», 1987, -288с.')" onmouseout="writetxt(0)">2]</a>),
+	нетрудно проверить, что обе системы удовлетворяют условиям устойчивости прогонки (см. 
+	<a href="javascript:void(0)" onmouseover="writetxt('Калиткин Н.Н. Численные методы.  Москва «Наука», 1978, -512с.')" onmouseout="writetxt(0)">[1, </a> 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А. Введение в численные методы. Москва «Наука», 1987, -288с.')" onmouseout="writetxt(0)">2]</a>). После этого искомый сплайн 
+	<img src="../image/topic_3/image146.gif" align="top"> вычисляется по формуле 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image131.gif><img src=../image/topic_3/image132.gif>')" onmouseout="writetxt(0)">(12)</a>, а его производная 
+	<img src="../image/topic_3/image147.gif" align="top"> по формуле 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image130.gif>')" onmouseout="writetxt(0)">(11)</a>.
+	
+	<p>Следующее утверждение содержит оценки сходимости для кубического сплайна, его доказательство можно найти в 
+	<a href="javascript:void(0)" onmouseover="writetxt('Самарский А.А., Гулин А.В. Численные методы. Москва «Наука», 1989, - 430 с.')" onmouseout="writetxt(0)">[3]</a> и 
+	<a href="javascript:void(0)" onmouseover="writetxt('Бабенко К.И. Основы численного анализа. Москва «Наука», 1986, - с.')" onmouseout="writetxt(0)">[5]</a>.</FONT></P>
+	
+	<P><FONT style="letter-spacing: 20">Теорема</FONT>
+	<FONT>1. Пусть <img src="../image/topic_3/image148.gif" align="top"> - сетка равномерная; сплайн
+	<img src="../image/topic_3/image149.gif" align="top"> определяется системой уравнений 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image139.gif>')" onmouseout="writetxt(0)">(15)</a>, 
+	<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_3/image144.gif>')" onmouseout="writetxt(0)">(17)</a>. Тогда:</P>
+	<CENTER><img src="../image/topic_3/image150.gif" align="top"></CENTER>
+	<P style="text-align: justify; text-indent:0">где <img src="../image/topic_3/image151.gif" align="middle"> <IMG src="../image/topic_2/square.gif" align="middle"></P>
+
+	<BR>
+			<CENTER><FONT><B>ЛИТЕРАТУРА</B></FONT></CENTER>
+			<P>
+			<OL type="1">
+			<LI><P>Калиткин Н.Н. Численные методы.  Москва «Наука», 1978, -512с.</P></LI>
+			<LI><P>Самарский А.А. Введение в численные методы. Москва «Наука», 1987, -288с.</P></LI>
+			<LI><P>Самарский А.А., Гулин А.В. Численные методы. Москва «Наука», 1989, -430 с.</P></LI>
+			<LI><P>Бахвалов Н.С. Численные методы-I. Москва «Наука», 1975, -631 с.</P></LI>
+			<LI><P>Бабенко К.И. Основы численного анализа. Москва «Наука», 1986, -    с.</P></LI>
+			</OL>
+			</P>
+	</FONT>
+	<BR>
+	<CENTER><TABLE border="0">
+	<TR>
+	<TD width="100%" align="left" valign="middle"><a href="../NUM_METH(WIN)/NM_Splines.exe"><IMG border="0" src="../image/buttons/lab_tp3.jpg"></A></TD>
+	<!--<TD width="100%" align="right" valign="middle"><a href="../NUM_METH(WIN)/NM_Splines.exe"><IMG border="0" src="../image/buttons/test_tp3.jpg"></A></TD>-->
+	</TR>
+	</TABLE></CENTER>
+	<br>
+		
+	<div id="navtxt" class="navtext" style="position:absolute; top:-100px; left:0px; visibility:hidden">
+	</div>
+</BODY>
+</HTML>

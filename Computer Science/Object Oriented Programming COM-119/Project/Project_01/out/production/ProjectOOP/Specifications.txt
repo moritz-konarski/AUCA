@@ -1,0 +1,48 @@
+#Herein find the specifications for the first project of OOP
+
+#Classes (as many as possible)
+    -Snake
+    -Field
+    -Apple (Food)
+    -don't mix data and presentation, so move the draw methods to the drawing classes
+
+#Methods
+    -Field:
+        -width
+        -height
+        -standard is 40 x 40
+    -simplify all the drawing to be able to do it only in main
+    -rename main class to Main
+
+#Graphics
+
+
+#Main as the render class
+private void draw(Screen currentScreen) {
+    TODO:
+    background
+    draw buttons
+    draw buttonText
+    draw field + Snake
+    draw table
+}
+
+NEXT CLASS 12.04.2019
+
+//============================How to improve the program========================================================
+TODO from this particular session:
+    -refactoring the code:
+        *removing some useless methods
+        *getting rid of other functions that we do not need
+        *make variables local to methods wherever possible
+    -moving on to the apple class:
+        *coordinates of the apple
+        *color of the apple
+        *constructor (snake position, field size) {coordinates are random, they shall not collide with the snake's position}
+        *int[] getPosition()
+        *he makes some getters and setters that I do not need because I only draw in Main.java
+    -moving on to the snake class:
+        *add a graphical tail to the snake
+        *enable move by passing the movement vector, might not be safe, but it is simpler
+        *isInside method for the field
+        *instant turning for the snake

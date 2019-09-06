@@ -1,0 +1,408 @@
+<HTML>
+<HEAD>
+	<TITLE>Тема 2 - ОСНОВНЫЕ ПОНЯТИЯ И ОПРЕДЕЛЕНИЯ ВЫЧИСЛИТЕЛЬНОЙ МАТЕМАТИКИ</TITLE>
+<!--Всплывающие подсказки-картинки-->
+<style type="text/css">
+.navtext {
+width:200px;
+font-size:12pt;
+border-width:1px;
+border-style:outset;
+border-color:black;
+layer-background-color:red;
+background-color:#F3F1F1;
+color:black;
+}
+</style>
+<script language="javascript" src="../script/alttxt.js">
+</script>
+<!--конец-->
+
+</HEAD>
+
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../css/html.css">
+
+<BODY bgcolor="dedede" background="../image/frame/bg_tp2.jpg"  bgproperties=fixed>
+	<FONT><CENTER><B>II. ОСНОВНЫЕ ПОНЯТИЯ И ОПРЕДЕЛЕНИЯ ВЫЧИСЛИТЕЛЬНОЙ МАТЕМАТИКИ</B></CENTER></FONT>
+
+	<P><FONT><B>Пространство сеточных функций. </B>В настоящем разделе мы обсудим такие понятия 
+	вычислительной математики как <I>сеточная область </I> и <I>сеточная функция, </I>определим
+	<I> семейство норм</I> в <i> пространстве сеточных функций </I>и исследуем их свойства.</FONT></P>
+
+	<P><FONT style="letter-spacing: 20">Определение </FONT>
+	<FONT>1. Произвольное<I> конечное множество </I>
+	<IMG src="../image/topic_2/image002.gif" align="top"><I>точек </I>из 
+	<IMG src="../image/topic_2/image004.gif" align="top"> (q - целое и положительное) будем называть сеточной областью в 
+	<IMG src="../image/topic_2/image005.gif" align="top">, а его элементы - <I>узлами сетки </I> или просто <I> узлами. </I>Число элементов множества 
+	<IMG src="../image/topic_2/image007.gif" align="top"> будем обозначать символом 
+	<IMG src="../image/topic_2/image009.gif" align="top">. Пусть 
+	<IMG src="../image/topic_2/image011.gif" align="top"> - произвольная область в 
+	<IMG src="../image/topic_2/image012.gif" align="top">. Если множество точек 
+	<IMG src="../image/topic_2/image014.gif" align="top"> содержится в 
+	<IMG src="../image/topic_2/image016.gif" align="top">, то говорят, что в области 
+	<IMG src="../image/topic_2/image018.gif" align="top"> <I> задана сетка </I>
+	<IMG src="../image/topic_2/image020.gif" align="top"> или 
+	<IMG src="../image/topic_2/image022.gif" align="top"><I> аппроксимируется сеточной областью </I>
+	<IMG src="../image/topic_2/image024.gif" align="top">
+	<IMG src="../image/topic_2/square.gif" align="middle">	
+	</FONT></P>
+	
+	<P><FONT><B><I>Примеры сеточных областей.</I></B></FONT></P>
+	<OL type="1"><FONT>
+		<LI><P>Пусть 
+		<IMG src="../image/topic_2/image026.gif" align="top"> - отрезок в
+		<IMG src="../image/topic_2/image028.gif" align="top">. В качестве сеточной области 
+		<IMG src="../image/topic_2/image030.gif" align="top">, аппроксимирующей 
+		<IMG src="../image/topic_2/image032.gif" align="top">, можно рассматривать множество 
+		<IMG src="../image/topic_2/image034.gif" align="top"> точек 
+		<center><IMG src="../image/topic_2/image036.gif" align="top"></center></P>
+		<p style="TEXT-ALIGN:JUSTIFY; text-indent:0">В этом случае будем говорить, что на отрезке 
+		<IMG src="../image/topic_2/image038.gif" align="middle"> задана <I> равномерная </I>	сетка 
+		<IMG src="../image/topic_2/image040.gif" align="top">, а величину 
+		<IMG src="../image/topic_2/image042.gif" align="middle"> будем называть <I>шагом сетки </I>
+		<IMG src="../image/topic_2/image044.gif" align="middle">.
+		</P></LI>
+		
+		<LI><P>Пусть
+		<IMG src="../image/topic_2/image046.gif" align="top"> - прямоугольник в 
+		<IMG src="../image/topic_2/image048.gif" align="top">. Равномерной сеткой в прямоугольнике 
+		<IMG src="../image/topic_2/image050.gif" align="top"> можно считать множество
+		<IMG src="../image/topic_2/image052.gif" align="top">, элементами которого являются точки:
+		<CENTER><IMG src="../image/topic_2/image054.gif" align="top"></CENTER>
+		<CENTER><IMG src="../image/topic_2/image056.gif" align="top"></CENTER>
+		Шагами сетки по «направлениям x и y» будем называть соответственно величины 
+		<IMG src="../image/topic_2/image058.gif" align="top">, которые определим следующими соотношениями:</P>
+		<CENTER><IMG src="../image/topic_2/image060.gif" align="top"></CENTER>
+	</OL></FONT>
+
+		 <P><FONT style="letter-spacing: 20">Определение </FONT><FONT>2.</FONT>
+		 <OL type="1"><FONT>
+		 	<LI><P>Предположим, что в 
+		 	<IMG src="../image/topic_2/image061.gif" align="top"> задана некоторая сеточная область 
+		 	<IMG src="../image/topic_2/image063.gif" align="top">. Функцию 
+		 	<IMG src="../image/topic_2/image065.gif" align="top">, определенную на множестве 
+		 	<IMG src="../image/topic_2/image067.gif" align="top"> и  принимающую вещественные значения, будем называть 
+		 	<I>сеточной функцией.</I></P>
+		 	</LI>
+		 	
+		 	<LI><P>Пусть
+		 	<IMG src="../image/topic_2/image069.gif" align="top"> в области
+		 	<IMG src="../image/topic_2/image071.gif" align="top"> рассмотрим некоторую сетку 
+		 	<IMG src="../image/topic_2/image073.gif" align="top">. Произвольной непрерывной в области 
+		 	<IMG src="../image/topic_2/image075.gif" align="top"> функции 
+		 	<IMG src="../image/topic_2/image077.gif" align="top"> сопоставим некоторую сеточную функцию 
+		 	<IMG src="../image/topic_2/image079.gif" align="top"> по правилу:</P>
+		 	<CENTER><IMG src="../image/topic_2/image081.gif" align="top"></CENTER>
+		 	<P style="text-align: justify; text-indent:0 ">Сеточную функцию 	 	
+		 	<IMG src="../image/topic_2/image083.gif" align="top"> будем называть 
+		 	<I>проекцией непрерывной функции
+		 	<IMG src="../image/topic_2/image085.gif" align="top"> во множество сеточных функций.</I>
+		 	<IMG src="../image/topic_2/square.gif" align="middle"></P>
+		 	
+		 	<P>Проекцию непрерывной функции
+		 	<IMG src="../image/topic_2/image086.gif" align="top"> во множество сеточных функций можно выбрать и другим способом, например, если 
+		 	<IMG src="../image/topic_2/image088.gif" align="top"> из примера 1), то в качестве проекции функции
+		 	<IMG src="../image/topic_2/image090.gif" align="top"> можно рассмотреть функцию:</P>
+		 	<CENTER><IMG src="../image/topic_2/image092.gif" align="top"></CENTER>
+		 	</FONT></LI>
+		 </OL>
+		 	
+		 <P><FONT style="letter-spacing:20">Определение </FONT>
+		 <FONT>3. Обозначим символом 
+		 	<IMG src="../image/topic_2/image094.gif" align="top"> - множество сеточных функций, заданных в области 
+		 	<IMG src="../image/topic_2/image096.gif" align="top">, с «естественным образом» определенными на этом множестве операциями сложения (вычитания) функций и умножения функций на вещественное число. Будем говорить, что на множестве 
+		 	<IMG src="../image/topic_2/image098.gif" align="top"> задана <I>норма, </I>если определено однозначное соответствие:
+		 	<CENTER><IMG src="../image/topic_2/image100.gif" align="top"> для любого
+		 	<IMG src="../image/topic_2/image102.gif" align="top">,</CENTER>
+			или, что то же самое:
+		 	<center><IMG src="../image/topic_2/image104.gif" align="top"></center>
+			которое удовлетворяет следующим условиям <i>(аксиомам нормы)</i>:
+		 	<ol type='1'>
+			<li>
+		 	<IMG src="../image/topic_2/image106.gif" align="top"> для любого 
+		 	<IMG src="../image/topic_2/image108.gif" align="top">;
+		 	<IMG src="../image/topic_2/image110.gif" align="top">;
+		 	<li>
+		 	<IMG src="../image/topic_2/image112.gif" align="top"> для любых
+		 	<IMG src="../image/topic_2/image114.gif" align="top">;
+			<li>
+		 	<IMG src="../image/topic_2/image116.gif" align="top"> для любых 
+		 	<IMG src="../image/topic_2/image118.gif" align="top"> <IMG src="../image/topic_2/square.gif" align="middle">
+		 	</ol></FONT></P> 
+		 	
+			<p><font>На множестве сеточных функций, заданных в области
+			<IMG src="../image/topic_2/image119.gif" align="top">, будем рассматривать одну из следующих норм:
+			</font></p>
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image121.gif" align="top"></center></td>
+			<td><font>(1)</font><td>
+			</tr>
+			</table>
+			
+			<p><font style="letter-spacing:20">Задача</font>
+			<font> 1. Доказать, что выражение (1) удовлетворяет аксиомам  нормы 
+			(</font><font style="letter-spacing:20">Определение </font><font>3 )</font> <IMG src="../image/topic_2/square.gif" align="middle"></p>
+			
+			<p><font>Для сеточной функции, заданной в "одномерной" сеточной области 
+			(см. пример 1) будем в дальнейшем использовать обозначение:</FONT></p>
+			
+			<center><IMG src="../image/topic_2/image123.gif" align="top"></center>
+			
+			<p style="TEXT-ALIGN: justify; text-indent:0"><FONT>
+			в котором: <IMG src="../image/topic_2/image125.gif" align="top"> при i=1,2,…n - значения этой функции в узлах сетки. В этом случае нормы из
+			</P>
+			
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0">
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			<FONT>удобней записать следующим образом:
+			</font></P>
+			
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image127.gif" align="top"></center></td>
+			<td><font>(2)</font><td>
+			</tr>
+			</table>
+			
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0"><font>Во множестве сеточных 
+			функций будем рассматривать также <i> скалярное произведение</i>:
+			<center><IMG src="../image/topic_2/image129.gif" align="top"></center>
+			<br>которое "порождает" гильбертову норму
+			<IMG src="../image/topic_2/image131.gif" align="top">
+			 по правилу: 
+			<IMG src="../image/topic_2/image133.gif" align="top">
+			</font></p>
+			
+			<p><font style="letter-spacing=20">Теорема 1</font>
+			<font>. Справедливы следующие свойства норм 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			 
+			<FONT>:
+			<ol type='1'>
+			<li><IMG src="../image/topic_2/image135.gif" align="top">
+			<li><IMG src="../image/topic_2/image137.gif" align="middle"> при <IMG src="../image/topic_2/image139.gif" align="middle">.
+			</ol>
+			</font></p>
+			
+			<p><font style="letter-spacing=20">Доказательство</FONT><FONT>.</font>
+			<font> Для доказательства нам потребуется <i>обобщенное неравенство 
+			Коши-Шварца</i> для конечных сумм 
+			<a href="javascript:void(0)" onmouseover="writetxt('Беккенбах Э., Беллман Р. Неравенства. Москва «Мир», 1965, с.276.')" onmouseout="writetxt(0)">[1]</a>
+			пусть <IMG src="../image/topic_2/image141.gif" align="top"> - произвольные сеточные функции, 
+			заданные в области <IMG src="../image/topic_2/image143.gif" align="middle">; числа
+			<IMG src="../image/topic_2/image145.gif" align="middle"> таковы, что:
+			<IMG src="../image/topic_2/image147.gif" align="middle">, тогда:
+			</font>
+			
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image149.gif" align="top"></center></td>
+			<td><font>(3)</font><td>
+			</tr>
+			</table>
+			</p>
+			
+			<p><FONT>
+			Докажем<I> первое утверждение.</I> Неравенство
+			</FONT></P>
+			
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image151.gif" align="top"></center></td>
+			<td><font>(4)</font><td>
+			</tr>
+			</table>
+			
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0"><font>
+			очевидно для любого p такого, что 
+			<IMG src="../image/topic_2/image153.gif" align="top">. Пусть 
+			<IMG src="../image/topic_2/image155.gif" align="top">, таково, что 
+			<IMG src="../image/topic_2/image157.gif" align="top">, рассмотрим сеточную функцию
+			<CENTER><IMG src="../image/topic_2/image159.gif" align="top"></CENTER>
+			Используя неравенство 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image149.gif>')" onmouseout="writetxt(0)">(3)</a></font>
+			 
+			<FONT>, получим для любого
+			<IMG src="../image/topic_2/image161.gif" align="top">
+			</FONT>
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image163.gif" align="top"></center></td>
+			<td><font>(5)</font><td>
+			</tr>
+			</table>
+			<FONT>
+			В силу неравенств 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image151.gif>')" onmouseout="writetxt(0)">(4)</a></font>
+			 
+			<FONT>
+			 и (5) получим  для  любого 
+			<IMG src="../image/topic_2/image165.gif" align="top"> оценки:
+			</FONT>
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image167.gif" align="top"></center></td>
+			<td><font>(6)</font><td>
+			</tr>
+			</table>
+			<FONT>Переходя в (6) к пределу при 
+			<IMG src="../image/topic_2/image169.gif" align="top">, приходим к выводу о справедливости  первой части теоремы.
+			</FONT>
+			</P>
+			
+			<P><FONT>Докажем <I>второе утверждение</I> теоремы.</FONT></P>
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0"><font>Полагая в неравенстве 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image149.gif>')" onmouseout="writetxt(0)">(3)</a></font>
+			 
+			<FONT>:
+			<IMG src="../image/topic_2/image171.gif" align="middle"> получим оценку:
+			</FONT></P>
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image173.gif" align="top"></center></td>
+			<td><font>(7)</font><td>
+			</tr>
+			</table>
+			
+			<p style="text-indent:0"><font>
+			Далее, используя левое неравенство в 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image163.gif>')" onmouseout="writetxt(0)">(5)</a></font>
+			 
+			<FONT>:</FONT>
+			<CENTER><IMG src="../image/topic_2/image175.gif" align="top"></CENTER>
+			</P>
+			
+			<p style="text-align:justify; text-indent:0"><font>
+			Последняя оценка, вместе с 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image167.gif>')" onmouseout="writetxt(0)">(6)</a></font>
+			 
+			<FONT>, доказывают вторую часть теоремы
+			</FONT></P>
+			
+			<P><FONT>
+			Оценка части 2   
+			</FONT>
+			<FONT style="letter-spacing:20"> Теоремы</FONT>
+			<FONT> 1 говорит о том, что при фиксированном
+			<IMG src="../image/topic_2/image177.gif" align="top"> все нормы вида </font></P>
+			
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0"><FONT>
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			 
+			<FONT>
+			<I> эквивалентны.</I></FONT></P>
+			
+			<P><FONT style="letter-spacing:20">Определение </FONT>
+			<FONT>3. Пусть
+			<IMG src="../image/topic_2/image178.gif" align="top"> - множество сеточных функций, удовлетворяющих условиям</FONT>
+			<font style="letter-spacing:20">Определения</FONT>
+			<FONT>  2. Если, кроме того, на этом множестве задана одна из норм семейства 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			 
+			<FONT>, то <IMG src="../image/topic_2/image179.gif" align="middle"> будем называть 
+			<I>пространством сеточных функций.</I>
+			</FONT><IMG src="../image/topic_2/square.gif" align="middle">
+			</P>
+			
+			<P><FONT>Заметим, что если упорядочить множество узлов сеточной области 
+			<IMG src="../image/topic_2/image181.gif" align="top"> с 
+			<IMG src="../image/topic_2/image183.gif" align="top">, то сеточное пространство 
+			<IMG src="../image/topic_2/image184.gif" align="top"> можно отождествлять с
+			<I>эвклидовым пространством</I>
+			<IMG src="../image/topic_2/image186.gif" align="top">, оснащенным одной из норм (1).
+			</FONT></P>
+			
+			<P><FONT>Наряду с пространством сеточных функций 
+			<IMG src="../image/topic_2/image188.gif" align="top">, рассмотрим пространство
+			<IMG src="../image/topic_2/image190.gif" align="top">-один раз непрерывно дифференцируемых функций в области
+			<IMG src="../image/topic_2/image192.gif" align="top">, при этом считаем, что 
+			<IMG src="../image/topic_2/image194.gif" align="top"> аппроксимирует
+			<IMG src="../image/topic_2/image196.gif" align="top"> в смысле
+			<FONT style="letter-spacing:20">Определения</FONT>
+			<FONT> 1. В пространстве 
+			<IMG src="../image/topic_2/image198.gif" align="top"> рассмотрим семейство норм
+			</FONT></P>
+			
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image200.gif" align="top"></center></td>
+			<td><font>(8)</font><td>
+			</tr>
+			</table>
+			
+			<P><FONT>Можно доказать, что нормы 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			 
+			<FONT> и (8) в некотором смысле <I>согласованы,</I> 
+			если сеточная область 
+			<IMG src="../image/topic_2/image202.gif" align="top"> удовлетворяет определенным условиям. Сделаем 
+			это в простейшем случае.
+			</FONT></P>
+			
+			<P><FONT style="letter-spacing:20">Теорема 2</FONT>
+			<FONT>. Пусть <IMG src="../image/topic_2/image204.gif" align="top"> и <IMG src="../image/topic_2/image206.gif" align="top"> - равномерная 
+			сетка в области	<IMG src="../image/topic_2/image208.gif" align="top">(
+			</FONT>
+			<FONT style="letter-spacing:20">Пример</FONT>
+			<FONT> 1), тогда для любых  
+			<IMG src="../image/topic_2/image210.gif" align="top">:</FONT>
+			<CENTER><IMG src="../image/topic_2/image212.gif" align="top"></CENTER>
+			<P style="text-align:justify; text-indent:0"><FONT>
+			Это означает, что для любого <IMG src="../image/topic_2/image214.gif" align="top">
+			<I> нормы </I>
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image121.gif>')" onmouseout="writetxt(0)">(1)</a></font>
+			 
+			<FONT> и 
+			<a href="javascript:void(0)" onmouseover="writetxt('<img src=../image/topic_2/image200.gif>')" onmouseout="writetxt(0)">(8)</a></font>
+			 
+			<FONT>
+			<I> согласованы.</I></FONT></P>
+			
+			<P><FONT style="letter-spacing:20">Замечание</FONT>
+			<FONT>. Мы не делаем (и в дальнейшем не будем делать) различий в записи норм 
+			(1) и (8), полагая, что эти различия определяются тем, какая функция стоит под 
+			знаком нормы: непрерывная «f», или дискретная 
+			«<IMG src="../image/topic_2/image216.gif" align="top">».
+			</FONT></P>
+			
+			<P><FONT style="letter-spacing:20">Доказательство</FONT>
+			<FONT>. Обозначим:
+			<CENTER><IMG src="../image/topic_2/image218.gif" align="top">.</CENTER>
+			<BR>
+			Используя формулу интегрирования "по-частям", легко проверить равенство:
+			<CENTER><IMG src="../image/topic_2/image220.gif" align="middle">;</CENTER>
+			<BR>
+			теперь проделаем выкладку:</FONT>
+			<table>
+			<tr>
+			<td width=100%><center><IMG src="../image/topic_2/image222.gif" align="top"></center></td>
+			<td><font>(9)</font><td>
+			</tr>
+			</table>
+			<BR>
+			<p style="TEXT-ALIGN:JUSTIFY; text-indent:0"><FONT>
+			Следующая оценка и предельный переход при <IMG src="../image/topic_2/image224.gif" align="middle"> 
+			в обеих частях соотношения (9) доказывает теорему:
+			<CENTER><IMG src="../image/topic_2/image226.gif" align="middle"> <IMG src="../image/topic_2/square.gif" align="middle"></CENTER>
+			</FONT></P>
+					
+			<BR>
+			<CENTER><FONT><B>ЛИТЕРАТУРА</B></FONT></CENTER>
+			<OL type="1">
+			<LI>Беккенбах Э., Беллман Р. Неравенства. Москва "Мир", 1965, с.276.
+			<OL>
+			<BR>
+			
+			<!--<CENTER><TABLE border="0">
+			<TR>
+			<TD width="100%" align="right" valign="middle"><a href="../NUM_METH(WIN)/NM_IterativeMethods.exe"><IMG border="0" src="../image/buttons/test_tp2.jpg"></A></TD>
+			</TR>
+			</TABLE></CENTER>
+			<br>-->
+
+			<div id="navtxt" class="navtext" style="position:absolute; top:-100px; left:0px; visibility:hidden">
+			</div>
+	
+</BODY>
+</HTML>

@@ -130,3 +130,42 @@
 - then all of Manas' victories are talked about, also one against the Kirgiz
 - __Manas is not Kirgiz__
 
+## Notes in class
+
+- in this version of the text the characters are not introduced, suggesting listeners are
+  familiar with them, while in later texts the characters are introduced
+- storytellers use certain formulas: repeated endings, description of things to make it
+  easier to remember the story
+- beginning the story with the death of an important ruler is common: it creates a vacuum
+  for new characters, creates drama, uncertainty; is relieved at the end with new ruler
+- the rhyme scheme has entire words rhyming at the end of phrases, making it easy to
+  remember
+- the start has a real rhyme/idiom: probably rehearsed or it's a common proverb
+  - it draws attention
+  - pause after the 4th line: emphasis on what was said
+- typical rhyme meter is: X / X / X /
+- the pommel on the saddle: khan is as necessary for a people as a saddle is for riding
+  a horse
+- recorded in norther Issik-Kul region in 1856: turmoil, wars, start of Russian
+  colonization
+- Valikhanov was on a reconnaissance mission from Russian Empire for annexation of the
+  tribe
+- V was happy to find this story told, called it "Illiad of the steppe"
+- maybe the story was supposed to be a message to V. in a tumultuous time
+- the khan asks for a Kazakh first, of all people, maybe message to V. (who was Kazakh)
+- V. revised some lines, as they did not fit Kazakh or his opinion
+- he may have misheard or purposefully changed stuff that didn't fit him -> how much
+  trust can we put into this transcription?
+- Manas is not described like a hero, and he is not the center of the story, that changed
+  later on
+- Bok-murun may have been the original protagonist, name means "snot-nose"
+- it may be kind of a parody? Bok-murun needs to earn his name first through battle or
+  competition
+- Manas wins the competition instead of Bok-murun, so he can not earn his name, is that
+  supposed to be a surprise, or was the original story stale and they changed it?
+- "Sart" - originally just someone from the flat lands, so a milkdrinker, today it's
+  a grave insult
+- the route the khan describes and Bok-murun takes is the same route that the sarybagysh
+  tribe takes annually: easy for the storyteller to remember, easy to emphasize for the
+  audience, connects the audience to those heroes, as the walk in their footsteps
+- almost shamanistic, connects the audience to an earlier time and gone heroes

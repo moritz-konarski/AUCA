@@ -172,4 +172,66 @@
 
 ### Notes
 
-- starting from "After Targil-taz"
+- Khan Joloy is injured and his medic tells him not to ride out, but he ignores him
+- he calls for his men to assemble and the medic warns him again not to ride out
+- Joloy plans to have a big slaughter, being very sick
+- Manas is already waiting for him
+- Manas addresses his men as the army nears: we shall attack them from behind, while
+  Manas plans an ambush in wooded land
+- a description of the army is repeated here
+- there was ferocious fighting, but khan Joloy was nowhere to be found
+- the he came in behind, not finding anyone to fight
+- Targil-taz tells Joloy they will be defeated, he should not go on as he sees Manas
+  waiting
+- Joloy splits his chin in rage and gallops away
+- Joloy is a ferocious warrior, none can stand is his path, except Manas, who impales
+  him on his lance, but Joloy is still standing. Then Almambek impales him too and throws
+  him to the ground
+- Manas then decapitates Joloy with his sword
+- Almambek fights the sons of Joloy in gory fashion
+- the sons got killed and many others routed
+- at the break of dawn they plan to descend on Joloy people and give his daughters to the
+  smith and his son
+- Manas tells the companions that he brought them their weapons and now expects them to
+  fight, less their lives be forfeit and their cattle up for pillaging
+- he wants them to die for his sake, if they flee, he will kill them himself
+- they have guns, which is totally unexpected
+- they slaughtered the people of Joloy and stole his daughters
+- Manas rides home saying that his shame is ended now, he takes one of the khan's
+  daughters and gives the others to the craftsman as booty
+- Manas took three wives, now his father inspects them
+- one of them is not lucky, he states
+- one is cursed, the third one he considers lucky and a good leader/warrior
+- Kanikey is the famed one that his father approves of
+- he tells his companions to get ready to go to Kanikey at dawn, to see if his father is
+  right
+- Kanikey orders one of her maids to open the door and the other one to take care of
+  Manas' horse
+- they plan to treat the companions and Manas with the highest honor when they arrive
+- the procedure is repeated twice
+- she clothes them in the most exquisite of garments, much to their amazement
+- the companions are well pleased
+- after some camping, to not become soft, Manas set out to raid the Kalmak, who seem to
+  be rich
+- Manas saddles up, but Kanikey bids him to stay as this year and month are unlucky
+- the same kind of warning was given to khan Joloy before his demise
+- he goes into a rage and whips her so hard her clothes rip open
+- Kanikey starts _laughing_ at this and tells him to restrain himself and wishes him good
+  luck with his raiding and a swift return
+- Manas leaves, but Akilay, following Kanikey, takes hold of him and tells him the same
+  exact thing
+- again, he goes into a rage, calls her a wretch and tells her that he didn't take
+  Kanikey's advice, so why should he take hers?
+- he whips her too, ripping her gown and scattering her jewelry, she curses him in return
+- she curses him to never come back and never hold Kanikey again
+- Kanikey, who can see the future, sends a messenger after him telling him to come back,
+  but Manas can't listen to a woman, so he does not come back
+
+### Observations
+
+- the Kirgiz are superficially islamicized according to Hatto
+- Joloy was poisoned and still put up an admirable fight against Manas' companions
+- he was then killed by two lance thrusts and decapitation
+- Manas companions are fiercely loyal and Manas expects them to be too
+- Manas raids Joloy's land and steals his daughters
+- 

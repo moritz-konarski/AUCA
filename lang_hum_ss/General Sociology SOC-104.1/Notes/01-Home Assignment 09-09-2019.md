@@ -77,57 +77,57 @@
 ### Questions
 
 1. What is Sociology?
-  - Sociology is the study of human interaction, social life and the processes that shape
-    individuals and societies
+  Sociology is the study of human interaction, social life and the processes that shape
+  individuals and societies
 2. Describe the process of professionalization of sociology.
-  - Because the first sociologist were trained in other, generally scientific
-    disciplines, they put great emphasis on scientific and empirical methods in their
-    research, which helped separate sociology from other disciplines of the humanities
-    that do not do this. Early sociologists were trying to research the drastic societal
-    changes that took place in their time and doing so with scientific methods paved the
-    way for sociology to be accepted as a scientific discipline. John Dewey's three
-    phases of inquiry describe this process well (see History towards the end)
+  Because the first sociologist were trained in other, generally scientific
+  disciplines, they put great emphasis on scientific and empirical methods in their
+  research, which helped separate sociology from other disciplines of the humanities
+  that do not do this. Early sociologists were trying to research the drastic societal
+  changes that took place in their time and doing so with scientific methods paved the
+  way for sociology to be accepted as a scientific discipline. John Dewey's three
+  phases of inquiry describe this process well (see History towards the end)
 3. How is sociology related to other sciences?
-  - When it comes to studying humans and their actions, Psychology looks at it at the
-    smallest scale, generally on an individual level. Sociology goes beyond that and
-    examines how groups of people behave and what shapes them or how they shape each
-    other. Economics looks at how groups of people and other entities handle wealth and
-    production, Politcal science concerns itself with the study interactions of even larger groups of
-    people: communities, cities, states, countries and international organizations. 
-    As far as research methods go, Sociology is similar in nature to how PHysiscs and
-    other natural sciences handle research, a legacy from its early days when most
-    Sociologists came from those disciplines.
+  When it comes to studying humans and their actions, Psychology looks at it at the
+  smallest scale, generally on an individual level. Sociology goes beyond that and
+  examines how groups of people behave and what shapes them or how they shape each
+  other. Economics looks at how groups of people and other entities handle wealth and
+  production, Political Science concerns itself with the study interactions of even larger groups of
+  people: communities, cities, states, countries and international organizations. 
+  As far as research methods go, Sociology is similar in nature to how Physiscs and
+  other natural sciences handle research, a legacy from its early days when most
+  Sociologists came from those disciplines.
 4. What do you think of Comte's Law of Stages?
-  - I think that his stages make sense at first glance. Roughly speaking, the first two
-    stages fit the conception of history most people have. But of course it is way too
-    simplistic to be correct. I know too little about history to refute his first to
-    points using facts, but I would say that the third stage is too idealistic to be
-    correct in any case. I can not imagine that there will ever be a time when society is
-    governed by reliable knowledge and understood only through science. Even today, in
-    a time where we are very technologically and scientifically advanced (definitely
-    metaphysical stage) society is still i many cases ruled by people's feelings and
-    opinions, even though those opinions may be scientifically proven to be incorrect
-    (e.g. the existance of climate change, or the (lack of) effectiveness of repressive
-    laws and prison systems). Thus I would say that his third stage will probably never
-    actually happen. It would be nice, but I do not thin that it is realistic.
+  I think that his stages make sense at first glance. Roughly speaking, the first two
+  stages fit the conception of history most people have. But of course it is way too
+  simplistic to be correct. I know too little about history to refute his first to
+  points using facts, but I would say that the third stage is too idealistic to be
+  correct in any case. I can not imagine that there will ever be a time when society is
+  governed by reliable knowledge and understood only through science. Even today, in
+  a time where we are very technologically and scientifically advanced (definitely
+  metaphysical stage) society is still i many cases ruled by people's feelings and
+  opinions, even though those opinions may be scientifically proven to be incorrect
+  (e.g. the existence of climate change, or the (lack of) effectiveness of repressive
+  laws and prison systems). Thus I would say that his third stage will probably never
+  actually happen. It would be nice, but I do not thin that it is realistic.
 5. What is the scientific stage according to Comte?
-  - The scientific stage is the final stage of societal development, where society is
-    governed by scientific knowledge and understood through the lense of science. This
-    stage seems utopic, as nice at it could be, I do not believe this stage can become
-    reality yet. I am also sceptical of the idea that there can be a world where humans
-    put aside their opinions and feelings and only follow science and reason. That seems
-    non-human to me. It might also deprive us of emphathy and have us at the mercy of
-    science, which, as much as we try, might be incorrect. As good as science and the
-    scientific method are at finding the truth, they can be wrong or just applied
-    incorrectly, even if it's just by accident. Thus I think blindly trusting science is
-    never a good idea.
+  The scientific stage is the final stage of societal development, where society is
+  governed by scientific knowledge and understood through the lense of science. This
+  stage seems utopical, as nice at it could be, I do not believe this stage can become
+  reality yet. I am also sceptical of the idea that there can be a world where humans
+  put aside their opinions and feelings and only follow science and reason. That seems
+  non-human to me. It might also deprive us of empathy and have us at the mercy of
+  science, which, as much as we try, might be incorrect. As good as science and the
+  scientific method are at finding the truth, they can be wrong or just applied
+  incorrectly, even if it's just by accident. Thus I think blindly trusting science is
+  never a good idea.
 6. What is the significant trend of sociological research currently?
-  - Recently, sociologists have realized that sociology has historically been a very
-    Western science, it generally ignored other regions of the world. This realization
-    lead to sociologists focusing on non-Western societies and broadening their research
-    to gain a better understanding of them. This goes back to the roots of sociology,
-    trying to underdstand the changes societies got through, and with globalization today
-    there may be more change than ever before.
+  Recently, sociologists have realized that sociology has historically been a very
+  Western science, it generally ignored other regions of the world. This realization
+  lead to sociologists focusing on non-Western societies and broadening their research
+  to gain a better understanding of them. This goes back to the roots of sociology,
+  trying to understand the changes societies got through, and with globalization today
+  there may be more change than ever before.
 
 ## News 
 

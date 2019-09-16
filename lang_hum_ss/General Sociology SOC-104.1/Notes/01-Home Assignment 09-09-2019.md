@@ -77,10 +77,10 @@
 
 ### Questions
 
-1. What is Sociology?
+1. _What is Sociology?_    
   Sociology is the study of human interaction, social life and the processes that shape
   individuals and societies
-2. Describe the process of professionalization of sociology.
+2. _Describe the process of professionalization of sociology._    
   Because the first sociologist were trained in other, generally scientific
   disciplines, they put great emphasis on scientific and empirical methods in their
   research, which helped separate sociology from other disciplines of the humanities
@@ -88,7 +88,7 @@
   changes that took place in their time and doing so with scientific methods paved the
   way for sociology to be accepted as a scientific discipline. John Dewey's three
   phases of inquiry describe this process well (see History towards the end)
-3. How is sociology related to other sciences?
+3. _How is sociology related to other sciences?_   
   When it comes to studying humans and their actions, Psychology looks at it at the
   smallest scale, generally on an individual level. Sociology goes beyond that and
   examines how groups of people behave and what shapes them or how they shape each
@@ -98,7 +98,7 @@
   As far as research methods go, Sociology is similar in nature to how Physiscs and
   other natural sciences handle research, a legacy from its early days when most
   Sociologists came from those disciplines.
-4. What do you think of Comte's Law of Stages?
+4. _What do you think of Comte's Law of Stages?_   
   I think that his stages make sense at first glance. Roughly speaking, the first two
   stages fit the conception of history most people have. But of course it is way too
   simplistic to be correct. I know too little about history to refute his first to
@@ -111,7 +111,7 @@
   (e.g. the existence of climate change, or the (lack of) effectiveness of repressive
   laws and prison systems). Thus I would say that his third stage will probably never
   actually happen. It would be nice, but I do not thin that it is realistic.
-5. What is the scientific stage according to Comte?
+5. _What is the scientific stage according to Comte?_   
   The scientific stage is the final stage of societal development, where society is
   governed by scientific knowledge and understood through the lense of science. This
   stage seems utopical, as nice at it could be, I do not believe this stage can become
@@ -122,7 +122,7 @@
   scientific method are at finding the truth, they can be wrong or just applied
   incorrectly, even if it's just by accident. Thus I think blindly trusting science is
   never a good idea.
-6. What is the significant trend of sociological research currently?
+6. _What is the significant trend of sociological research currently?_  
   Recently, sociologists have realized that sociology has historically been a very
   Western science, it generally ignored other regions of the world. This realization
   lead to sociologists focusing on non-Western societies and broadening their research

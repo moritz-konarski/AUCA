@@ -12,9 +12,10 @@
 - some early sociologists include Marx, Weber and Durkheim
 - they employed _sociological imagination_: the ability to situate personal troubles
   within an informed framework of social issues (after C. Wright Mills)
-- he said people need to be able to use information and reason to understand the world
-  and themselves. Sociological imagination enables understanding larger historical
-  schemes in terms of their meaning for the inner and outer life of individuals
+- Sociological imagination enables understanding larger historical schemes in terms of their 
+  meaning for the inner and outer life of individuals
+- Wright Mills said people need to be able to use information and reason to understand the world
+  and themselves
 - stepping outside of their personal worldview and seeing what influences behavior,
   attitudes and culture
 - sociological imagination is more than common sense, it's based on science, not feelings
@@ -31,10 +32,10 @@
 - Sociology was coined by Auguste Comte (1798-1857) in 1838, meaning study of
   companion(ship)
 - he argued for The Law of Three Stages:
-  - theological stage: religious view of society
-  - metaphysical stage: society understood as natural
-  - positivist stage: pinnacle of social development, society is governed by reliable
-    knowledge and is understood through science, primarily sociology
+    - theological stage: religious view of society
+    - metaphysical stage: society understood as natural
+    - positivist stage: pinnacle of social development, society is governed by reliable
+      knowledge and is understood through science, primarily sociology
 - other classical theorists are Karl Marx, Herbert Spencer, Ferdinand Toennies, Emile
   Durkheim, Vilfredo Pareto, Max Weber
 - most of them were not trained Sociologists, but historians, philosophers, economists,
@@ -60,9 +61,9 @@
 - Freud and James were pioneers in combining scientific inquiry with exploration of human
   relationships
 - John Dewey formulated three phases of inquiry:
-  - problematic situation with inadequate typical response
-  - isolation of data or subject matter
-  - reflective, which is tested empirically
+    - problematic situation with inadequate typical response
+    - isolation of data or subject matter
+    - reflective, which is tested empirically
 - this signaled a development from humanities to social sciences
 
 ### Sociology Today
@@ -129,9 +130,9 @@
   trying to understand the changes societies got through, and with globalization today
   there may be more change than ever before.
 
-## News 
+# News 
 
-### "Boris Johnson Finds His Party Loyalists Aren't as Loyal as Trump's" - New York Times 08.09.2019
+## "Boris Johnson Finds His Party Loyalists Aren't as Loyal as Trump's" - New York Times 08.09.2019
 
 - over the past years Britain and the USA had very similar populist views and strategies,
   but recently there has been a divide

@@ -261,4 +261,57 @@
 
 ### Implications
 
-- this means etc.
+- 129: the bard here has decent historical knowledge, concerning the hoja family in,
+  even though the events did not take place right where they lived. It is
+  also worth noting that the names of certain people might be changed, or even
+  the person was changed, to better fit the meter of Kyrgyz poetry
+- 245: Manas can definitely be bought, not a very princely trait
+- 396: it is interesting how much content would go amiss if not for scholars
+  like Hatto that dig deep and find all the little nuances in phrases that most
+  people would just skip
+- 439: this passage shows that certain well know heroes would be
+  changed/appropriated to tell a convincing/fun story, even though, upon closer
+  inspection, the facts do not hold up. In an oral storytelling this would
+  probably not been much of an issue
+- 451: Hatto comments on wrong etymologies and translations in the text, making
+  it obvious that these texts need to be examined critically and with caution
+- 479-496: Hatto notes the logical inconsistencies in the bard's story, where
+  a horse is both given to an envoy and at the same time ridden by BM. It also
+  criticized Radloff for his bad translation, while additionally showing that
+  Hatto could have used an editor for the annotations
+- 504-505: Hatto supposes that R. skipped some verses in his transcription, as
+  evident in the rhyme scheme, which makes one further doubt the authenticity of
+  the text
+- 692: the bard has some further logical errors in his story, that a listener
+  might miss, but the transcript immortilized them
+- 763, 843, 849: some historical research that explains some facets of the text
+- 887f: not sure if this is supposed to show that there was influence of Greek
+  mythology on Kyrgyz epics, or if it is something that is common in epics in
+  general, how unrealistic it may be
+- 894-897: the use of prophecies in three stages is interesting, it is
+  definitely a formula, but it gives the whole thing a lot more gravitas, as
+  the prophecy is foretold, then repeated and finally comes true
+- 1032: this shows the historical and mythological knowledge of the bard, who
+  connects it to the story at hand. This would also imply that the listeners
+  knew the same things, otherwise it would not be worth telling
+- 1099: Hatto notes that epic heroes can be put into different locations to fit
+  the narrative of the bard, such that they can claim famous heroes as one of
+  their own
+- 1260: heroes grow up very quickly in these epics, which underlines their
+  prowess and general awesomeness because normal people cannot do that
+- 1298: another transcription error by Radloff that makes little sense that
+  Hatto notices
+- 1337: epics can be sources from which one might learn something about the
+  culture at that point, even though normal historical works do not mention
+  these things
+- 1487: sometimes the bards make up persons because it fits the story that they
+  are telling
+- 1842: the Joloy/Saykal story illustrates that the bard probably knew more
+  stories than just Manas and could thus refer to them, even though it may not
+  fit in totally logically. This implies that the audience may have known more
+  than one epic too. Additionally, this must be some relatively set part of the
+  story, otherwise there would be no other matching versions of it
+- a couple of lines talk about the kind of handguns the nomads where using at
+  the time, either from Tashkent of Kazakhstan, which were heavy guns requiring
+  tripods and having slow burning wicks, probably more akin to small cannons
+  than to modern firearms

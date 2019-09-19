@@ -1,0 +1,10 @@
+USE AUCA_DB;
+DROP TABLE Contacts;
+DROP TABLE Courses;
+DROP TABLE Faculties;
+DROP TABLE Genders;
+DROP TABLE Grades;
+DROP TABLE MaritalStatuses;
+DROP TABLE StudentCourses;
+DROP TABLE Students;
+DROP TABLE StudentsInFaculties;

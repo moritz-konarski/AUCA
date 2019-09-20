@@ -1,6 +1,6 @@
 USE AUCA_DB;
--- USE COMMENTS --
 
+-- create courses table
 CREATE TABLE Courses (
   Id INT IDENTITY CONSTRAINT PK__Courses PRIMARY KEY,
   Name NVARCHAR(255) NOT NULL,
@@ -8,27 +8,33 @@ CREATE TABLE Courses (
   Credits INT NOT NULL,
 );
 
+-- create genders table
 CREATE TABLE Genders (
   Id INT IDENTITY CONSTRAINT PK__Genders PRIMARY KEY,
   Name NVARCHAR(50) NOT NULL
 );
 
+-- create marital statuses table
 CREATE TABLE MaritalStatuses (
   Id INT IDENTITY CONSTRAINT PK__MaritalStatuses PRIMARY KEY,
   Name NVARCHAR(50) NOT NULL
 );
 
+-- create grades table
 CREATE TABLE Grades (
   Id INT IDENTITY CONSTRAINT PK__Grades PRIMARY KEY,
   Name VARCHAR(2) NOT NULL,
   Description NVARCHAR(255) NULL
 );
 
+-- create faculties table
 CREATE TABLE Faculties (
   Id INT IDENTITY CONSTRAINT PK__Faculties PRIMARY KEY,
   Name NVARCHAR(500) NOT NULL
 );
 
+-- create students table
+-- link FK to marital statuses and genders tables
 CREATE TABLE Students (
   Id INT IDENTITY CONSTRAINT PK__Students PRIMARY KEY,
   Name NVARCHAR(500) NOT NULL,
@@ -48,6 +54,8 @@ CREATE TABLE Students (
     REFERENCES Genders(Id)
 );
 
+-- create student contact info table
+-- link FK to student table
 CREATE TABLE StudentContactInfo (
   Id INT IDENTITY CONSTRAINT PK__StudentContactInfo PRIMARY KEY,
   StudentId INT NOT NULL,
@@ -57,11 +65,14 @@ CREATE TABLE StudentContactInfo (
     REFERENCES Students(Id)
 );
 
+-- create address type
 CREATE TABLE AddressType (
   Id INT IDENTITY CONSTRAINT PK__AddressType PRIMARY KEY,
   Name NVARCHAR(150) NOT NULL
 );
 
+-- create address table
+-- link FK to student table and address type table
 CREATE TABLE Address (
   Id INT IDENTITY CONSTRAINT PK__Address PRIMARY KEY,
   StudentId INT NOT NULL,
@@ -79,11 +90,14 @@ CREATE TABLE Address (
     REFERENCES AddressType(Id)
 );
 
+-- create email type
 CREATE TABLE EmailType (
   Id INT IDENTITY CONSTRAINT PK__EmailType PRIMARY KEY,
   Name NVARCHAR(150) NOT NULL
 );
 
+-- create email table, belongs to student contact info
+-- link FK to student table and email type table
 CREATE TABLE Email (
   Id INT IDENTITY CONSTRAINT PK__Email PRIMARY KEY,
   StudentId INT NOT NULL,
@@ -95,11 +109,14 @@ CREATE TABLE Email (
     REFERENCES EmailType(Id)
 );
 
+-- create phone type table
 CREATE TABLE PhoneType (
   Id INT IDENTITY CONSTRAINT PK__PhoneType PRIMARY KEY,
   Name NVARCHAR(150) NOT NULL
 );
 
+-- create phone table
+-- link FK to student contact info and phone type tables
 CREATE TABLE Phone (
   Id INT IDENTITY CONSTRAINT PK__Phone PRIMARY KEY,
   StudentId INT NOT NULL,
@@ -111,6 +128,8 @@ CREATE TABLE Phone (
     REFERENCES PhoneType(Id)
 );
 
+-- create students in faculties table
+-- link FK to students and to faculties tables
 CREATE TABLE StudentsInFaculties (
   Id INT IDENTITY CONSTRAINT PK__StudentsInFaculties PRIMARY KEY,
   StudentId INT NOT NULL,
@@ -122,6 +141,8 @@ CREATE TABLE StudentsInFaculties (
     REFERENCES Faculties(Id)
 );
 
+-- create student courses table
+-- link FK to students, grades and courses
 CREATE TABLE StudentCourses (
   Id INT IDENTITY CONSTRAINT PK__StudentCourses PRIMARY KEY,
   StudentId INT NOT NULL,

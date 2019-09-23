@@ -234,4 +234,3 @@
 - he was then killed by two lance thrusts and decapitation
 - Manas companions are fiercely loyal and Manas expects them to be too
 - Manas raids Joloy's land and steals his daughters
-- 

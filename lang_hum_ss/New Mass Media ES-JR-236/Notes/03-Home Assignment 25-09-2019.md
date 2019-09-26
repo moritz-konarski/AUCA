@@ -117,3 +117,19 @@
       inequality
     - different places are building this tech now, how can is serve individuals
     - how to keep it from becoming the ultimate surveillance tool
+
+# Notes in class
+
+- connectivity: can unity or fragment
+- can connect online and then meet up in real life as FB would like it to be
+- some people can be left behind, as all others now go online ->
+  marginalization
+- unity: interest groups, opportunities to get together irl
+- fragmentation: marginalization of some groups, giving up on real life, can't
+  un-neighbor your neighbor etc.
+- cohesion: some might keep dev. for themselves, then the rest is left behind
+- equality: can prevent extremism; globalization should benefit everyone, not
+  just a few of them
+- where should the data be?
+- AI: breaches of data privacy; storing data; manipulation
+- GDPR as a benchmark of data protection policies

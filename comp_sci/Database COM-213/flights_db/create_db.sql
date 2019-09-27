@@ -80,14 +80,26 @@ CREATE TABLE Contacts (
     REFERENCES Countries(ID)
 );
 
+/* table for timezones
+ * referenced by: Airports
+ */
+CREATE TABLE Timezones (
+  ID INT IDENTITY CONSTRAINT PK__Timeszones PRIMARY KEY CLUSTERED,
+  Name VARCHAR(50) NOT NULL,
+  DifferenceToUTC INT NOT NULL
+);
+
 /* table of airports
- * referenced by: Terminals, ContactsToAirports
+ * referenced by: Terminals, ContactsToAirports, TimezonesToAirports
  */
 CREATE TABLE Airports (
   ID INT IDENTITY CONSTRAINT PK__Airports PRIMARY KEY CLUSTERED,
   Name NVARCHAR(255) NOT NULL,
   -- for example FRU for Manas Airport
-  AirportAbbreviation VARCHAR(10) NOT NULL
+  AirportAbbreviation VARCHAR(10) NOT NULL,
+  TimezoneId INT NOT NULL,
+  CONSTRAINT FK__Airports__Timezones FOREIGN KEY (TimezoneId)
+    REFERENCES Timezones(ID)
 );
 
 /* table of terminals of airports
@@ -170,9 +182,11 @@ CREATE TABLE Flights (
   PlaneId INT NOT NULL,
   DepartureTerminalName NVARCHAR(255) NULL,
   DepartureAirportId INT NOT NULL,
+  -- in UTC to make calculation easy
   DepartureTimeAndDate DATETIME2(7) NOT NULL,
   ArrivalTerminalName NVARCHAR(255) NULL,
   ArrivalAirportId INT NOT NULL,
+  -- in UTC to make calculations easy
   ArrivalTimeAndDate DATETIME2(7) NOT NULL,
   CONSTRAINT FK__Flights__Terminals__ForDepartures 
     FOREIGN KEY (DepartureTerminalName, DepartureAirportId)

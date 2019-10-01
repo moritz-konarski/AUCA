@@ -30,3 +30,7 @@
 __how the dabate on encryption is going in the EU, how the dumb-fuck LEA's
 whine about going dark and using reports about cyber crime to have some data on
 what kind of criminal stuff is happening online__
+
+__cyber crime and the problem that to fight it LEA's want to regulate
+encryption, which makes the whole system weaker. At the same time encryption
+protects users from crime in the first place__

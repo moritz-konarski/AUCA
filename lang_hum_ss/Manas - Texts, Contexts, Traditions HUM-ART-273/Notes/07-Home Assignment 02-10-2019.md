@@ -67,4 +67,19 @@
   go raiding to get the herds for that
 - Manas calls her a shrew, her mother also calls her spoilt
 - Kanikey interrupts them and tells them she wants to find out what kind of man
-- __p. 121__
+- the yurt of Manas is floating??
+- Manas vows to fight his father?
+- the companions attack Temir khan and Jakip khan
+- now Temir khan's people want to go and hand over Kanikey to make the fighting
+  stop
+- K is noble, so she will not be troubled by the Companions, she will do it
+  herself
+- Manas sees the maidens and plans to seize them as booty to punish Kanikey
+- he wants to put her on the horse without a saddle
+- Manas asks her if she has come to her senses?
+- there are shapeshifting maidens in this __not very muslim__
+- Almambet is the best of the companions, he would be worth while Altinay
+- Atinay should try to get Almambet
+- Mendi-bay wants to not give maidens to Manas and wants to kill him for what
+  he did
+- Mendi-bay does listen to Temir khan, but only if he is threatened

@@ -246,7 +246,7 @@ you! If any turn their lash on you while the White Padishah is there, cut off th
 heads like sheeps’, spill their blood like water! Manas, you have inspired dread
 in the peoples all around! Manas, never brush up against the White Padishah’s
 people - did you hear, o my Manas? For if you do, my [outraged] Blessing will
-punish Manas!” | shall have no fear of heroes of any sort, but I shall not go
+punish Manas!” I shall have no fear of heroes of any sort, but I shall not go
 raiding as hitherto! I seized Kayip’s daughter Kara-borukk from the steppe, took
 Sooruk’s daughter Akılay
 from the fort as booty - I never married a girl in the customary way, never knew
@@ -311,7 +311,7 @@ wander in winter, starving, as one whose cattle are famished! Nor do I come
 seeking aid on being stripped of my herds! I have a son, Warrior Manas, who
 seized Kay1p’s daughter Kara-boruk from the steppe, and took Sooruk’s daughter
 Akilay from the fort as booty, but who has never married a girl in the 
-customary way, never known a bride’s embraces! So | bitted my 
+customary way, never known a bride’s embraces! So I bitted my 
 (crescent-)moon-jewelled horse and sought a lovely bride for Manas - I ranged
 among the Chinese people, whose muttering tongue no man fathoms, but among
 them failed to find a maiden;
@@ -358,7 +358,7 @@ enfolded, and present it to him! See that his thirst is well quenched, and
 set him a soft couch! Cover him warm with the coverlet! Lull him quietly to
 sleep! When dawn darts its rays and the star has set in the sky, just as the sun is
 peeping, after waking him I want to question the hero. Bidding him mount his
-horse, | wish to ascend the Mound of Heroes! If he speaks friendly, affable
+horse, I wish to ascend the Mound of Heroes! If he speaks friendly, affable
 words, I shall give him a friendly answer. If he speaks unfriendly, hard words, I
 shall give an unfriendly answer.’
 They did as he had said. Jakip rose at dawn. They set a metal basin for him,
@@ -909,7 +909,7 @@ you, one and all! Let each settle in his place! And now live in contentment!’
 That Bakay, son of Bay, who was Jakip’s peer, now addressed Jakip: ‘You did
 not accept what I said, did not take my advice, you did not enter into what I said,
 Jakip! You will tether a Memorial Gift-horse, you will voice some words of
-regret. I shall have to be there. What shall I do here? Though short of stature |
+regret. I shall have to be there. What shall I do here? Though short of stature I
 measure up to them, I consult with the Forty Companions! When I ride a
 thoroughbred, I test it to the limit - I shall honour Manas the Lion’s Ancestor-
 spirits! When I ride a charger, I test him to the full!’
@@ -1063,7 +1063,7 @@ Jakıp-bay went out and mounted. He went to him that roars like the Tiger, to
 Almambet, to stallıon-jawed, soft-spoken Ajıbay: “Ak-kula is not with the herd
 - where shall we seek him? Ak-Sumkar is not on the stand, nor Ak-taygan in the
 collar - where shall we find them? What Remedy is there now, what Way-out
-can there be? Having lost my Wings, being parted from Khan Manas, now that |
+can there be? Having lost my Wings, being parted from Khan Manas, now that I
 have grown old whenever I have looked at Ak-kula, cherished like Manas himself, 
 my eyes were contented. - Bring all Three to light, wherever they are! I
 have known days of dazzling sunshine, have feasted by bright moonlight! I have

@@ -29,16 +29,16 @@ FROM GroupedIngredients
 		ON GroupedIngredients.ID1 = I1.ID
 	INNER JOIN Ingredients AS I2
 		ON GroupedIngredients.ID2 = I2.ID
--- only the most popular one
+--only the most popular one
 WHERE 
 	Count IN (
-		SELECT MAX(Count) 
+		SELECT MAX(Count)
 		FROM GroupedIngredients
 	) AND I1.Name < I2.Name
--- ignoring the most popular one
-/*WHERE 
-	Count IN (
-		SELECT MAX(Count)-1 
-		FROM GroupedIngredients
-	) AND I1.Name < I2.Name*/
+--ignoring the most popular one
+--WHERE 
+--	Count IN (
+--		SELECT MAX(Count)-1 
+--		FROM GroupedIngredients
+--	) AND I1.Name < I2.Name
 ORDER BY I1.Name

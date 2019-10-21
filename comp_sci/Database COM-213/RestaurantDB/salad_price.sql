@@ -11,29 +11,10 @@ P = (price_day_1 + price_day_2 + ... price_day_n) / n_of_days.
 Output: a single number, rounded to two decimal places.
 */
 
-WITH 
-	SaladData AS (
-		SELECT 
-			DateFrom, 
-			DateTo, 
-			Price
-		FROM Prices
-			INNER JOIN Dishes
-				ON prices.DishID = Dishes.ID
-		WHERE Dishes.Name = 'Summer salad'
-	)
+USE Restaurant;
 
-SELECT ROUND(SUM(SumPrice) / SUM(NumberOfDays), 2)
-FROM (
-	SELECT -- Summer
-		DATEDIFF(day, DateFrom, DateTo) AS NumberOfDays,
-		Price * DATEDIFF(day, DateFrom, DateTo) AS SumPrice
-	FROM SaladData
-	WHERE DATEPART(mm, DateFrom) = 05 --May
-	UNION
-	SELECT -- Winter
-		DATEDIFF(day, DateFrom, DateTo) AS NumberOfDays,
-		Price * DATEDIFF(day, DateFrom, DateTo) AS SumPrice
-	FROM SaladData
-	WHERE DATEPART(mm, DateFrom) = 11 --November
-	) as PriceData
+SELECT ROUND(SUM(Price * DATEDIFF(day, DateFrom, DateTo)) / SUM(DATEDIFF(day, DateFrom, DateTo)), 2)
+FROM Prices
+		INNER JOIN Dishes
+			ON prices.DishID = Dishes.ID
+		WHERE Dishes.Name = 'Summer salad'

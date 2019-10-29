@@ -9,16 +9,25 @@ The first to go is the one that goes earlier alphabetically
 
 USE Restaurant;
 
-WITH GroupedIngredients AS (
+WITH RemoveDoubleIngredients AS (
 	SELECT 
-		di1.IngredientID AS ID1, 
-		di2.IngredientID AS ID2, 
-		COUNT(*) AS Count
+		DI1.DishID as DishID, 
+		DI1.IngredientID AS IId1, 
+		DI2.IngredientID AS IId2
 	FROM DishesIngredients AS DI1
 		INNER JOIN DishesIngredients AS DI2
 			ON DI1.DishID = DI2.DishID 
 				AND DI1.ID <> DI2.ID
-	GROUP BY DI1.IngredientID, DI2.IngredientID
+	GROUP BY di1.DishID, di1.IngredientID, di2.IngredientID
+	HAVING Count(*) = 1 OR Count(*) > 1 AND DI1.IngredientID < DI2.IngredientID
+	),
+	GroupedIngredients AS (
+	SELECT 
+		rdi.IId1 AS ID1, 
+		rdi.IId2 AS ID2, 
+		COUNT(*) AS Count
+	FROM RemoveDoubleIngredients AS rdi
+	GROUP BY rdi.IId1, rdi.IId2
 	)
 
 SELECT
@@ -32,13 +41,7 @@ FROM GroupedIngredients
 --only the most popular one
 WHERE 
 	Count IN (
-		SELECT MAX(Count)
+		SELECT MAX(Count) - 1
 		FROM GroupedIngredients
 	) AND I1.Name < I2.Name
---ignoring the most popular one
---WHERE 
---	Count IN (
---		SELECT MAX(Count)-1 
---		FROM GroupedIngredients
---	) AND I1.Name < I2.Name
 ORDER BY I1.Name

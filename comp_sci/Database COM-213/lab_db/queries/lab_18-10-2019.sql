@@ -1,3 +1,5 @@
+/* this database is about ordering and aggregating data */
+
 USE TEST1;
 
 --CREATE TABLE PopularityInfo (

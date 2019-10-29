@@ -13,8 +13,16 @@ Output: a single number, rounded to two decimal places.
 
 USE Restaurant;
 
-SELECT ROUND(SUM(Price * DATEDIFF(day, DateFrom, DateTo)) / SUM(DATEDIFF(day, DateFrom, DateTo)), 2)
+SELECT *--ROUND(SUM(Price * DATEDIFF(day, DateFrom, DateTo)) / SUM(DATEDIFF(day, DateFrom, DateTo)), 2)
 FROM Prices
 		INNER JOIN Dishes
-			ON prices.DishID = Dishes.ID
-		WHERE Dishes.Name = 'Summer salad'
+			ON prices.DishID = Dishes.ID AND Dishes.Name = 'Summer salad'
+WHERE 
+	Price >= 0 AND
+	DateFrom < DateTo AND
+	DATEPART([Year], DateFrom) = 2018 AND
+	DATEPART([Year], DateTo) IN (2018, 2019) AND
+	DATEPART([Month], DateFrom) IN (5, 11) AND
+	DATEPART([Month], DateTo) IN (10, 4)
+
+

@@ -47,40 +47,54 @@ DECLARE @FinalDate DATETIME = (
 	UNION 
 
 	SELECT @FinalDate AS [Date]
+),
+	IncompleteList ([DateFrom], Price) AS (
+		SELECT * 
+		FROM (
+			SELECT @InitalDate, @InitialPrice
+			UNION
+			SELECT [Date], Price
+			FROM (
+				SELECT DateFrom, DateTo, Price, [Date]
+				FROM Prices as p
+					INNER JOIN Dishes as d
+						ON d.ID = p.DishID AND 
+						d.[Name] = 'Summer salad'
+					RIGHT JOIN PriceChanges as pc
+						ON pc.[Date] = p.DateFrom
+				UNION
+				SELECT DateFrom, DateTo, Price, [Date]
+				FROM Prices as p
+					INNER JOIN Dishes as d
+						ON d.ID = p.DishID AND 
+						d.[Name] = 'Summer salad'
+					RIGHT JOIN PriceChanges as pc
+						ON pc.[Date] = DATEADD(DAY, 1, p.DateTo)
+			) AS Dates
+			GROUP BY [Date], Price
+			UNION
+			SELECT @FinalDate, @FinalPrice
+		) AS DateList (DateFrom, Price)
+		GROUP BY [DateFrom], Price
+		HAVING DateFrom IS NOT NULL
 )
 
+Select * 
+from IncompleteList
+--where price IS NOT NULL
 
-SELECT * 
-FROM (
-	SELECT @InitalDate, @InitialPrice
-	UNION
-	SELECT [Date], Price
-	FROM (
-		SELECT DateFrom, DateTo, Price, [Date]
-		FROM Prices as p
-			INNER JOIN Dishes as d
-				ON d.ID = p.DishID AND 
-				d.[Name] = 'Summer salad'
-			RIGHT JOIN PriceChanges as pc
-				ON pc.[Date] = p.DateFrom
-		UNION
-		SELECT DateFrom, DateTo, Price, [Date]
-		FROM Prices as p
-			INNER JOIN Dishes as d
-				ON d.ID = p.DishID AND 
-				d.[Name] = 'Summer salad'
-			RIGHT JOIN PriceChanges as pc
-				ON pc.[Date] = DATEADD(DAY, 1, p.DateTo)
-	) AS Dates
-	GROUP BY [Date], Price
-	UNION
-	SELECT @FinalDate, @FinalPrice
-) AS DateList (DateFrom, Price)
-GROUP BY [DateFrom], Price
-HAVING DateFrom IS NOT NULL
-
+Select @FinalPrice
 
 /*
+
+SELECT *
+FROM Prices 
+	INNER JOIN Dishes
+		ON Dishes.ID = DishID 
+--WHERE DateFrom IS NOT NULL
+ORDER BY DateFrom ASC
+
+
 
 SELECT * 
 FROM Prices AS p
@@ -107,8 +121,7 @@ ORDER BY p1.DateFrom ASC
 SELECT *
 FROM Prices 
 	INNER JOIN Dishes
-		ON Dishes.ID = DishID AND 
-		[Name] = 'Summer salad'
+		ON Dishes.ID = DishID 
 --WHERE DateFrom IS NOT NULL
 ORDER BY DateFrom ASC
 

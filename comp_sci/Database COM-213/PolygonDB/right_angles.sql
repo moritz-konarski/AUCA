@@ -1,125 +1,69 @@
 use Polygons;
 
 WITH 
-InitialTable AS (
-SELECT PolygonID, 
-		PointNum, 
-		X, 
-		Y, 
-		ISNULL(PrevX, LAST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum ASC)) AS PrevX,
-		ISNULL(PrevY, LAST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum ASC)) AS PrevY,
-		--NextX,
-		--NextY,
-		ISNULL(PrevX, LAST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum ASC)) AS PrevX,
-		ISNULL(PrevY, LAST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum ASC)) AS PrevY,
-		--PrevY--,
-		FIRST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS FirstX,
-		FIRST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS FirstY,
-		LAST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS LastX,
-		LAST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS LastY
-FROM (
-	SELECT PolygonID, 
-		PointNum, 
-		X, 
-		Y, 
-		LEAD(X, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS NextX,
-		LEAD(Y, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS NextY,
-		LAG(X, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS PrevX,
-		LAG(Y, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS PrevY,
-		FIRST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS FirstX,
-		FIRST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS FirstY,
-		LAST_VALUE(X) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS LastX,
-		LAST_VALUE(Y) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS LastY
-	FROM RightAngles
-	) AS T
-),
-InitialTable2 AS (
-	SELECT PolygonID, 
-		PointNum, 
-		LEAD(X, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS NextX,
-		LEAD(Y, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS NextY
+PolygonValues AS (
+	SELECT 
+		PolygonID,
+		PointNum,
+		X,
+		Y
 	FROM RightAngles
 ),
-InitialTable3 AS (
-	SELECT PolygonID, 
-		PointNum, 
-		LAG(X, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS PrevX,
-		LAG(Y, 1) OVER (PARTITION BY PolygonID ORDER BY PointNum) AS PrevY
-	FROM RightAngles
-)
-
-SELECT *
-FROM InitialTable it
-	INNER JOIN InitialTable2 it2
-		ON it.PolygonID = it2.PolygonID AND it.PointNum = it2.PointNum
-	INNER JOIN InitialTable3 it3
-		ON it.PolygonID = it3.PolygonID AND it.PointNum = it3.PointNum
-
-
-
-
-
-
-
-
-VertexCount AS (
-	SELECT PolygonID, 
-		COUNT(*) AS [Count]
-	FROM RightAngles
-	GROUP BY PolygonID
+NextPolygonValues (PolygonID, PointNum, NextX, NextY) AS (
+	SELECT *
+	FROM PolygonValues
 ),
-FirstVertex AS (
-	SELECT PolygonID, 
-		X, Y
-	FROM RightAngles
+PrevPolygonValues (PolygonID, PointNum, PrevX, PrevY) AS (
+	SELECT *
+	FROM PolygonValues
+),
+FirstPoint (PolygonID, PointNum, FirstX, FirstY) AS (
+	SELECT *
+	FROM PolygonValues
 	WHERE PointNum = 1
 ),
-LastVertex AS (
-	SELECT ra.PolygonID, 
-		vc.[Count] AS PointNum,
-		X, Y
-	FROM RightAngles ra
-		INNER JOIN VertexCount vc
-			ON ra.PolygonID = vc.PolygonID
-	WHERE ra.PointNum = vc.[Count]
-)--,
---VertexList AS (
---	SELECT PolygonID, 1 AS PointNum, X, Y, 
---	FROM FirstVertex
---	UNION
---	SELECT PolygonID, PointNum, X, Y
---	FROM LastVertex
---	UNION
---	SELECT PolygonID, PointNum, X, Y
---	FROM 
---)
+LastPoint (PolygonID, PointNum, LastX, LastY) AS (
+	SELECT PolygonValues.PolygonID, 
+		PolygonValues.PointNum, 
+		X, 
+		Y
+	FROM PolygonValues
+		INNER JOIN (
+			SELECT PolygonID, COUNT(*) AS NumberOfPoints
+			FROM RightAngles
+			GROUP BY PolygonID
+			) AS PointCount
+		ON PolygonValues.PolygonID = PointCount.PolygonID
+	WHERE PolygonValues.PointNum = PointCount.NumberOfPoints
+),
+PointsWithSurroundingPoints (PolygonID, PointNum, X, Y, PrevX, PrevY, NextX, NextY) AS (
+	SELECT 
+		pv.PolygonID,
+		pv.PointNum,
+		pv.X, 
+		pv.Y,
+		ISNULL(npv.NextX, lp.LastX),
+		ISNULL(npv.NextY, lp.LastY),
+		ISNULL(ppv.PrevX, fp.FirstX),
+		ISNULL(ppv.PrevY, fp.FirstY)
+	FROM PolygonValues pv
+		LEFT JOIN NextPolygonValues npv
+			ON pv.PolygonID = npv.PolygonID AND pv.PointNum = npv.PointNum + 1
+		LEFT JOIN PrevPolygonValues ppv
+			ON pv.PolygonID = ppv.PolygonID AND pv.PointNum = ppv.PointNum - 1
+		INNER JOIN FirstPoint fp
+			ON pv.PolygonID = fp.PolygonID
+		INNER JOIN LastPoint lp
+			ON pv.PolygonID = lp.PolygonID
+)
 
---SELECT * 
---PolygonID,
---	PointNum,
---	X,
---	Y,
---	NextX,
---	NextY,
---	PrevX,
---	PrevY
---FROM 
---	InitialTable it1
---		INNER JOIN InitialTable it2
---			ON it1.PolygonID = it2.PolygonID
---				AND it1.PointNum = it2.PointNum
---				AND it1.PointNum = 1
-
-
-
-SELECT PolygonID, 
-	PointNum, 
-	X, 
-	Y, 
-	NextX, 
-	ISNULL(NextY, SELECT Y FROM FirstVertex fv WHERE fv.PolygonID = it.PolygonID), 
-	PrevX, 
-	PrevY
-FROM InitialTable
---GROUP BY PolygonID, PointNum, X, Y, NextX, NextY, PrevX, PrevY
---HAVING (1.0 * Y - ISNULL(NextY, SELECT Y FROM FirstVertex fv WHERE fv.PolygonID = it.PolygonID))/(X - NextX) = (-1.0 * X - PrevX)/(Y - PrevY)
+SELECT DISTINCT RightAngles.PolygonID,
+	ISNULL(RightAnglesCount, 0) AS RightAnglesCount
+FROM RightAngles
+	LEFT JOIN (
+		SELECT DISTINCT PolygonID,
+			COUNT(*) OVER (PARTITION BY PolygonID ORDER BY PolygonID) AS RightAnglesCount
+		FROM PointsWithSurroundingPoints
+		WHERE (Y - NextY) * (Y - PrevY) = -1 * (X - NextX) * (X - PrevX)
+		) AS AngleCount
+	ON RightAngles.PolygonID = AngleCount.PolygonID

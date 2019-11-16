@@ -1,0 +1,16 @@
+USE AUCA_DB;
+DELETE FROM Courses;
+DELETE FROM Genders;
+DELETE FROM MaritalStatuses;
+DELETE FROM Grades;
+DELETE FROM Faculties;
+DELETE FROM Students;
+DELETE FROM StudentContactInfo;
+DELETE FROM AddressType;
+DELETE FROM Address;
+DELETE FROM EmailType;
+DELETE FROM Email;
+DELETE FROM PhoneType;
+DELETE FROM Phone;
+DELETE FROM StudentsInFaculties;
+DELETE FROM StudentCourses;

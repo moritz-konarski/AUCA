@@ -1,0 +1,16 @@
+USE AUCA_DB;
+DROP TABLE Courses;
+DROP TABLE Genders;
+DROP TABLE MaritalStatuses;
+DROP TABLE Grades;
+DROP TABLE Faculties;
+DROP TABLE Students;
+DROP TABLE StudentContactInfo;
+DROP TABLE AddressType;
+DROP TABLE Address;
+DROP TABLE EmailType;
+DROP TABLE Email;
+DROP TABLE PhoneType;
+DROP TABLE Phone;
+DROP TABLE StudentsInFaculties;
+DROP TABLE StudentCourses;

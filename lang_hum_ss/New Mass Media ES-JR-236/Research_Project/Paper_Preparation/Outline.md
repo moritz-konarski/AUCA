@@ -54,7 +54,6 @@
     - the commission proposes to develop measures to break encryption without
       weakening it
     - we have seen how well that can work out with the NSA etc...
-- 
 
 ## Outline the thesis and main research questions
 

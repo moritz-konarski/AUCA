@@ -113,4 +113,51 @@
       arguments for and against equality: pro gives abstract equality and
       chalks up inequality to nature; contra gives actual inequality and then
       derives abstract inequality from that
-    - 
+    - men say that women are equal to women, at the same time they say that
+      women can never be equal to men
+    - it is difficult to realize for men how important discrimination is, its 
+      outwardly insignificant but actually has moral and intellectual effects
+      that even appear to spring grom her original nature
+    - men also have trouble realizing the true extend of the privilege, so lets
+      ignore what men say regarding this issue
+- feminism is not a lot better:
+    - masculine arrogance made the "woman question" a quarrel, and in quarrel
+      one does not reason in quarrel
+    - all of the arguments people give can also be used to prove their
+      opposites, all the terms, equality, inferiority, superiority are all
+      abstract
+    - we should start fresh
+- how can we start fresh?
+    - probably the best people to represent women would be women
+    - women have now mostly obtained equality in the US but they are still more
+      connected to women-ness and humanity
+    - while there are more pressing problems, these still concern women
+    - there should now be a push for understanding rather than controversy
+- we can not approach any issues without bias as we are human
+- the only public good is the assertion of the private good, thus they shall be
+  judged by how they provide that 
+
+- Main idea: 
+    - the concept of what is a women is discussed, as it is used differently
+    - some concepts of the "eternal feminine" are discussed
+    - there are undeniable differences, but what does it mean to be a woman?
+    - the major focus is that humans think in the concept of US and THEM
+    - women are the other in the sense of sex
+    - women lack the same kind of bonds that proletarians or slaves have
+    - they are bound to men through economics, culture etc
+    - both sexes need each other, so why do women not take advantage
+    - laws are made by men, they have the power, but many women also enjoy
+      their status
+    - men have trouble realizing the extend of the oppression; their oppression
+      influences women and then the results of this influence is used to
+      justify their oppression
+    - all the commonly used terms are problematically abstract and men have
+      turned that discussion into a quarrel
+    - happiness is not a good metric - it is assigned to marginalized groups as
+      justification
+    - a person should achieve liberty through reaching out for other liberties,
+      so stagnation is the enemy 
+    - superiority is also a nice drug; even the lowest man can look down on
+      women
+    - as we do not believe fate to be inevitable, we have to ask what roads are
+      open to women, how can they become independent? 

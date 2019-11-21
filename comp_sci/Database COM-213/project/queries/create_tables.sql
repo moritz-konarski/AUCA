@@ -40,30 +40,6 @@ CREATE TABLE dbo.[Currency] (
 )
 GO
 
-/*table for all machines*/
-CREATE TABLE dbo.[Machine] (
-    [ID] INT IDENTITY CONSTRAINT PK__Machine PRIMARY KEY CLUSTERED,
-    [Name] NVARCHAR(50) NOT NULL,
-    [MakerID] INT NOT NULL,
-    [OwnerID] INT NULL,
-    [CurrencyID] INT NULL,
-    [AddressID] INT NULL,
-    [IdentificationCode] INT NULL,      --the unique QR code
-    [ProductCapacity] INT NOT NULL,     --maybe better stored as machine type in another table
-    [OperationStatusID] INT NULL,
-    CONSTRAINT FK__Machine__MachineOwner FOREIGN KEY (OwnerID)
-        REFERENCES dbo.[MachineOwner](ID),
-    CONSTRAINT FK__Machine__MachineMaker FOREIGN KEY (MakerID)
-        REFERENCES dbo.[MachineMaker](ID),
-    CONSTRAINT FK__Machine__OperationStatus FOREIGN KEY (OperationStatusID)
-        REFERENCES dbo.[OperationStatus](ID),
-    CONSTRAINT FK__Machine__Currency FOREIGN KEY (CurrencyID)
-        REFERENCES dbo.[Currency](ID),
-    CONSTRAINT FK__Machine__MachineAddress FOREIGN KEY (AddressID)
-        REFERENCES dbo.[MachineAddress](ID)
-)
-GO
-
 /*table of countries*/
 CREATE TABLE dbo.[Country] (
     [ID] INT IDENTITY CONSTRAINT PK__Country PRIMARY KEY CLUSTERED,
@@ -77,7 +53,9 @@ CREATE TABLE dbo.[City] (
     [Name] NVARCHAR(200) NOT NULL,
     [CountryID] INT NOT NULL,
     [Postcode] INT NOT NULL,
-    CONSTRAINT UK__City__Country_Postcode UNIQUE (CountryID, Postcode)
+    CONSTRAINT UK__City__Country_Postcode UNIQUE (CountryID, Postcode), 
+    CONSTRAINT FK__City__Country FOREIGN KEY (CountryID)
+        REFERENCES dbo.[Country](ID)
 )
 GO
 
@@ -91,6 +69,30 @@ CREATE TABLE dbo.[MachineAddress] (
     [AdditionalInformation] NVARCHAR(300) NULL,
     CONSTRAINT FK__MachineAddress__City FOREIGN KEY (CityID)
         REFERENCES dbo.[City](ID)
+)
+GO
+
+/*table for all machines*/
+CREATE TABLE dbo.[Machine] (
+    [ID] INT IDENTITY CONSTRAINT PK__Machine PRIMARY KEY CLUSTERED,
+    [Name] NVARCHAR(50) NOT NULL,  --TODO: make the name unique
+    [MakerID] INT NOT NULL,
+    [OwnerID] INT NULL,
+    [CurrencyID] INT NULL,
+    [AddressID] INT NULL,
+    [IdentificationCode] VARCHAR(255) NULL,      --the unique QR code
+    [ProductCapacity] INT NOT NULL,     --MAX IS 300  maybe better stored as machine type in another table
+    [OperationStatusID] INT NULL,
+    CONSTRAINT FK__Machine__MachineOwner FOREIGN KEY (OwnerID)
+        REFERENCES dbo.[MachineOwner](ID),
+    CONSTRAINT FK__Machine__MachineMaker FOREIGN KEY (MakerID)
+        REFERENCES dbo.[MachineMaker](ID),
+    CONSTRAINT FK__Machine__OperationStatus FOREIGN KEY (OperationStatusID)
+        REFERENCES dbo.[OperationStatus](ID),
+    CONSTRAINT FK__Machine__Currency FOREIGN KEY (CurrencyID)
+        REFERENCES dbo.[Currency](ID),
+    CONSTRAINT FK__Machine__MachineAddress FOREIGN KEY (AddressID)
+        REFERENCES dbo.[MachineAddress](ID)
 )
 GO
 
@@ -161,11 +163,14 @@ GO
 CREATE TABLE dbo.[Prices] (
     [ID] INT IDENTITY CONSTRAINT PK__Prices PRIMARY KEY CLUSTERED,
     [ProductTypeID] INT NOT NULL,
+    [MachineID] INT NOT NULL,
     [Amount] INT NOT NULL,
     [DateFrom] DATETIME NOT NULL,
     [DateTo] DATETIME NULL,
     CONSTRAINT FK__Prices__ProductType FOREIGN KEY (ProductTypeID)
-        REFERENCES dbo.[ProductType](ID)
+        REFERENCES dbo.[ProductType](ID),
+    CONSTRAINT FK__Prices__Machine FOREIGN KEY (MachineID)
+        REFERENCES dbo.[Machine](ID)
 )
 GO
 
@@ -188,9 +193,12 @@ CREATE TABLE dbo.[ProductInstance] (
     [ProductTypeID] INT NOT NULL,
     [ExpirationDate] DATETIME NOT NULL,
     [SupplierID] INT NOT NULL,
+    [MachineID] INT NULL,
     [PurchaseID] INT NULL,
     CONSTRAINT FK__ProductInstance__ProductType FOREIGN KEY (ProductTypeID)
         REFERENCES dbo.[ProductType](ID),
+    CONSTRAINT FK__ProductInstance__Machine FOREIGN KEY (MachineID)
+        REFERENCES dbo.[Machine](ID),
     CONSTRAINT FK__ProductInstance__Supplier FOREIGN KEY (SupplierID)
         REFERENCES dbo.[Supplier](ID),
     CONSTRAINT FK__ProductInstance__Purchase FOREIGN KEY (PurchaseID)
@@ -212,3 +220,41 @@ CREATE TABLE dbo.[Invoice] (
         REFERENCES dbo.[PaymentCard](ID)
 )
 GO
+
+/*table connecting customers to their payment info*/
+CREATE TABLE dbo.[UserPaymentInformation] (
+    [ID] INT IDENTITY CONSTRAINT PK__UserPaymentInformation PRIMARY KEY CLUSTERED,
+    [UserID] INT NOT NULL,
+    [PaymentCardID] INT NOT NULL,
+    CONSTRAINT FK__UserPaymentInformation__User FOREIGN KEY (UserID)
+        REFERENCES dbo.[User](ID),
+    CONSTRAINT FK__UserPaymentInformation__PaymentCard FOREIGN KEY (PaymentCardID)
+        REFERENCES dbo.[PaymentCard](ID)
+)
+GO
+
+/*table connecting customers to their emails*/
+CREATE TABLE dbo.[UserEmail] (
+    [ID] INT IDENTITY CONSTRAINT PK__UserEmail PRIMARY KEY CLUSTERED,
+    [UserID] INT NOT NULL,
+    [EmailID] INT NOT NULL,
+    CONSTRAINT FK__UserEmail__User FOREIGN KEY (UserID)
+        REFERENCES dbo.[User](ID),
+    CONSTRAINT FK__UserEmail__Email FOREIGN KEY (EmailID)
+        REFERENCES dbo.[Email](ID)
+)
+GO
+
+/*table connecting product categories with product types*/
+CREATE TABLE dbo.[ProductCategoryToType] (
+    [ID] INT IDENTITY CONSTRAINT PK__ProductCategoryToType PRIMARY KEY CLUSTERED,
+    [ProductCategoryID] INT NOT NULL,
+    [ProductTypeID] INT NOT NULL,
+    CONSTRAINT FK__ProductCategoryToType__ProductCategory FOREIGN KEY (ProductCategoryID)
+        REFERENCES dbo.[ProductCategory](ID),
+    CONSTRAINT FK__ProductCategoryToType__ProductType FOREIGN KEY (ProductTypeID)
+        REFERENCES dbo.[ProductType](ID)
+)
+GO
+
+/*TODO: table for bonuses a user might earn and table distributing them to users*/

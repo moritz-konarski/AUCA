@@ -3,8 +3,8 @@
 ## Customer
 
 - date of birth
-- email-reference           --
-- payment info reference    --
+- email-reference
+- payment info reference
 - phone number
 - number verified
 
@@ -19,11 +19,6 @@
 - product capacity
 - status message
 
-## Products to Machine      --
-
-- which to which
-- quantity
-
 ## Bank
 
 - name
@@ -34,7 +29,7 @@
 - ID
 - Name
 
-## Prices                   --
+## Prices
 
 - machine
 - product type
@@ -75,7 +70,7 @@
 - Name
 - Description
 
-## Product Type and Brand- Coca Cola, 
+## Product Type and Brand- Coca Cola
 
 - Category
 - Name

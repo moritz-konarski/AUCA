@@ -1,4 +1,8 @@
-USE VendingMachineCompany;
+--USE VendingMachineCompany;
+/*
+DROP DATABASE VendingMachineCompany;
+GO
+*/
 
-DROP TABLE dbo.[User]
+CREATE DATABASE VendingMachineCompany;
 GO

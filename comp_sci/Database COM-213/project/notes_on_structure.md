@@ -3,8 +3,8 @@
 ## Customer
 
 - date of birth
-- email-reference
-- payment info reference
+- email-reference           --
+- payment info reference    --
 - phone number
 - number verified
 
@@ -19,7 +19,7 @@
 - product capacity
 - status message
 
-## Products to Machine
+## Products to Machine      --
 
 - which to which
 - quantity
@@ -34,7 +34,7 @@
 - ID
 - Name
 
-## Prices
+## Prices                   --
 
 - machine
 - product type
@@ -45,10 +45,8 @@
 
 ## Currencies
 
-- name 
+- name
 - ID
-
-## Currencies to machines
 
 ## Machine Address
 
@@ -84,6 +82,8 @@
 - brand
 - Description
 - picture
+
+## categories to types
 
 ## Brands
 

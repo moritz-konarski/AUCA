@@ -5,7 +5,7 @@ CREATE TABLE dbo.[User] (
     [ID] INT IDENTITY CONSTRAINT PK__User PRIMARY KEY CLUSTERED,
     [Name] NVARCHAR(500) NOT NULL,
     [DateOfBirth] DATETIME NOT NULL,
-    [PhoneNumber] INT NOT NULL,
+    [PhoneNumber] INT NOT NULL,     --TODO: make unique
     [IsPhoneNumberVerified] BIT NOT NULL,
     [SignupDate] DATETIME NOT NULL
 )
@@ -81,7 +81,7 @@ CREATE TABLE dbo.[Machine] (
     [CurrencyID] INT NULL,
     [AddressID] INT NULL,
     [IdentificationCode] VARCHAR(255) NULL,      --the unique QR code
-    [ProductCapacity] INT NOT NULL,     --MAX IS 300  maybe better stored as machine type in another table
+    [ProductCapacity] INT NOT NULL,     --TODO: MAX IS 300  maybe better stored as machine type in another table
     [OperationStatusID] INT NULL,
     CONSTRAINT FK__Machine__MachineOwner FOREIGN KEY (OwnerID)
         REFERENCES dbo.[MachineOwner](ID),

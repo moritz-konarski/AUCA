@@ -212,7 +212,7 @@ CREATE TABLE dbo.[Invoice] (            --TODO: add currency information
     [PurchaseID] INT NOT NULL,
     [Amount] INT NOT NULL,
     [IsPaid] BIT NOT NULL,
-    [PaymentDate] DATETIME NULL,
+    [PaymentDate] DATETIME NULL,            --TODO: put payment card into purchase and not invoice
     [CustomerPaymentCardID] INT NOT NULL,
     CONSTRAINT FK__Invoice__Purchase FOREIGN KEY (PurchaseID)
         REFERENCES dbo.[Purchase](ID),

@@ -1,5 +1,13 @@
 # Outline 2 - Encryption Debate in the EU
 
+Make the whole thing about FB Messenger; go through the announcement by
+Zuckerberg and then explain how this interacts with the debate on encryption
+and the EU
+
+Start: fb announces to make messenger more private -- govs react -- why did
+they react in this way? What is the significance? How can this shed some light
+on the whole encryption debate?
+
 ----------
 
 ## Introduction

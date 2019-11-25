@@ -109,3 +109,72 @@
       experts, LEA and govs on ways to implement safety measures
     - we need to work together to get this right
 - on balance, implementing e2ee is the right thing to do
+- messages and calls are some of the most private conversations people have so
+  they are worth protecting in this dangerous world
+- we'll take all possible steps to stop bad actors withing the confines of an
+  encrypted service
+- WhatsApp is a stepping stone in this picture; there has to be more discussion
+
+## Reducing Permanence
+
+- information should be around for shorter periods of time
+- people don't want to be bitten in the ass by stuff they shared, so reducing
+  the amount of time information is stored will help with that
+- over time large amounts of data build up and this is an asset and a liability
+  at the same time
+- so content could be set to automatically expire over time like in Stories
+  after 24h -- people can now share more naturally
+- default deletion time could be 1 month or one year, reducing the risk of
+  messages resurfacing; could of course be turned off or set to seconds or
+  minutes for certain messages
+- length of time that messaging metadata is stored should also be reduced --
+  it's used for spam and safety systems, but they don't need it for a long time
+- important part of the solution is to collect less personal information in the
+  first place, WhatsApp was built like this from the start
+
+## Interoperability
+
+- you should be able to use the messaging service of your choice to communicate
+  with all people on the other services without issues
+- they want to start by allowing people to send messages to their contacts
+  using any of the services, later SMS too -- would be opt-in so you can
+  separate your accounts too
+- this has privacy and security advantages: instead of unencrypted SMS through
+  messenger, you could send a WhatsApp message from messenger to that person's
+  WhatsApp
+- it would be easier as you don't have three different ways to message people,
+  e.g. when selling stuff and giving your phone number -- after this you
+  wouldn't have to, as they could message you and you'd get a WhatsApp message
+  instead
+- some problems:
+    - Apple does not allow SMS access from other apps so it's Android only
+    - interoperability should not compromise existing encryption on WA
+    - unknown apps could be used to send spam and stuff and compromise security
+- there are many unsolved problems, but the end goal would be convenient and
+  cool
+
+## Secure Data Storage
+
+- the physical location of data is important as people need to trust them --
+  the location of data centers is important
+- providing services in a country != storing data there
+- storing data in countries with a record of violating freedom of expression
+  and the like would make it easy for that state to steal some data
+- this means that their services will get blocked in some countries or never
+  even be allowed in others, but that's ok
+- not storing any important information is of course the way to go --
+  __WhatsApp does not store any keys__ and they want to design their other
+  services the same way
+- data should only be stored in places where it is secure
+
+## Next Steps
+
+- there is still a lot of work to be done on these principles -- we'll work
+  with industry, experts, advocates, govs to get it right
+- then there are more questions of what to build on top of that foundation
+- the initial steps are the most crucial ones though
+- as such we need to take positions on some of the most important issues of the
+  internet
+- I believe in a world where people can speak privately and live freely knowing
+  that their information will only be seen by those who they want to see it and
+  that it won't be around forever

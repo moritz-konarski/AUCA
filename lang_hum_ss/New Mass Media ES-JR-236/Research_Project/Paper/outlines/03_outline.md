@@ -245,11 +245,4 @@ _It seems like there is no clear solution in sight_
 - as such they probably chose the most difficult path and the least trodden one
 
 
-
-
-
-
-
-
-
-[1]:   [https://www.google.com/publicdata/explore?ds=alp1i5f0htq8h_]
+[1]: https://www.google.com/publicdata/explore?ds=alp1i5f0htq8h_

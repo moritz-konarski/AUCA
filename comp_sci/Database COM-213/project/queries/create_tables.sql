@@ -5,7 +5,7 @@ CREATE TABLE dbo.[Customer] (
     [ID] INT IDENTITY CONSTRAINT PK_Customer PRIMARY KEY CLUSTERED,
     [Name] NVARCHAR(500) NOT NULL,
     [DateOfBirth] DATETIME NOT NULL,
-    [PhoneNumber] INT NOT NULL,     --TODO: make unique
+    [PhoneNumber] INT NOT NULL CONSTRAINT UK__PhoneNumber UNIQUE,
     [IsPhoneNumberVerified] BIT NOT NULL,
     [SignupDate] DATETIME NOT NULL
 )
@@ -53,7 +53,7 @@ CREATE TABLE dbo.[City] (
     [Name] NVARCHAR(200) NOT NULL,
     [CountryID] INT NOT NULL,
     [Postcode] INT NOT NULL,
-    CONSTRAINT UK__City__Country_Postcode UNIQUE (CountryID, Postcode), 
+    CONSTRAINT UK__City__Country_Postcode UNIQUE (CountryID, Postcode),
     CONSTRAINT FK__City__Country FOREIGN KEY (CountryID)
         REFERENCES dbo.[Country](ID)
 )
@@ -75,13 +75,13 @@ GO
 /*table for all VendingMachines*/
 CREATE TABLE dbo.[VendingMachine] (     --TODO: some form of checking if a product is allowed in the machine
     [ID] INT IDENTITY CONSTRAINT PK__VendingMachine PRIMARY KEY CLUSTERED,
-    [Name] NVARCHAR(50) NOT NULL,  --TODO: make the name unique
+    [Name] NVARCHAR(50) NOT NULL CONSTRAINT UK__Name UNIQUE,  
     [MakerID] INT NOT NULL,
     [OwnerID] INT NULL,
     [CurrencyID] INT NULL,          -- TODO: find a better way to store currencies
     [AddressID] INT NULL,
     [IdentificationCode] VARCHAR(255) NULL,      --the unique QR code
-    [ProductCapacity] INT NOT NULL,     --TODO: MAX IS 300  maybe better stored as VendingMachine type in another table
+    [ProductCapacity] INT NOT NULL, CHECK (ProductCapacity <= 300 AND ProductCapacity > 0),
     [OperationStatusID] INT NULL,
     CONSTRAINT FK__VendingMachine__VendingMachineOwner FOREIGN KEY (OwnerID)
         REFERENCES dbo.[VendingMachineOwner](ID),
@@ -160,16 +160,16 @@ GO
 
 /*prices for types of products -- ALL PRICES ARE STORED IN A SINGLE CURRENCY AND THEN CONVERTED 
  TO THE CORRECT CURRENCY DEPENDING ON LOCATION AND EXCHANGE RATE*/
-CREATE TABLE dbo.[ProductPrice] (           --TODO: currency should be connected to price and not to machine directly or to country
-    [ID] INT IDENTITY CONSTRAINT PK__ProductPrice PRIMARY KEY CLUSTERED,
+CREATE TABLE dbo.[ProductPriceToVendingMachine] (           --TODO: currency should be connected to price and not to machine directly or to country
+    [ID] INT IDENTITY CONSTRAINT PK__ProductPriceToVendingMachine PRIMARY KEY CLUSTERED,
     [ProductTypeID] INT NOT NULL,
     [VendingMachineID] INT NOT NULL,
     [Amount] INT NOT NULL,
     [DateFrom] DATETIME NOT NULL,
     [DateTo] DATETIME NULL,
-    CONSTRAINT FK__ProductPrice__ProductType FOREIGN KEY (ProductTypeID)
+    CONSTRAINT FK__ProductPriceToVendingMachine__ProductType FOREIGN KEY (ProductTypeID)
         REFERENCES dbo.[ProductType](ID),
-    CONSTRAINT FK__ProductPrice__VendingMachine FOREIGN KEY (VendingMachineID)
+    CONSTRAINT FK__ProductPriceToVendingMachine__VendingMachine FOREIGN KEY (VendingMachineID)
         REFERENCES dbo.[VendingMachine](ID)
 )
 GO
@@ -191,6 +191,7 @@ GO
 CREATE TABLE dbo.[ProductInstance] ( --TODO: add weight and or value
     [ID] INT IDENTITY CONSTRAINT PK__ProductInstance PRIMARY KEY CLUSTERED,
     [ProductTypeID] INT NOT NULL,
+    [ProductWeight] INT NOT NULL,
     [ExpirationDate] DATETIME NOT NULL,
     [ProductSupplierID] INT NOT NULL,
     [VendingMachineID] INT NULL,
@@ -234,13 +235,13 @@ CREATE TABLE dbo.[CustomerPaymentInformation] (
 GO
 
 /*table connecting customers to theirCustomeremails*/
-CREATE TABLE dbo.[EmailTCustomer] (
-    [ID] INT IDENTITY CONSTRAINT PK__EmailTCustomer PRIMARY KEY CLUSTERED,
+CREATE TABLE dbo.[EmailToCustomer] (
+    [ID] INT IDENTITY CONSTRAINT PK__EmailToCustomer PRIMARY KEY CLUSTERED,
     [CustomerID] INT NOT NULL,
     [CustomerEmailID] INT NOT NULL,
-    CONSTRAINT FK__EmailTCustomer__Customer FOREIGN KEY (CustomerID)
+    CONSTRAINT FK__EmailToCustomer__Customer FOREIGN KEY (CustomerID)
         REFERENCES dbo.[Customer](ID),
-    CONSTRAINT FK__EmailTCustomer__CustomerEmail FOREIGN KEY (CustomerEmailID)
+    CONSTRAINT FK__EmailToCustomer__CustomerEmail FOREIGN KEY (CustomerEmailID)
         REFERENCES dbo.[CustomerEmail](ID)
 )
 GO
@@ -257,4 +258,5 @@ CREATE TABLE dbo.[ProductCategoryToType] (
 )
 GO
 
-/*TODO: table for bonuses aCustomer might earn and table distributing them toCustomers*/
+--TODO: table for bonuses a Customer might earn and table distributing them toCustomers
+-- TODO: add some way to have type of payment -- like bonus, payment cards etc

@@ -5,17 +5,9 @@
 - Argue which variant of Semetey you consider the most significant and
   valueable
 
-# Summaries
+# Maldibay Borzu uulu
 
-Summaries of the various variants we are allowed/supposed to use
-
-## Birth Of Semetey - Radloff
-
-## Semetey - Radloff
-
-## Maldibay Borzu uulu
-
-### Notes
+## Notes
 
 - _SMB_
 - Kirghiz
@@ -66,7 +58,7 @@ promised each other since before birth
 - Semetey recognizes the people but does not say it, the reasons here are not
 clear -- riding in full armor can make the opening exchange more interesting
 
-### Text
+## Text
 
 - written in black ink on a piece of yellowed pulp paper
 - damaged
@@ -79,13 +71,9 @@ not spell it
 - epithets and diction indicate that the two parts of the story are from two
 different authors
 
-### Summary
+# Tinibek Japiy uulu
 
-See notes 11
-
-## Tinibek Japiy uulu
-
-### Notes
+## Notes
 
 - STJ
 - 1898
@@ -121,16 +109,10 @@ it
 going
 - the use of these _arbak_ are all too common in this period
 
-### Text
+## Text
 
 - lost original manuscript 1898-1902
 - Kirghiz language, reformed Arabic script
 - preface by Arabaev
 - about 3600 lines in total
 - there are some gaps in the manuscript
-
-### Summary
-
-See notes 12
-
-## Kenje Kara - first recording

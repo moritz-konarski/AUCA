@@ -1,14 +1,32 @@
 % this is the first test file
 \documentclass[12pt,a4paper,draft]{article}
+
+% geometry package
 \usepackage[margin=1in]{geometry}
 
+% use color package
+\usepackage{color}
+
+% hyperref package
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    allcolors=black,
+    final
+}
+
 \begin{document}
+
+% make title
 \title{Functional Analysis Summary}
 \author{Moritz Konarski}
 \date{December 2019}
 \maketitle
 
 \renewcommand{\abstractname}{Information}
+
+% make abstract
 \begin{abstract}
     This is my summary of the content of the course Functional Analysis at AUCA
     in the fall semester 2019 taught by professor Imanaliev
@@ -18,6 +36,11 @@
 
 \section{Metric Spaces}
 Hello
+
+$$ \sin{2x_0} = \cos{2x_0} $$
+$$ \int_{0}^{\infty}{K^{*}(x,t)y(t)dt} $$
+
+hello this is some shit
 
 \section{Integral Equations}
 {\em hello there} hello there

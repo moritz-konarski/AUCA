@@ -1,13 +1,14 @@
 USE VendingMachineCompany;
 
-/* table forCustomers of the service */
+/* table for Customers of the service */
 CREATE TABLE dbo.[Customer] (
     [ID] INT IDENTITY CONSTRAINT PK_Customer PRIMARY KEY CLUSTERED,
     [Name] NVARCHAR(500) NOT NULL,
     [DateOfBirth] DATETIME NOT NULL,
     [PhoneNumber] INT NOT NULL CONSTRAINT UK__PhoneNumber UNIQUE,
     [IsPhoneNumberVerified] BIT NOT NULL,
-    [SignupDate] DATETIME NOT NULL
+    [SignupDate] DATETIME NOT NULL,
+    [IsBlocked] BIT NOT NULL DEFAULT 0  --if the user does not pay, they get blocked
 )
 GO
 
@@ -65,7 +66,7 @@ CREATE TABLE dbo.[VendingMachineAddress] (
     [CityID] INT NOT NULL,
     [StreetName] NVARCHAR(200) NOT NULL,
     [StreetNumber] INT NOT NULL,
-    [GPSCoordinates] VARCHAR(200) NULL,
+    [GPSCoordinates] GEOGRAPHY NULL,
     [AdditionalInformation] NVARCHAR(300) NULL,
     CONSTRAINT FK__VendingMachineAddress__City FOREIGN KEY (CityID)
         REFERENCES dbo.[City](ID)
@@ -73,12 +74,11 @@ CREATE TABLE dbo.[VendingMachineAddress] (
 GO
 
 /*table for all VendingMachines*/
-CREATE TABLE dbo.[VendingMachine] (     --TODO: some form of checking if a product is allowed in the machine
+CREATE TABLE dbo.[VendingMachine] ( 
     [ID] INT IDENTITY CONSTRAINT PK__VendingMachine PRIMARY KEY CLUSTERED,
     [Name] NVARCHAR(50) NOT NULL CONSTRAINT UK__Name UNIQUE,  
     [MakerID] INT NOT NULL,
     [OwnerID] INT NULL,
-    [CurrencyID] INT NULL,          -- TODO: find a better way to store currencies
     [AddressID] INT NULL,
     [IdentificationCode] VARCHAR(255) NULL,      --the unique QR code
     [ProductCapacity] INT NOT NULL, CHECK (ProductCapacity <= 300 AND ProductCapacity > 0),
@@ -89,8 +89,6 @@ CREATE TABLE dbo.[VendingMachine] (     --TODO: some form of checking if a produ
         REFERENCES dbo.[VendingMachineMaker](ID),
     CONSTRAINT FK__VendingMachine__OperationStatus FOREIGN KEY (OperationStatusID)
         REFERENCES dbo.[OperationStatus](ID),
-    CONSTRAINT FK__VendingMachine__Currency FOREIGN KEY (CurrencyID)
-        REFERENCES dbo.[Currency](ID),
     CONSTRAINT FK__VendingMachine__VendingMachineAddress FOREIGN KEY (AddressID)
         REFERENCES dbo.[VendingMachineAddress](ID)
 )
@@ -104,7 +102,7 @@ CREATE TABLE dbo.[Bank] (
 )
 GO
 
-/*table for payment cards ofCustomers*/
+/*table for payment cards of Customers*/
 CREATE TABLE dbo.[CustomerPaymentCard] (
     [ID] INT IDENTITY CONSTRAINT PK_CustomerPaymentCard PRIMARY KEY CLUSTERED, 
     [BankID] INT NOT NULL,
@@ -151,45 +149,52 @@ CREATE TABLE dbo.[ProductType] (
 )
 GO
 
-/*table forCustomer'sCustomeremail*/
+/*table for Customer's email*/
 CREATE TABLE dbo.[CustomerEmail] (
     [ID] INT IDENTITY CONSTRAINT PK__CustomerEmail PRIMARY KEY CLUSTERED,
     [Address] VARCHAR(255) NOT NULL
 )
 GO
 
-/*prices for types of products -- ALL PRICES ARE STORED IN A SINGLE CURRENCY AND THEN CONVERTED 
- TO THE CORRECT CURRENCY DEPENDING ON LOCATION AND EXCHANGE RATE*/
-CREATE TABLE dbo.[ProductPriceToVendingMachine] (           --TODO: currency should be connected to price and not to machine directly or to country
+/* prices for types of products */
+CREATE TABLE dbo.[ProductPriceToVendingMachine] (  
     [ID] INT IDENTITY CONSTRAINT PK__ProductPriceToVendingMachine PRIMARY KEY CLUSTERED,
     [ProductTypeID] INT NOT NULL,
     [VendingMachineID] INT NOT NULL,
-    [Amount] INT NOT NULL,
+    [CurrencyID] INT NOT NULL,
+    [Amount] DECIMAL(5, 2) NOT NULL,
     [DateFrom] DATETIME NOT NULL,
     [DateTo] DATETIME NULL,
     CONSTRAINT FK__ProductPriceToVendingMachine__ProductType FOREIGN KEY (ProductTypeID)
         REFERENCES dbo.[ProductType](ID),
     CONSTRAINT FK__ProductPriceToVendingMachine__VendingMachine FOREIGN KEY (VendingMachineID)
-        REFERENCES dbo.[VendingMachine](ID)
+        REFERENCES dbo.[VendingMachine](ID),
+    CONSTRAINT FK__ProductPriceToVendingMachine__Currency FOREIGN KEY (CurrencyID)
+        REFERENCES dbo.[Currency](ID),
 )
 GO
 
-/*table for all the pruchases made*/
+/* table for all the purchases made 
+ * bought products are managed through purchase ID in the instances table
+ * later a bonus id is added in case the customer wants to use it */
 CREATE TABLE dbo.[Purchase] (
     [ID] INT IDENTITY CONSTRAINT PK__Purchase PRIMARY KEY CLUSTERED,
+    [Date] DATETIME NOT NULL,
     [CustomerID] INT NOT NULL,
     [VendingMachineID] INT NOT NULL,
-    [Date] DATETIME NOT NULL,
+    [CustomerPaymentCardID] INT NOT NULL,
     CONSTRAINT FK__Purchase__Customer FOREIGN KEY (CustomerID)
         REFERENCES dbo.Customer(ID),
     CONSTRAINT FK__Purchase__VendingMachine FOREIGN KEY (VendingMachineID)
-        REFERENCES dbo.[VendingMachine](ID)
+        REFERENCES dbo.[VendingMachine](ID),
+    CONSTRAINT FK__Invoice__CustomerPaymentCard FOREIGN KEY (CustomerPaymentCardID)
+        REFERENCES dbo.[CustomerPaymentCard](ID)
 )
 GO
 
 /*table for specific instances of a product type*/
-CREATE TABLE dbo.[ProductInstance] ( --TODO: add weight and or value
-    [ID] INT IDENTITY CONSTRAINT PK__ProductInstance PRIMARY KEY CLUSTERED,
+CREATE TABLE dbo.[ProductInstance] (
+    [ID] INT IDENTITY CONSTRAINT PK__ProductInstance PRIMARY KEY CLUSTERED, --unique ID of the product instance
     [ProductTypeID] INT NOT NULL,
     [ProductWeight] INT NOT NULL,
     [ExpirationDate] DATETIME NOT NULL,
@@ -208,17 +213,16 @@ CREATE TABLE dbo.[ProductInstance] ( --TODO: add weight and or value
 GO
 
 /*table for the invoices, created after purchase is made*/
-CREATE TABLE dbo.[Invoice] (            --TODO: add currency information
+/*price and currency can be found from the prices to vending machines table and
+ * the date of purchase*/
+CREATE TABLE dbo.[Invoice] (            
     [ID] INT IDENTITY CONSTRAINT PK__Invoice PRIMARY KEY CLUSTERED,
     [PurchaseID] INT NOT NULL,
     [Amount] INT NOT NULL,
     [IsPaid] BIT NOT NULL,
-    [PaymentDate] DATETIME NULL,            --TODO: put payment card into purchase and not invoice
-    [CustomerPaymentCardID] INT NOT NULL,
+    [PaymentDate] DATETIME NULL,            
     CONSTRAINT FK__Invoice__Purchase FOREIGN KEY (PurchaseID)
-        REFERENCES dbo.[Purchase](ID),
-    CONSTRAINT FK__Invoice__CustomerPaymentCard FOREIGN KEY (CustomerPaymentCardID)
-        REFERENCES dbo.[CustomerPaymentCard](ID)
+        REFERENCES dbo.[Purchase](ID)
 )
 GO
 
@@ -234,7 +238,7 @@ CREATE TABLE dbo.[CustomerPaymentInformation] (
 )
 GO
 
-/*table connecting customers to theirCustomeremails*/
+/*table connecting customers to their Customer emails*/
 CREATE TABLE dbo.[EmailToCustomer] (
     [ID] INT IDENTITY CONSTRAINT PK__EmailToCustomer PRIMARY KEY CLUSTERED,
     [CustomerID] INT NOT NULL,
@@ -258,5 +262,32 @@ CREATE TABLE dbo.[ProductCategoryToType] (
 )
 GO
 
---TODO: table for bonuses a Customer might earn and table distributing them toCustomers
--- TODO: add some way to have type of payment -- like bonus, payment cards etc
+/* table for bonuses a customer might earn */
+CREATE TABLE dbo.[Bonus] (
+    [ID] INT IDENTITY CONSTRAINT PK__Bonus PRIMARY KEY CLUSTERED,
+    [Name] NVARCHAR(50) NOT NULL,
+    [Modifier] DECIMAL(3, 2) NOT NULL -- like 0.90 for a 10% discount
+);
+GO
+
+/* table connecting customers to bonuses */
+CREATE TABLE dbo.[BonusToCustomer] (
+    [ID] INT IDENTITY CONSTRAINT PK__BonusToCustomer PRIMARY KEY CLUSTERED,
+    [CustomerID] INT NOT NULL,
+    [BonusID] INT NOT NULL,
+    CONSTRAINT FK__BonusToCustomer__Customer FOREIGN KEY (CustomerID)
+        REFERENCES dbo.[Customer](ID),
+    CONSTRAINT FK__BonusToCustomer__Bonus FOREIGN KEY (BonusID)
+        REFERENCES dbo.[Bonus](ID)
+
+);
+GO
+
+-- add bonuses to purchases
+ALTER TABLE dbo.[Purchase] ADD [BonusID] INT NULL;
+GO
+
+-- add foreign key to purchase to make sure there are no mistakes
+ALTER TABLE dbo.[Purchase] ADD CONSTRAINT FK__Purchase__Bonus FOREIGN KEY (BonusID)
+    REFERENCES dbo.[Bonus](ID);
+GO

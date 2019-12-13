@@ -1,13 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1575735408 "semetey.tex" "semetey.pdf" "semetey" 1575735408
+["pdflatex"] 1576211587 "semetey.tex" "semetey.pdf" "semetey" 1576211599
   "/etc/texmf/web2c/texmf.cnf" 1557329512 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1480098701 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1480098701 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1480098701 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1480098701 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1480098701 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1480098733 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1480098733 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1480098733 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1480098733 36118 fad905eba93cff5bce1e185fe980a177 ""
@@ -22,9 +20,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1557329582 125883 5a8e8cee8831b673b8567a1d9242290b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1557329586 724917 4e08d825753cc4be87d95de715215845 ""
-  "semetey.aux" 1575735408 80 eb0d01adcf093de5107f3f1873ca9de9 ""
-  "semetey.tex" 1575735403 295 1a752e1d5ec37bfd1da484b7aefd0605 ""
+  "semetey.aux" 1576211595 8 a94a2480d3289e625eea47cd1b285758 ""
+  "semetey.tex" 1576211585 726 97515211e3d64e2e71d96136278ab6e6 ""
   (generated)
+  "semetey.aux"
   "semetey.pdf"
   "semetey.log"
-  "semetey.aux"

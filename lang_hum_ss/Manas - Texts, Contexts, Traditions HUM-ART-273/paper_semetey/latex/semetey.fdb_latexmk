@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1576389601 "semetey.tex" "semetey.pdf" "semetey" 1576389602
+["pdflatex"] 1576431735 "semetey.tex" "semetey.pdf" "semetey" 1576431735
   "/etc/texmf/web2c/texmf.cnf" 1557329512 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1480098701 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1480098701 1288 655e228510b4c2a1abe905c368440826 ""
@@ -29,9 +29,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1557329582 125883 5a8e8cee8831b673b8567a1d9242290b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1557329586 724917 4e08d825753cc4be87d95de715215845 ""
-  "semetey.aux" 1576389602 8 a94a2480d3289e625eea47cd1b285758 ""
-  "semetey.tex" 1576389597 7477 9718c9a7a83e8cfcd5cd5105d4a5bed7 ""
+  "semetey.aux" 1576431735 8 a94a2480d3289e625eea47cd1b285758 ""
+  "semetey.tex" 1576431730 8359 b1e2b0992a574a0673cac2d17b8cd8da ""
   (generated)
   "semetey.pdf"
-  "semetey.log"
   "semetey.aux"
+  "semetey.log"

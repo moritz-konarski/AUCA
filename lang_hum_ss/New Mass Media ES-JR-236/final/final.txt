@@ -1,0 +1,68 @@
+Final Exam Questions New Mass Media
+===================================
+
+Moritz Konarski, 18.12.2019
+
+#### 1. New mass media are predominantly digital, which is a blessing and a curse at the same time. Please explain what are the main benefits of digital media and what also are the biggest threats/risks associated with them.
+
+The digital, distributed nature of new mass media is probably its
+biggest strength and weakness at the same time. Many online services are
+free to use if one has an internet connection and a device that can
+access the web. This makes internet use very easy and cheap, allowing
+many people to participate. Additionally, the internet is available in
+most areas worldwide, allowing communication and the global sharing of
+ideas. Such new mass media can reach more people than ever before,
+contributing to a global exchange of ideas. Furthermore, ideas can
+spread very easily across the internet because most platforms are
+interconnected. This allows a funny tweet to not only become popular on
+Twitter, but also on Facebook, Instagram or Reddit. Another advantage of
+new mass media is that traditional gatekeepers (in old forms of media
+like TV, radio, newspapers) do not exists on the internet. This allows
+people to publish what they want.
+
+This easy spreading of ideas and absence of gatekeepers has downsides,
+too. Because ideas spread so easily, factually incorrect ones or harmful
+ones spread easily, too. In combination with the absence of gatekeepers
+moderating content, this can and does lead to falsehoods being shared.
+These falsehoods, if they are subtle, will spread before being noticed
+and do considerable damage. This disadvantage ties into another one,
+that verifying the truthfulness of online content is difficult and (I
+would bet) most people do not do that. Finding the original source of a
+statement can take time and difficult because even reputable news
+agencies cite other news agencies citing other news agencies etc. If
+even they are hard to fact-check, the average Facebook user is
+impossible to fact-check without putting more effort than most people
+would be willing to.
+
+#### 3. What is media literacy and why it is a vital skill nowadays? Please discuss at least 3 cases in which it needs to be applied and why.
+
+According to Wikipedia, "Media literacy encompasses the practices that
+allow people to access, critically evaluate, and create or manipulate
+media." ([1. Wikipedia - Media
+literacy](https://en.wikipedia.org/wiki/Media_literacy)). Part of this
+is the process of identifying the author, purpose, point of view, and
+representation (bias, propaganda, censorship) of a piece of content ([2.
+Wikipedia - Media literacy
+eductation](https://en.wikipedia.org/wiki/Media_literacy#Media_literacy_education)).
+
+-   all of those points are important:
+    -   access is how you get the media
+    -   critical evaluation is always important, but for new media this
+        can be hard
+    -   creation and manipulation are also important -- even if it's
+        just to know how others would do it
+
+1.  seeing a post shared by a friend
+    -   who authored the post?
+    -   who is the audience?
+    -   techniques that were used
+2.  reading a news article on a controversial topic
+3.  watching an election advertisement on TV or online
+
+*References*
+
+1.  Wikipedia - Media literacy:
+    https://en.wikipedia.org/wiki/Media\_literacy
+2.  Wikipedia - Media literacy eductation:\
+    https://en.wikipedia.org/wiki/Media\_literacy\#Media\_literacy\_education
+

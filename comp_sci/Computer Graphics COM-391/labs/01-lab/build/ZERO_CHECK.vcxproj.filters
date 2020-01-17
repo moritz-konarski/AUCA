@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\morit\Documents\Code\auca\comp_sci\Computer Graphics COM-391\labs\01-lab\build\CMakeFiles\f3df970f5c7c4b8b2d2d7f9882ca0daa\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{ADA49FAA-41ED-3704-8218-1E00E3777809}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

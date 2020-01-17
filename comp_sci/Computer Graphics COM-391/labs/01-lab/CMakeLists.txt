@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION "2.8.0")
 
 project("01-lab")
 
-add_definitions("std=c++11")
+
 
 include(build/conanbuildinfo.cmake)
 conan_basic_setup()

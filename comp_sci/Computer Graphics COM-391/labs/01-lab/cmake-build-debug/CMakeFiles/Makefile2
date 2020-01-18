@@ -44,21 +44,21 @@ RM = /home/moritz/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab"
+CMAKE_SOURCE_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/01-lab.dir/all
+all: CMakeFiles/00-lab.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/01-lab.dir/clean
+clean: CMakeFiles/00-lab.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/01-lab.dir
+# Target rules for target CMakeFiles/00-lab.dir
 
 # All Build rule for target.
-CMakeFiles/01-lab.dir/all:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/depend
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target 01-lab"
-.PHONY : CMakeFiles/01-lab.dir/all
+CMakeFiles/00-lab.dir/all:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/depend
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles" --progress-num=1,2 "Built target 00-lab"
+.PHONY : CMakeFiles/00-lab.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/01-lab.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles" 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/01-lab.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/01-lab.dir/rule
+CMakeFiles/00-lab.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/00-lab.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/00-lab.dir/rule
 
 # Convenience name for target.
-01-lab: CMakeFiles/01-lab.dir/rule
+00-lab: CMakeFiles/00-lab.dir/rule
 
-.PHONY : 01-lab
+.PHONY : 00-lab
 
 # clean rule for target.
-CMakeFiles/01-lab.dir/clean:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/clean
-.PHONY : CMakeFiles/01-lab.dir/clean
+CMakeFiles/00-lab.dir/clean:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/clean
+.PHONY : CMakeFiles/00-lab.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/01-lab.dir/01-lab.cpp.o  -o 01-lab -lSDL2 -lGL -lGLEW -lGL -lX11 -lGLU -lGL -lGLEW -lX11 -lGLU 

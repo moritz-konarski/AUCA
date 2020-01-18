@@ -48,10 +48,10 @@ RM = /home/moritz/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab"
+CMAKE_SOURCE_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles" "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles" "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/00-lab/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 01-lab
+# Target rules for targets named 00-lab
 
 # Build rule for target.
-01-lab: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 01-lab
-.PHONY : 01-lab
+00-lab: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 00-lab
+.PHONY : 00-lab
 
 # fast build rule for target.
-01-lab/fast:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/build
-.PHONY : 01-lab/fast
+00-lab/fast:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/build
+.PHONY : 00-lab/fast
 
-01-lab.o: 01-lab.cpp.o
+00-lab.o: 00-lab.cpp.o
 
-.PHONY : 01-lab.o
+.PHONY : 00-lab.o
 
 # target to build an object file
-01-lab.cpp.o:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/01-lab.cpp.o
-.PHONY : 01-lab.cpp.o
+00-lab.cpp.o:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/00-lab.cpp.o
+.PHONY : 00-lab.cpp.o
 
-01-lab.i: 01-lab.cpp.i
+00-lab.i: 00-lab.cpp.i
 
-.PHONY : 01-lab.i
+.PHONY : 00-lab.i
 
 # target to preprocess a source file
-01-lab.cpp.i:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/01-lab.cpp.i
-.PHONY : 01-lab.cpp.i
+00-lab.cpp.i:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/00-lab.cpp.i
+.PHONY : 00-lab.cpp.i
 
-01-lab.s: 01-lab.cpp.s
+00-lab.s: 00-lab.cpp.s
 
-.PHONY : 01-lab.s
+.PHONY : 00-lab.s
 
 # target to generate assembly for a file
-01-lab.cpp.s:
-	$(MAKE) -f CMakeFiles/01-lab.dir/build.make CMakeFiles/01-lab.dir/01-lab.cpp.s
-.PHONY : 01-lab.cpp.s
+00-lab.cpp.s:
+	$(MAKE) -f CMakeFiles/00-lab.dir/build.make CMakeFiles/00-lab.dir/00-lab.cpp.s
+.PHONY : 00-lab.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... 01-lab"
+	@echo "... 00-lab"
 	@echo "... edit_cache"
-	@echo "... 01-lab.o"
-	@echo "... 01-lab.i"
-	@echo "... 01-lab.s"
+	@echo "... 00-lab.o"
+	@echo "... 00-lab.i"
+	@echo "... 00-lab.s"
 .PHONY : help
 
 

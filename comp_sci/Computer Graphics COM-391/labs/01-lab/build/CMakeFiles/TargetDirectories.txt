@@ -1,3 +1,0 @@
-C:/Users/morit/Documents/Code/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/build/CMakeFiles/01-lab.dir
-C:/Users/morit/Documents/Code/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/morit/Documents/Code/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/build/CMakeFiles/ZERO_CHECK.dir

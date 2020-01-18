@@ -1,0 +1,3 @@
+/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles/01-lab.dir
+/home/moritz/Documents/auca/comp_sci/Computer Graphics COM-391/labs/01-lab/cmake-build-debug/CMakeFiles/edit_cache.dir

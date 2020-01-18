@@ -1,15 +1,15 @@
 #include <GL/glew.h>
-#include <SDL.h>
-#include <SDL_opengl.h>
-
-#define HEIGHT  500
-#define WIDTH   500
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
 
 int main(int argc, char **argv) {
 
+    static const int WIDTH = 500;
+    static const int HEIGHT = 500;
+
     // Initialization
     SDL_Init(SDL_INIT_VIDEO);
-    SDL_Window *window = SDL_CreateWindow("01-lab", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, HEIGHT, WIDTH, SDL_WINDOW_OPENGL);
+    SDL_Window *window = SDL_CreateWindow("01-lab", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_OPENGL);
     SDL_GLContext gl_context = SDL_GL_CreateContext(window);
     glewExperimental = GL_TRUE;
     glewInit();

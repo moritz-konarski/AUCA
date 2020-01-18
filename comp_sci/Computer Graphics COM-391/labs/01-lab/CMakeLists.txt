@@ -1,11 +1,16 @@
-cmake_minimum_required(VERSION "2.8.0")
-
 project("01-lab")
 
+cmake_minimum_required(VERSION "2.8.0")
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include(build/conanbuildinfo.cmake)
-conan_basic_setup()
+INCLUDE(FindPkgConfig)
+
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+PKG_SEARCH_MODULE(GL REQUIRED gl)
+PKG_SEARCH_MODULE(GLEW REQUIRED)# glew)
+
+INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${GL_LIBRARIES} ${GLEW_LIBRARIES})
 
 add_executable(01-lab 01-lab.cpp)
-target_link_libraries(01-lab ${CONAN_LIBS})
+TARGET_LINK_LIBRARIES(01-lab ${SDL2_LIBRARIES} ${GL_LIBRARIES} ${GLEW_LIBRARIES}) # ${SDL2OPENGL_LIBRARIES})

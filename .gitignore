@@ -265,3 +265,6 @@ __pycache__/
 *.exe
 *.out
 *.make
+**source_lib
+**build
+**cmake-build-debug

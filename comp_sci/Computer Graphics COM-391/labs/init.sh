@@ -4,7 +4,7 @@
 
 mkdir "./$1"
 mkdir "./$1/build/"
-touch "./$1/$1.cpp" "./$1/CMakeLists.txt" 
+touch "./$1/$1.cpp" "./$1/CMakeLists.txt" #"./$1/compile.sh"
 
 # Adding content to CMakeLists.txt
 
@@ -63,3 +63,9 @@ end:
     return 0;
 }
 " > "./$1/$1.cpp"
+
+# Call initial cmake
+
+cd ./$1/build/
+cmake ..
+cd ../..

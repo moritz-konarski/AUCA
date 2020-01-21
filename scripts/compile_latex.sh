@@ -1,3 +1,5 @@
 for file in $1; do 
-    latexmk -pdf "$file"
+    cd build
+    latexmk -pdf "../$file"
+    cd ..
 done

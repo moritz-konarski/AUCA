@@ -1,3 +1,3 @@
-for file in $1; do 
-    pandoc "$file" -o "$(basename "$file" .md)-beamer.pdf" -t beamer
-done
+#!/bin/bash
+
+pandoc "$1" -o "$(basename "$1" .md)-beamer.pdf" -t beamer

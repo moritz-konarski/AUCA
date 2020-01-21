@@ -1,0 +1,98 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             test_05, CODE, READWRITE
+    2 00000000                 ENTRY
+    3 00000000 E28F0018        ADR              r0, P       ; r4 points to the 
+                                                            data area
+    4 00000004 E5901004        LDR              r1, [r0, #4] ; load Q into r1
+    5 00000008 E5902008        LDR              r2, [r0, #8] ; load R into r2
+    6 0000000C E0812002        ADD              r2, r1, r2  ; add Q and R
+    7 00000010 E590100C        LDR              r1, [r0, #12] ; load S into r3
+    8 00000014 E0822001        ADD              r2, r2, r1  ; add S to the tota
+                                                            l
+    9 00000018 E5821000        STR              r1, [r2]    ; save the result i
+                                                            n memory
+   10 0000001C EAFFFFFE 
+                       Stop    B                Stop
+   11 00000020         
+   12 00000020                 AREA             test_05, CODE, READWRITE
+   13 00000020 00 00 00 
+              00       P       SPACE            4           ; save one word of 
+                                                            storage for P
+   14 00000024 00000002 
+                       Q       DCD              2           ; create variable Q
+                                                             with initial value
+                                                             2
+   15 00000028 00000004 
+                       R       DCD              4           ; create variable R
+                                                             with initial value
+                                                             4
+   16 0000002C 00000005 
+                       S       DCD              5           ; create variable S
+                                                             with initial value
+                                                             5
+   17 00000030                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\test_05.d -o.\objects\test_05.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil
+_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSIO
+N SETA 529" --list=.\listings\test_05.lst test_05.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+P 00000020
+
+Symbol: P
+   Definitions
+      At line 13 in file test_05.s
+   Uses
+      At line 3 in file test_05.s
+Comment: P used once
+Q 00000024
+
+Symbol: Q
+   Definitions
+      At line 14 in file test_05.s
+   Uses
+      None
+Comment: Q unused
+R 00000028
+
+Symbol: R
+   Definitions
+      At line 15 in file test_05.s
+   Uses
+      None
+Comment: R unused
+S 0000002C
+
+Symbol: S
+   Definitions
+      At line 16 in file test_05.s
+   Uses
+      None
+Comment: S unused
+Stop 0000001C
+
+Symbol: Stop
+   Definitions
+      At line 10 in file test_05.s
+   Uses
+      At line 10 in file test_05.s
+Comment: Stop used once
+test_05 00000000
+
+Symbol: test_05
+   Definitions
+      At line 1 in file test_05.s
+   Uses
+      None
+Comment: test_05 unused
+6 symbols
+338 symbols in table

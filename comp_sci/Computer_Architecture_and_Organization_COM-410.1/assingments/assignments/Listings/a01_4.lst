@@ -1,0 +1,45 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             a01_4, CODE, READONLY
+    2 00000000 E3A01005        MOV              r1, #0x5
+    3 00000004 E0000191        MUL              r0, r1, r1
+    4 00000008 E3A02004        LDR              r2, =4
+    5 0000000C E0000092        MUL              r0, r2, r0
+    6 00000010 E3A02003        LDR              r2, =3
+    7 00000014 E0020291        MUL              r2, r1, r2
+    8 00000018 E0800002        ADD              r0, r0, r2
+    9 0000001C EAFFFFFE 
+                       S       B                S
+   10 00000020                 END
+Command Line: --debug --xref --diag_suppress=9931 --bi --apcs=interwork --depen
+d=.\objects\a01_4.d -o.\objects\a01_4.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\
+ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SE
+TA 529" --list=.\listings\a01_4.lst a01_4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+S 0000001C
+
+Symbol: S
+   Definitions
+      At line 9 in file a01_4.s
+   Uses
+      At line 9 in file a01_4.s
+Comment: S used once
+a01_4 00000000
+
+Symbol: a01_4
+   Definitions
+      At line 1 in file a01_4.s
+   Uses
+      None
+Comment: a01_4 unused
+2 symbols
+334 symbols in table

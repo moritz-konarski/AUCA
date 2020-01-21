@@ -17,7 +17,7 @@ Choose the family and version of the processor that you are going to use
         ENTRY
         MOV r0, #0x4        ; load 4 into r0
         MOV r1, #0x5        ; load 5 into r1
-        ADD r2, r0, 0xe1    ; add r0 to r1 and put the result in r2
+        ADD r2, r0, r1      ; add r0 to r1 and put the result in r2
     S   B   S               ; force infinite loop by branching to this line
         END                 ; end of program
     ```
@@ -59,10 +59,13 @@ Save result P in register r0
 - Assembly code:
     ```
          AREA Example1, CODE, READONLY
+         MOV r1, #0x2
+         MOV r2, #0x4
+         MOV r3, #0x5
          ADD r0, r1, r2
          ADD r0, r3
     Stop B   Stop
-         End
+         END
     ```
 - Notes:
     1. a semicolon indicates a user-entered comment, everything after it is ignored by the assembler
@@ -74,7 +77,7 @@ Save result P in register r0
     and `READONLY` indicates that this is not a modifiable piece of code
     3. everything that is in the first column of the code (in our case `Stop`) represents a label 
     that can be used to refer to this line
-    4. the `Stop B Stop` command means “branching to the line labeled `Stop`” and is used to 
+    4. the `Stop B Stop` command means branching to the line labeled `Stop` and is used to 
     create an endless loop. This is a convenient way to terminate programs in simple examples, 
     like this one
     5. the last line of `END` is an assembler directive that indicates that there is no more

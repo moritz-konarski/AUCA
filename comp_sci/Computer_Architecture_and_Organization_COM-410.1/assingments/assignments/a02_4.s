@@ -1,0 +1,7 @@
+	AREA a02_4, CODE, READONLY
+	MOV r0, #0xa0000000
+	MOV r1, #0xf0000000
+	ADDS r3, r1 ,r0
+	SUB r2, r3, r0
+S	B	S
+	END

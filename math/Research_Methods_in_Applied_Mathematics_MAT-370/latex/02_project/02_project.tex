@@ -6,6 +6,8 @@
 %       - add header
 %       - fix position of page numbers
 %       - fix equivalence sign at (8)
+%       - use colorbox
+%       - fix stupid tlmgr
 
 \documentclass[12pt, leqno, oneside]{amsart}
 
@@ -13,6 +15,9 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{anysize}
+%\usepackage{colorbox}
+
+\renewcommand{\baselinestretch}{1.5}
 
 \marginsize{2in}{1in}{1in}{1in}
 
@@ -28,8 +33,8 @@ by adding additional conditions and then solving the resulting model.
 The model of a vibrating elastic string (a violin string, for instance)
 consists of the \textbf{one-dimensional wave equation}
 \begin{equation}
-    \frac{\partial^2{u}}{\partial{t^2}} = c^2\frac{\partial^2{u}}\\
-        {\partial{x^2}} \qquad \qquad c^2 = \frac{T}{\rho}
+    \frac{\partial^2{u}}{\partial{t^2}} = c^2\frac{\partial^2{u} \\
+        }{\partial{x^2}} \qquad \qquad c^2 = \frac{T}{\rho}
 \end{equation}
 for the unknown deflection $u(x,t)$ of the string, a PDE that we have just 
 obtained, and some \textbf{\emph{additional conditions}}, which we shall now 

@@ -20,11 +20,12 @@ include(FindPkgConfig)
 pkg_search_module(SDL2 REQUIRED sdl2)
 pkg_search_module(GL REQUIRED gl)
 pkg_search_module(GLEW REQUIRED glew)
+pkg_search_module(GLM REQUIRED glm)
 
-include_directories(\${SDL2_INCLUDE_DIRS} \${GL_INCLUDE_DIRS} \${GLEW_INCLUDE_DIRS})
+include_directories(\${SDL2_INCLUDE_DIRS} \${GL_INCLUDE_DIRS} \${GLEW_INCLUDE_DIRS} \${GLM_INCLUDE_DIRS})
 
 add_executable("$1" "$1".cpp)
-target_link_libraries("$1" \${SDL2_LIBRARIES} \${GL_LIBRARIES} \${GLEW_LIBRARIES})
+target_link_libraries("$1" \${SDL2_LIBRARIES} \${GL_LIBRARIES} \${GLEW_LIBRARIES} \${GLM_LIBRARIES})
 " > "./$1/CMakeLists.txt"
 
 # Adding content to cpp source file
@@ -32,6 +33,7 @@ target_link_libraries("$1" \${SDL2_LIBRARIES} \${GL_LIBRARIES} \${GLEW_LIBRARIES
 echo "#include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
+#include <glm/ext.hpp>
 
 int main(int argc, char **argv) {
 

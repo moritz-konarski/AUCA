@@ -1,6 +1,6 @@
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_opengl.h>
+//#include <SDL2/SDL_opengl.h>
 
 int main(int argc, char **argv) {
 
@@ -9,20 +9,21 @@ int main(int argc, char **argv) {
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window *window =
-        SDL_CreateWindow(
-            "lab_02",
-            SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-            WINDOW_WIDTH, WINDOW_HEIGHT,
-            SDL_WINDOW_OPENGL
-        );
+            SDL_CreateWindow(
+                    "lab_02",
+                    SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                    WINDOW_WIDTH, WINDOW_HEIGHT,
+                    SDL_WINDOW_OPENGL
+            );
     SDL_GLContext gl_context = SDL_GL_CreateContext(window);
-    glewExperimental = GL_TRUE; glewInit();
+    glewExperimental = GL_TRUE;
+    glewInit();
     SDL_GL_SetSwapInterval(1);
 
     // OpenGL Shader Compilation
-
+    // these are two GLSL shaders
     const char *vertex_shader_source =
-        "#version 110\n"                 \
+            "#version 110\n"                 \
         "\n"                             \
         "attribute vec4 position;\n"     \
         "attribute vec4 color;\n"        \
@@ -36,7 +37,7 @@ int main(int argc, char **argv) {
         "    gl_Position = position;\n"  \
         "}";
     const char *fragment_shader_source =
-        "#version 110\n"                       \
+            "#version 110\n"                       \
         "\n"                                   \
         "varying vec4 fragment_color;\n"       \
         "\n"                                   \
@@ -45,71 +46,78 @@ int main(int argc, char **argv) {
         "    gl_FragColor = fragment_color;\n" \
         "}";
 
+    // use OpelGL to compile the shader
     GLuint vertex_shader_object = glCreateShader(GL_VERTEX_SHADER);
+    // send the source to the GPU driver
     glShaderSource(
-        vertex_shader_object,
-        1, (const GLchar**) &vertex_shader_source, NULL
+            vertex_shader_object,
+            1, (const GLchar **) &vertex_shader_source, NULL
     );
+    // actually create the shader
     glCompileShader(vertex_shader_object);
 
+    // same thing as above, just for the fragment shader
     GLuint fragment_shader_object = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(
-        fragment_shader_object,
-        1, (const GLchar**) &fragment_shader_source, NULL
+            fragment_shader_object,
+            1, (const GLchar **) &fragment_shader_source, NULL
     );
     glCompileShader(fragment_shader_object);
 
+    // now we link both shaders together and compile
     GLuint shader_program = glCreateProgram();
     glAttachShader(shader_program, vertex_shader_object);
     glAttachShader(shader_program, fragment_shader_object);
     glLinkProgram(shader_program);
+
+    // delete the shader programs that are no longer needed
     glDetachShader(shader_program, vertex_shader_object);
     glDetachShader(shader_program, fragment_shader_object);
     glDeleteShader(vertex_shader_object);
     glDeleteShader(fragment_shader_object);
 
+    // find the address of where we should send the data for the shaders
     GLint position_attribute_location =
-        glGetAttribLocation(shader_program, "position");
+            glGetAttribLocation(shader_program, "position");
     GLint color_attribute_location =
-        glGetAttribLocation(shader_program, "color");
+            glGetAttribLocation(shader_program, "color");
 
     // OpengGL Geometry Data Transfer
-
     GLfloat vertex_data[] = {
-    //   Position           Color (RGBA)
-        -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-         0.0f,  0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-         0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+            // Position (x,z,y), Color (RGBA)
+           -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+            0.0f,  0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+            0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,
     };
 
-    GLuint vertex_array_object  = 0;
+    GLuint vertex_array_object = 0;
     GLuint vertex_buffer_object = 0;
     glGenVertexArrays(1, &vertex_array_object);
     glBindVertexArray(vertex_array_object);
     glGenBuffers(1, &vertex_buffer_object);
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_object);
     glBufferData(
-        GL_ARRAY_BUFFER,
-        sizeof(vertex_data), vertex_data,
-        GL_STATIC_DRAW
+            GL_ARRAY_BUFFER,
+            sizeof(vertex_data), vertex_data,
+            GL_STATIC_DRAW
     );
 
     GLsizei stride = sizeof(GLfloat) * 7;
     glEnableVertexAttribArray(position_attribute_location);
     glVertexAttribPointer(
-        position_attribute_location,
-        3, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) 0
+            position_attribute_location,
+            3, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) 0
     );
     glEnableVertexAttribArray(color_attribute_location);
     glVertexAttribPointer(
-        color_attribute_location,
-        4, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) (sizeof(GLfloat) * 3)
+            color_attribute_location,
+            4, GL_FLOAT, GL_FALSE, stride,
+            (const GLvoid *) (sizeof(GLfloat) * 3)
     );
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     // OpenGL General Setup
-
     glClearColor(0, 0, 0, 0);
     glViewport(0, 0, (GLsizei) WINDOW_WIDTH, (GLsizei) WINDOW_HEIGHT);
 
@@ -120,7 +128,6 @@ int main(int argc, char **argv) {
         }
 
         // OpenGL Rendering
-
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shader_program);
         glBindVertexArray(vertex_array_object);
@@ -129,9 +136,9 @@ int main(int argc, char **argv) {
         SDL_GL_SwapWindow(window);
     }
 
-end:
-    // SDL cleanup
+    end:
 
+    // SDL cleanup
     SDL_GL_DeleteContext(gl_context);
     SDL_DestroyWindow(window);
     SDL_Quit();

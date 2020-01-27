@@ -1,6 +1,0 @@
-	AREA a02_2, CODE, READONLY
-	MOV r0, #0xc0000000
-	MOV r1, #0xf0000000
-	SUBS r3, r1, r0
-S	B	S
-	END

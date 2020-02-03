@@ -213,3 +213,21 @@ scenic landscapes. This picture doesn't have any of that, making it different.
 I would say that the kind of America emerging in this picture is that of the 
 normal people that didn't do anything heroic or historically significant in 
 order to be painted.
+
+## Comment on an American landscape painting by an American artist from the 19th century
+
+![New England Scenery - Frederic E. Church, 1851][Church1851]
+
+New England Scenery is a 1851 painting by Frederic E. Church. I chose this 
+painting because of the high level of detail, idyllic, mostly untouched 
+landscape, and the depiction of human influence on this landscape. I would 
+like to elaborate on this in class. 
+----------------
+_bullshit here_
+
+
+
+
+
+
+[Church1851]: ./pictures/00_NEScenery.jpg "New England Scenery - Frederic E. Church, 1851"

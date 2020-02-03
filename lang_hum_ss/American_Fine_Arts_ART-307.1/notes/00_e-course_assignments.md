@@ -216,18 +216,62 @@ order to be painted.
 
 ## Comment on an American landscape painting by an American artist from the 19th century
 
-![New England Scenery - Frederic E. Church, 1851][Church1851]
-
 New England Scenery is a 1851 painting by Frederic E. Church. I chose this 
 painting because of the high level of detail, idyllic, mostly untouched 
 landscape, and the depiction of human influence on this landscape. I would 
 like to elaborate on this in class. 
+
 ----------------
-_bullshit here_
+
+[Picture Source][Church1851src]
+
+[Photo Source][ChurchPhoto]
+
+[Info Source][ChurchWiki]
+
+Life
+
+- May 4, 1826 - April 7, 1900
+- American landscape painter
+- generally painted mountains, waterfalls, sunsets
+- realistic detail, dramatic light, panoramic views
+- rich family allowed him to pursue art
+- at 18 became pupil of Thomas Cole
+- highly successful painter, most famous in his time
+- even made a lot of money with his paintings
+
+Style
+
+- idealized nature, richness and beauty
+- highly detailed
+- wanted to capture the wild, unsettled America that was quickly disappearing
+- pastoral settings were very prominent
+- landscape painters should pay utmost attention to the smallest details
+- he made sketches in nature and later developed paintings in his studio
+- Hudson River school
+
+Painting
+
+- 1851
+- his first true composite landscape
+- has mountains, nice lighting, panoramic views
+- bridge with woman, dog, and wagon in the foreground
+- water mill to the left
+- old gnarled trees to the right
+- water with a lot of reflection in the center
+- hill in the middle back
+- middle right back has a small town maybe?
+- shows old, untouched nature
+- but human influence on it is starting to show
+- the build roads, houses, and towns, signalling a new era
+- feels optimistic, as far as the lighting and weather goes
+- may be connected to the manifest destiny spirit of the time -- the wagon is
+_the_ symbol of that
 
 
 
 
 
-
-[Church1851]: ./pictures/00_NEScenery.jpg "New England Scenery - Frederic E. Church, 1851"
+[Church1851src]: https://upload.wikimedia.org/wikipedia/commons/b/ba/New_England_Scenery%2C_Frederic_Edwin_Church%2C_1851_-_Museum_of_Fine_Arts%2C_Springfield%2C_MA_-_DSC03984.JPG
+[ChurchPhoto]: https://upload.wikimedia.org/wikipedia/commons/0/05/Frederic_Edwin_Church_-_Brady-Handy_%28cropped%29.jpg
+[ChurchWiki]: https://en.wikipedia.org/wiki/Frederic_Edwin_Church

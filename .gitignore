@@ -270,3 +270,4 @@ __pycache__/
 **cmake-build-debug
 **out/production
 **.idea
+**processing-lib

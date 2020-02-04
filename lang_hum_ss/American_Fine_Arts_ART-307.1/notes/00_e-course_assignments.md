@@ -225,53 +225,70 @@ like to elaborate on this in class.
 
 [Picture Source][Church1851src]
 
+[Pastoral Stage][ColePastoral]
+
 [Photo Source][ChurchPhoto]
 
-[Info Source][ChurchWiki]
+[Info Source 1][ChurchWiki]
+
+[Info Source 2][ChurchUmass]
+
+[Info Source 3][ChurchMet]
 
 Life
 
+- Frederic Edwin Church
 - May 4, 1826 - April 7, 1900
 - American landscape painter
 - generally painted mountains, waterfalls, sunsets
 - realistic detail, dramatic light, panoramic views
 - rich family allowed him to pursue art
 - at 18 became pupil of Thomas Cole
+- finest eye in the world according to Cole
 - highly successful painter, most famous in his time
 - even made a lot of money with his paintings
 
 Style
 
+- Hudson River school, like Thomas Cole
 - idealized nature, richness and beauty
 - highly detailed
-- wanted to capture the wild, unsettled America that was quickly disappearing
+- wanted to capture the wild, unsettled America
 - pastoral settings were very prominent
-- landscape painters should pay utmost attention to the smallest details
 - he made sketches in nature and later developed paintings in his studio
-- Hudson River school
 
 Painting
 
 - 1851
 - his first true composite landscape
 - has mountains, nice lighting, panoramic views
+- close resemblance to Cole's Pastoral Stage
+    - woman in the foreground
+    - mountain in the background
+    - lots of sky
+    - trees to the right
+    - very green
 - bridge with woman, dog, and wagon in the foreground
 - water mill to the left
 - old gnarled trees to the right
 - water with a lot of reflection in the center
 - hill in the middle back
-- middle right back has a small town maybe?
+- middle right back has a small town with a church -- Church was religious
 - shows old, untouched nature
 - but human influence on it is starting to show
+- looks like living in harmony
 - the build roads, houses, and towns, signalling a new era
-- feels optimistic, as far as the lighting and weather goes
-- may be connected to the manifest destiny spirit of the time -- the wagon is
-_the_ symbol of that
+- feels idyllic, as far as the lighting and weather goes
+- connected to the manifest destiny spirit of the time -- the wagon is
+_the_ symbol of that -- hope and progress
 
 
 
 
 
 [Church1851src]: https://upload.wikimedia.org/wikipedia/commons/b/ba/New_England_Scenery%2C_Frederic_Edwin_Church%2C_1851_-_Museum_of_Fine_Arts%2C_Springfield%2C_MA_-_DSC03984.JPG
+[ColePastoral]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg/1024px-Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg
 [ChurchPhoto]: https://upload.wikimedia.org/wikipedia/commons/0/05/Frederic_Edwin_Church_-_Brady-Handy_%28cropped%29.jpg
 [ChurchWiki]: https://en.wikipedia.org/wiki/Frederic_Edwin_Church
+[CHurchUmass]: https://www.umass.edu/umassmag/archives/2000/fall2000/bk_scenery.html
+[ChurchMet]: https://www.metmuseum.org/toah/hd/chur/hd_chur.htm

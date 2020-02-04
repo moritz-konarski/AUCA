@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv) {
 
-    printf("Hello, World!\n");
+    puts("Hello, World!\n");
 
     return 0;
 }

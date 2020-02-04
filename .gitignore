@@ -268,3 +268,5 @@ __pycache__/
 **source_lib
 **build
 **cmake-build-debug
+**out/production
+**.idea

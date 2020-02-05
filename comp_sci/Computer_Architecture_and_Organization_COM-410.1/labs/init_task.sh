@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir "./$1"
-touch "./$1/$1.s"
+touch "./$1/$1.s" "./$1/compile.sh"
 
 echo ".section .data
 
@@ -9,3 +9,5 @@ echo ".section .data
 .global main
 main:
     " > "./$1/$1.s"
+
+echo "gcc $1.s -g -o a.out" > "./$1/compile.sh"

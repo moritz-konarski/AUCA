@@ -271,3 +271,7 @@ __pycache__/
 **out/production
 **.idea
 **processing-lib
+*.config
+*.resx
+*.settings
+*.iml

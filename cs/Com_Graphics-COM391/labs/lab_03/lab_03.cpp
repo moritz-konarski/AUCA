@@ -207,7 +207,7 @@ int main(int argc, char **argv) {
             }
         }
 
-        checkForErrors(errString, "after switch");
+        //checkForErrors(errString, "after switch");
 
         triangle_model_matrix = glm::translate(glm::mat4(1.0f),
                                                triangle_position);
@@ -223,7 +223,7 @@ int main(int argc, char **argv) {
         triangle_model_matrix = glm::scale(triangle_model_matrix,
                                            triangle_scale);
 
-        checkForErrors(errString, "after triangle model matrix");
+        //checkForErrors(errString, "after triangle model matrix");
 
         camera_model_matrix = glm::translate(glm::mat4(1.0f), camera_position);
         camera_model_matrix = glm::rotate(camera_model_matrix,
@@ -237,7 +237,7 @@ int main(int argc, char **argv) {
                                           glm::vec3(0, 0, 1));
         camera_view_matrix = glm::inverse(camera_model_matrix);
 
-        checkForErrors(errString, "after camera model matrix");
+        //checkForErrors(errString, "after camera model matrix");
 
         camera_aspect_ratio = fabsf((float) window_width /
                                     (float) window_height);
@@ -248,18 +248,18 @@ int main(int argc, char **argv) {
                 camera_far_plane
         );
 
-        checkForErrors(errString, "after other camera stuff");
+        //checkForErrors(errString, "after other camera stuff");
 
         triangle_model_view_projection_matrix = camera_projection_matrix *
                 camera_view_matrix * triangle_model_matrix;
-        checkForErrors(errString, "after triangle");
+        //checkForErrors(errString, "after triangle");
 
         glUniformMatrix4fv(
                 mvp_matrix_uniform_location,
                 1, GL_FALSE,
                 glm::value_ptr(triangle_model_view_projection_matrix)
         );
-        checkForErrors(errString, "after uniform matrix");
+        //checkForErrors(errString, "after uniform matrix");
 
         glViewport(
                 0, 0,
@@ -267,14 +267,14 @@ int main(int argc, char **argv) {
                 (GLsizei) window_height
         );
 
-        checkForErrors(errString, "after glviewpoint");
+        //checkForErrors(errString, "after glviewpoint");
 
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shader_program);
         glBindVertexArray(vertex_array_object);
         glDrawArrays(GL_TRIANGLE_FAN, 0, 3);
 
-        checkForErrors(errString, "end of loop");
+        //checkForErrors(errString, "end of loop");
 
         SDL_GL_SwapWindow(window);
     }

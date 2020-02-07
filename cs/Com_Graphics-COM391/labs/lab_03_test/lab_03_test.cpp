@@ -1,4 +1,5 @@
 #define GLM_ENABLE_EXPERIMENTAL
+#define CHECK_ERRORS 0
 
 #include <GL/glew.h>
 #include <SDL.h>
@@ -132,7 +133,7 @@ int main(int argc, char **argv) {
     glAttachShader(shader_program, vertex_shader_object);
     glAttachShader(shader_program, fragment_shader_object);
     glLinkProgram(shader_program);
-    glUseProgram(shader_program);
+    //glUseProgram(shader_program);
     glGetProgramiv(shader_program, GL_LINK_STATUS, &status);
     if (status == GL_FALSE) {
         GLint info_log_length;
@@ -302,7 +303,7 @@ int main(int argc, char **argv) {
         }
          */
 
-        //checkForErrors(errString, "l. 292");
+        checkForErrors(errString, "l. 292");
 
         glUniformMatrix4fv(
                 mvp_matrix_uniform_location,
@@ -310,7 +311,7 @@ int main(int argc, char **argv) {
                 glm::value_ptr(triangle_mod_view_proj_mat)
         );
 
-        //checkForErrors(errString, "l. 304");
+        checkForErrors(errString, "l. 304");
 
         glViewport(
                 0, 0,
@@ -339,10 +340,12 @@ int main(int argc, char **argv) {
 }
 
 void checkForErrors(const GLubyte *errString, const char *code) {
-    GLenum errCode;
-    while ((errCode = glGetError()) != GL_NO_ERROR) {
-        errString = gluErrorString(errCode);
-        fprintf(stderr, "OpenGL Error: %s\n", errString);
-        fprintf(stderr, "At %s\n", code);
+    if (CHECK_ERRORS) {
+        GLenum errCode;
+        while ((errCode = glGetError()) != GL_NO_ERROR) {
+            errString = gluErrorString(errCode);
+            fprintf(stderr, "OpenGL Error: %s\n", errString);
+            fprintf(stderr, "At %s\n", code);
+        }
     }
 }

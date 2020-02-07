@@ -106,6 +106,7 @@ int main(int argc, char **argv) {
     glAttachShader(shader_program, vertex_shader_object);
     glAttachShader(shader_program, fragment_shader_object);
     glLinkProgram(shader_program);
+    glUseProgram(shader_program);
 
     checkForErrors(errString, "after shader link");
 

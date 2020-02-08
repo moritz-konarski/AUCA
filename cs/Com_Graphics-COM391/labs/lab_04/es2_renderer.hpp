@@ -48,6 +48,7 @@ public:
                 glClear(GL_COLOR_BUFFER_BIT);
                 glLineWidth(geometry->get_line_width());
                 glDrawArrays(geometry->get_type(), 0, geometry->get_vertices().size());
+                window.swap();
             }
         }
 

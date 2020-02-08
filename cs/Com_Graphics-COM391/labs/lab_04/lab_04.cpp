@@ -33,7 +33,8 @@ int main(int argc, char **argv) {
     Mesh *triangle2 = new Mesh{geometry, material,
                                glm::vec3{+0.5f, 0.0f, 1.0f}};
 
-    std::vector<Object *> objects{triangle1, triangle2};
+    //TODO: one triangle renders, the other one does not
+    std::vector<Object *> objects{triangle1/*, triangle2*/};
     Scene scene{objects};
 
     Camera &camera = scene.get_camera();

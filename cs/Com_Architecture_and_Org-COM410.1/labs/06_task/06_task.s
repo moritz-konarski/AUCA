@@ -1,21 +1,19 @@
 .section .data
 output_format: .string "%ld\n"
 
+#------------------------------------------------
 
 .section .text
 
 add2:
-    mov %edi, %eax
-    cltq
-    mov %rax, %rdi
-    mov %esi, %eax
-    cltq
-    add %rdi, %rax
-    ret
-
-add2m:
     mov %rdi, %rax
     add %rsi, %rax
+    ret
+
+add3:
+    mov %rdi, %rax
+    add %rsi, %rax
+    add %rdx, %rax
     ret
 
 add6:
@@ -27,11 +25,48 @@ add6:
     add %r9, %rax
     ret
 
+add10:
+    mov %rdi, %rax
+    add %rsi, %rax
+    add %rdx, %rax
+    add %rcx, %rax
+    add %r8, %rax
+    add %r9, %rax
+    add %r10, %rax
+    add %r11, %rax
+    add %r12, %rax
+    add %r13, %rax
+    ret
+
+add10m:
+    pop %rax
+    pop %rsi
+    add %rsi, %rax
+    pop %rsi
+    add %rsi, %rax
+    pop %rax
+    add %rsi, %rax
+    pop %rsi
+    add %rsi, %rax
+    pop %rax
+    add %rsi, %rax
+    pop %rsi
+    add %rsi, %rax
+    pop %rax
+    add %rsi, %rax
+    pop %rsi
+    add %rsi, %rax
+    pop %rax
+    add %rsi, %rax
+    ret
+
+#------------------------------------------------
+
 .global main
 main:
 
-    mov $1, %edi
-    mov $2, %esi
+    mov $1, %rdi
+    mov $2, %rsi
     call add2
 
     mov %rax, %rsi
@@ -39,18 +74,19 @@ main:
     xor %eax, %eax
     call printf@plt
 
-    
+#----------------------------
 
     mov $1, %rdi
     mov $2, %rsi
-    call add2m
+    mov $3, %rdx
+    call add3
 
     mov %rax, %rsi
     lea output_format(%rip), %rdi
     xor %eax, %eax
     call printf@plt
 
-
+#----------------------------
 
     mov $1, %rdi
     mov $2, %rsi
@@ -65,13 +101,24 @@ main:
     xor %eax, %eax
     call printf@plt
 
+#----------------------------
 
+    push $1
+    push $2
+    push $3
+    push $4
+    push $5
+    push $6
+    push $7
+    push $8
+    push $9
+    push $10
+    call add10m
 
-
-
-
-
-
+    mov %rax, %rsi
+    lea output_format(%rip), %rdi
+    xor %eax, %eax
+    call printf@plt
 
 
     xor %eax, %eax

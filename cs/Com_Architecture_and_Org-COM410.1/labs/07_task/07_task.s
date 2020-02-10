@@ -1,32 +1,34 @@
 .section .data
-input_format: .string "%ld %ld"
-output_format: .string "%ld + %ld = %ld\n"
+read_format: .string "%ld %ld"
+write_equal: .string "%ld is equal to %ld\n"
+write_greater: .string "%ld is greater than %ld\n"
+write_lesser: .string "%ld is less than %ls\n"
 a: .int 0, 0
 b: .int 0, 0
 
 .section .text
+
+
+
 .global main
 main:
 
-    # try to align the base pointer
     sub $0x8, %rsp
 
-    lea input_format(%rip), %rdi    # set input format
+    lea read_format(%rip), %rdi
     lea a(%rip), %rsi
     lea b(%rip), %rdx
     xor %eax, %eax
     call scanf@plt
 
+    lea write_equal(%rip), %rdi
     mov a(%rip), %rsi
     mov b(%rip), %rdx
-    mov %rdx, %rcx
-    add %rsi, %rcx
-
-    lea output_format(%rip), %rdi
+    cmp %rsi, %rdx
     xor %eax, %eax
     call printf@plt
 
-    # re-align the base pointer
+
     add $0x8, %rsp
 
     xor %eax, %eax

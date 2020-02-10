@@ -9,14 +9,14 @@
 #include <SDL.h>
 #include <glm/glm.hpp>
 
-static const float CAMERA_SPEED { 0.01f };
-static const float CAMERA_ROT_SPEED { 0.01f };
-static const float TRIANGLE_ROT_SPEED { 0.01f };
+static const float CAMERA_SPEED{0.01f};
+static const float CAMERA_ROT_SPEED{0.01f};
+static const float TRIANGLE_ROT_SPEED{0.01f};
 
-static const glm::vec4 FORWARD {0.0f, 0.0f, 1.0f, 0.0f };
+static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
 
 int main(int argc, char **argv) {
-    SDLWindow window{"lab_04", 500, 500};
+    SDLWindow window{"lab_03_01", 500, 500};
 
     std::vector<Vertex> vertices{
             Vertex{{-0.5f, -0.5f, 0.0f},
@@ -26,17 +26,18 @@ int main(int argc, char **argv) {
             Vertex{{0.5f, -0.5f, 0.0f},
                    {0.0f, 0.0f,  1.0f, 1.0f}}
     };
+
+    // these are pointers that we might have to wrap
     Geometry *geometry = new ES2Geometry{vertices};
     Material *material = new ES2ConstantMaterial{};
     Mesh *triangle1 = new Mesh{geometry, material,
                                glm::vec3{-0.5f, 0.0f, 1.0f}};
     Mesh *triangle2 = new Mesh{geometry, material,
                                glm::vec3{+0.5f, 0.0f, 1.0f}};
-
-    //TODO: one triangle renders, the other one does not
-    std::vector<Object *> objects{triangle1/*, triangle2*/};
+    std::vector<Object *> objects{triangle1, triangle2};
     Scene scene{objects};
 
+    // this is a reference, here we will not allow inheritance, thus reference
     Camera &camera = scene.get_camera();
     camera.set_field_of_view(1.13f);
     camera.set_aspect_ratio(
@@ -94,5 +95,12 @@ int main(int argc, char **argv) {
     }
 
     end:
+    // Scene
+    // Mash
+    // Camera
+    // Geometry
+    // Material
+    // Mesh
+    // ES2 Renderer
     return 0;
 }

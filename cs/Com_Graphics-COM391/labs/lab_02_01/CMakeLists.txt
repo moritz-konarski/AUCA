@@ -1,5 +1,5 @@
 
-project("lab_03_test")
+project("lab_02_01")
 
 cmake_minimum_required(VERSION "2.8.0")
 
@@ -14,6 +14,6 @@ pkg_search_module(GLM REQUIRED glm)
 
 include_directories(${SDL2_INCLUDE_DIRS} ${GL_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${GLM_INCLUDE_DIRS})
 
-add_executable(lab_03_test lab_03_test.cpp)
-target_link_libraries(lab_03_test ${SDL2_LIBRARIES} ${GL_LIBRARIES} ${GLEW_LIBRARIES} ${GLM_LIBRARIES})
+add_executable(lab_02_01 lab_02_01.cpp)
+target_link_libraries(lab_02_01 ${SDL2_LIBRARIES} ${GL_LIBRARIES} ${GLEW_LIBRARIES} ${GLM_LIBRARIES})
 

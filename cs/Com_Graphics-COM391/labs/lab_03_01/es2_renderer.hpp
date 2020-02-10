@@ -26,6 +26,7 @@ public:
 
     void render(Scene &scene, Window &window) final {
         glViewport(0, 0, (GLsizei) window.get_width(), (GLsizei) window.get_height());
+        glClear(GL_COLOR_BUFFER_BIT);
 
         Camera &camera = scene.get_camera();
         camera.update_model_matrix();
@@ -45,12 +46,13 @@ public:
                 material->use();
                 geometry->bind();
 
-                glClear(GL_COLOR_BUFFER_BIT);
+                //glClear(GL_COLOR_BUFFER_BIT);
                 glLineWidth(geometry->get_line_width());
                 glDrawArrays(geometry->get_type(), 0, geometry->get_vertices().size());
-                window.swap();
+                //window.swap();
             }
         }
+
 
         window.swap();
     }

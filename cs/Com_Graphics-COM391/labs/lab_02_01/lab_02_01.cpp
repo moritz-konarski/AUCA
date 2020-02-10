@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     // TODO: add automatic scaling here
     SDL_Window *window =
             SDL_CreateWindow(
-                    "lab_03",
+                    "lab_02_01",
                     SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                     window_width, window_height,
                     SDL_WINDOW_OPENGL

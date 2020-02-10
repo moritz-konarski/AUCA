@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window *window =
             SDL_CreateWindow(
-                    "lab_03_gh",
+                    "lab_02_02",
                     SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                     window_width, window_height,
                     SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI
@@ -302,7 +302,7 @@ int main(int argc, char **argv) {
         }
          */
 
-        //checkForErrors(errString, "l. 292");
+        //checkForErrors(errString, "l. 294");
 
         glUniformMatrix4fv(
                 mvp_matrix_uniform_location,
@@ -310,7 +310,7 @@ int main(int argc, char **argv) {
                 glm::value_ptr(triangle_mod_view_proj_mat)
         );
 
-        //checkForErrors(errString, "l. 304");
+        //checkForErrors(errString, "l. 307");
 
         glViewport(
                 0, 0,

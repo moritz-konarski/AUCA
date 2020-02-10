@@ -1,5 +1,5 @@
 
-project("lab_02")
+project("lab_01_02")
 
 cmake_minimum_required(VERSION "2.8.0")
 
@@ -13,6 +13,6 @@ pkg_search_module(GLEW REQUIRED glew)
 
 include_directories(${SDL2_INCLUDE_DIRS} ${GL_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
-add_executable(lab_02 lab_02.cpp)
-target_link_libraries(lab_02 ${SDL2_LIBRARIES} ${GL_LIBRARIES} ${GLEW_LIBRARIES})
+add_executable(lab_01_02 lab_01_02.cpp)
+target_link_libraries(lab_01_02 ${SDL2_LIBRARIES} ${GL_LIBRARIES} ${GLEW_LIBRARIES})
 

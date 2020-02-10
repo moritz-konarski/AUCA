@@ -1,4 +1,4 @@
-# E-course writing assignments
+# E-Course Writing Assignments
 
 ## What is significant about Benjamin West’s painting The death of general Wolfe?
 

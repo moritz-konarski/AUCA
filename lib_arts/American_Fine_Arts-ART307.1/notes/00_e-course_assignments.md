@@ -221,7 +221,7 @@ painting because of the high level of detail, idyllic, mostly untouched
 landscape, and the depiction of human influence on this landscape. I would 
 like to elaborate on this in class. 
 
-----------------
+### Sources
 
 [Picture Source][Church1851src]
 
@@ -235,7 +235,7 @@ like to elaborate on this in class.
 
 [Info Source 3][ChurchMet]
 
-Life
+### Life
 
 - Frederic Edwin Church
 - May 4, 1826 - April 7, 1900
@@ -248,7 +248,7 @@ Life
 - highly successful painter, most famous in his time
 - even made a lot of money with his paintings
 
-Style
+### Style
 
 - Hudson River school, like Thomas Cole
 - idealized nature, richness and beauty
@@ -257,7 +257,7 @@ Style
 - pastoral settings were very prominent
 - he made sketches in nature and later developed paintings in his studio
 
-Painting
+### Painting
 
 - 1851
 - his first true composite landscape

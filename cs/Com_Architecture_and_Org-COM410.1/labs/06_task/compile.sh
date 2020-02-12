@@ -1,1 +1,1 @@
-gcc 06_task.s -g -o a.out
+gcc 06_task_better.s -g -o a.out

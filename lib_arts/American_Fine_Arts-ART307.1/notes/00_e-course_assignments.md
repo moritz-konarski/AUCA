@@ -282,8 +282,63 @@ like to elaborate on this in class.
 - connected to the manifest destiny spirit of the time -- the wagon is
 _the_ symbol of that -- hope and progress
 
+## What Is The Content Of Mount's Art?/What Kind Of America Emerges In His Art? What Does He Want To Convey To The Viewer? What Does The Popularity Of His Art Tell Us About Americans?
 
+Mount is generally know for his genre paintings, which mean that he painted 
+scenes from the everyday life of Americans living in rural areas. This 
+includes markets, parties, and street scenes. This means that Mount is showing 
+the America that most people are experiencing, an America that people can 
+empathize with because they have experienced similar things. The fact that his 
+art was popular means that Americans wanted to see themselves or people like 
+themselves represented in art. If artists only paint rich, important people in 
+glamorous settings this cannot happen. But when people see a market with 
+normal people going about their daily business they could imagine themselves 
+doing these same things.
 
+## Horatio Greenough's sculpture of George Washington. What was the attitude and the fate of this peace of art?
+
+This sculpture was commissioned by the US government to he shown in the 
+rotunda of the Capitol in Washington DC. The marble statue should show the 
+father of the country in the appropriate manner. Greenough, in his classical 
+style, took inspiration from the famous ancient Greek Zeus statue and used a 
+bust of Washington's head as a model for his sculptures head.            
+
+The finished marble statue showed Washington in a neoclassical style, wearing 
+ancient Greek clothing, holding a Greek sword, and basically having Zeus's 
+torso, which was bare. This was not the Washington people expected and most of 
+them had absolutely no connection to the Greek elements in the picture. Some 
+also thought that Washington didn't need anyone to represent himself. The 
+statue, even though the craftsmanship was superb, was ridiculed and ultimately 
+removed from the rotunda and placed outside where the weather got to it.
+
+## Why was _Washington Crossing the Delaware_ so popular? What are the inaccuracies in it that the critics point out? Are they really important?
+
+This painting showed an undeniable American hero, George Washington, 
+committing a heroic deed. The military tactic was successful and the enemy 
+forces were routed. Washington, as the father of the nation and accomplished 
+general, was portrayed here as a brave general leading his troops into battle 
+and outsmarting the enemy. I can imagine this portrayal of the national hero 
+being well received because it makes him look heroic.            
+
+Some of the inaccuracies include a cross section of the American population 
+being represented on the boats, the usage of an American flag that did not 
+exist at the time of the crossing, and that his stance is possibly not the 
+best one to have in that kind of row boat.             
+
+These inaccuracies are not that important in my opinion. The painting does 
+show a historic event and thus it would be ideal if it also accurately 
+represented the whole scene and wouldn't take liberties with the details. 
+Nonetheless, I think that Leutze was not aiming for complete historical 
+accuracy with this painting. I think he wanted to represent the idea of 
+heroism and pride that were associated with this event and that is certainly 
+the case.            
+
+Furthermore, considering that this painting was created 76 years after the 
+actual event, that the painter was not present, and that he painted this in 
+Germany and not in the US I could also imagine that these were accidents that 
+Leutze did not intend. Especially the flag being changed is very 
+understandable because the historically accurate Grand Union Flag still had 
+the Union Jack on it, which would not have been popular at all.
 
 
 [Church1851src]: https://upload.wikimedia.org/wikipedia/commons/b/ba/New_England_Scenery%2C_Frederic_Edwin_Church%2C_1851_-_Museum_of_Fine_Arts%2C_Springfield%2C_MA_-_DSC03984.JPG

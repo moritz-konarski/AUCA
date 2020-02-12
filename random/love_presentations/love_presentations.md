@@ -183,3 +183,106 @@ Questions and Discussion
 
 Everyone around the globe wants to find someone -- that's a constant. There are
 many hurdles to overcome.
+
+# Love in the Stone Age -- Dr. Aida Abdykhanova
+
+- love in the stone age, but mostly indirect evidence
+- it affects all kinds of different aspects of our life
+- imaginations of love are probably formed by cartoons etc
+- anatomically modern humans can form long term bonds, which is one of the
+unique features of humans
+- Varieties of views
+    - promiscuity (L. Morgan)
+    - primitive communism (F. Engels)
+    - sex for food (O. Lovejoy)
+    - sex contract (H. Fisher)
+    - empathy and compassion
+    - ability to form a long-term bond
+- KNM-ER 1808 died of vitamin A overdose, probably from eating liver
+- _Dmanisi_ skull is super old, people at that time were 40 years old at most,
+the skull has no teeth (natural causes) so scientists concluded that they person must have
+been ~80 years old
+- _How Comapssion Made Us Human_ is an interesting book to read
+- modern human faces were shaped by (among others) the need for social skills
+- more than 20 types of different types of emotions -- our face allows us to
+express a wide range of emotions
+- how the face shape changed can he clearly seen, this face change went faster
+than some other types of biological changes
+- footprints of Laetoli are more than 3,66 mya, 1 male, 2-3 females, 1-2
+children
+- the were Australopithecus africiensis
+- the footprints of the child disappear from time to time suggesting that is
+was carried
+- recently analysis discovered new footprints, might actually be two males and
+two small individuals (probably females) and maybe two children
+- AL 333 from Hadar, first family ever found, also Australopithecus afrosensis
+- many estimations for the number of individuals, 17, 9 adults, 3 adolescents,
+5 children
+- a paper predicted polygyny in early apes, Ardipithecus, Neanderthals, early
+modern humans, but not in Australopithecus
+- they used digit ratios to do that so it's not too certain, but cool
+- Happisburgh human footprints, a couple adolescents and stuff, about 12
+people, from 2 to 18 years
+- Ignology studies footprints and the like
+- genetic evidence for patrilocal mating behavior among Neanderthal groups,
+12 individuals, around 49.000 years ago, Y-chromosome marker and Mitochondrial 
+DNA analysis (because it is transmitted to all genders)
+- seems to be evidence of cannibalism
+- Rouffignac cave A1 in France there are a lot of paintings, but they are also
+covered in soft sediment where people drew stuff with their fingers, probably
+made by children, one of them was made by a ~5 year old girl
+- the paintings are 2m off the ground -- adult picked up the child and helped
+it -- kind of like play
+- H. sapiens appeared 200,000 years ago, they interbred with Neanderthals and
+thus we all have some of their DNA 
+- there was also a first generation Neanderthal-Denisovan hybrid found that
+gives insight into the interbreeding that happened
+- the mother originated in Europe and not in the Altai Mountains
+- because of successful interbreeding we have the double taxonomies of Homo
+sapiens sapiens and Homo sapiens neanderthalensis
+- Sima de los Huesos -- a hole that was used as a grave, 3m meters of sediment
+full of bones, 430,000 years ago, 29 individuals have been found, a burial
+complex
+- the also found a one hand-axe ("Excalibur") that might have been a gift for
+the dead
+- Shanidar Cave (IV) a 30-35 year old man, lots of flowers, places where
+flowers were concentrated, those are considered remedies, maybe Neanderthals
+used them as healing items
+- the cave has multiple burial places
+- Arene Candide cave, 23,500 years ago, a 15 year old boy, he had important
+artifacts with him, for example ivory, kauri shells, obsidian tools...
+- ivory was from mammoths which were extinct in Europe at the time, obsidian
+was from southern France, kauri shells only exist in norther Europe -- exchange
+of goods
+- the boy may have been killed by a bear or something
+- they found stones (pebbles) used to apply ochre to dead people and then being
+destroyed the tools 
+- they could have also thrown them into fire and the thermal shock could have
+destroyed them
+- Homo something can form long-term relationship, there were multifamily
+groups, there was mating between distinct groups, dead received special
+treatment
+
+Questions
+
+1. How long term were the relationships? Hard to say, but probably relatively
+long because taking care of children takes time and effort. Parental investment
+by males caused high fidelity to them in women, in humans male parental
+investment is a lot higher that in other apes. In the stone age families were
+relatively small, parental involvement allows offspring to be more fertile and
+have more children in their turn
+2. the need to express emotions was probably the main drive for the facial
+change. One of the things that are studied are the number of muscles that are
+needed to make faces. Also the shape of brows and our less prominent eyebrow
+ridges make expressions easier
+3. Do these kinds of findings exist in Asia or maybe in Kyrgyzstan? There were
+some skulls found in a cave here and it disappeared after the scientist that
+had it died. In Tashkent a museum has original teeth that nobody can study, and
+there are conflicting reports on what that stuff is from. Also some of the
+climate here makes some stuff less likely to survive (humidity, acidic soil),
+plus just a general lack of investigation
+4. In modern animal groups grown up males are forced to leave while in ancient
+humans woman were left sometimes and men stayed around. It is super hard to
+find any evidence for any of this. There is evidence for matriarchy or
+egalitarianism. Biologically, males tend to be more daring and they take their
+families along, not like men going out and leaving children and wives behind.

@@ -8,6 +8,8 @@ of primes
 - [Riemann Hypothesis][riemann], Riemann zeta function for complex numbers,
 where the non-trivial zeroes are
 - large cardinals -- large infinities
+- Shor's Algorithm for factoring large prime numbers using quantum computers in
+polynomial time
 - [other stuff][pop-mech]
 
 

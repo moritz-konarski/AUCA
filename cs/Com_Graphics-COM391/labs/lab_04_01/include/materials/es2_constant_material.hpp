@@ -19,8 +19,8 @@ namespace aur {
     class ES2ConstantMaterial : public ConstantMaterial {
     public:
         ES2ConstantMaterial() {
-            std::string vertex_shader_source = FileUtilities::read_text_file("../data/shaders/es2_constant_shader.vert");
-            std::string fragment_shader_source = FileUtilities::read_text_file("../data/shaders/es2_constant_shader.frag");
+            std::string vertex_shader_source = FileUtilities::read_text_file("../../data/shaders/es2_constant_shader.vert");
+            std::string fragment_shader_source = FileUtilities::read_text_file("../../data/shaders/es2_constant_shader.frag");
             std::vector<std::string> attributes{
                 "position",
                 "color"

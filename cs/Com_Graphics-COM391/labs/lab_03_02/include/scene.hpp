@@ -10,7 +10,7 @@
 
 class Scene {
 public:
-    explicit Scene(const std::vector<Object *> &objects = {}) {
+    explicit Scene(const std::vector<Object *> &objects = { }) {
         for (auto object : objects) {
             _objects.push_back(std::shared_ptr<Object>(object));
         }
@@ -24,7 +24,7 @@ public:
         _clear_color = clearColor;
     }
 
-    const std::vector<std::shared_ptr<Object>> &get_objects() const {
+    const std::vector<std::shared_ptr<Object>> & get_objects() const {
         return _objects;
     }
 
@@ -45,7 +45,7 @@ public:
     }
 
 private:
-    glm::vec4 _clear_color{0.0f};
+    glm::vec4 _clear_color { 0.0f };
 
     std::vector<std::shared_ptr<Object>> _objects;
 

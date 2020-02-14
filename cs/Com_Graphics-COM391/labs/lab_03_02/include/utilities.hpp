@@ -7,7 +7,7 @@
 
 class FileUtilities {
 public:
-    static std::string read_text_file(const std::string &path) {
+    static std::string read_text_file(const std::string& path) {
         std::ifstream file_stream(path);
         std::stringstream string_stream;
         string_stream << file_stream.rdbuf();

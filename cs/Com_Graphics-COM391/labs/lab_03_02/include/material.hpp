@@ -15,7 +15,7 @@ public:
 
     virtual ~Material() = default;
 
-    virtual void update(glm::mat4 &mvp_matrix) = 0;
+    virtual void update(glm::mat4 &mvp_matrit) = 0;
 
     virtual void use() = 0;
 

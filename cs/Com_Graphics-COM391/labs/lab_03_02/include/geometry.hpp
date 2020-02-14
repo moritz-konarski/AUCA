@@ -9,14 +9,14 @@
 #include <glm/glm.hpp>
 
 struct Vertex {
-    glm::vec3 position{0.0f};
-    glm::vec4 color{1.0f};
+    glm::vec3 position { 0.0f };
+    glm::vec4 color { 1.0f };
 };
 
 class Geometry {
 public:
     explicit Geometry(std::vector<Vertex> vertices) :
-            _vertices(std::move(vertices)) {}
+        _vertices(std::move(vertices)) { }
 
     virtual ~Geometry() = default;
 
@@ -45,8 +45,8 @@ public:
     virtual void bind() = 0;
 
 protected:
-    int _type{0x0004};
-    float _line_width{1.0f};
+    int _type { 0x0004 };
+    float _line_width { 1.0f };
 
     std::vector<Vertex> _vertices;
 };

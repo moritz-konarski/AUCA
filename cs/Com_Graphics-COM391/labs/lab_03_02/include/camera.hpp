@@ -55,10 +55,10 @@ public:
 
     void update_projection_matrix() {
         _projection_matrix = glm::perspective<float>(
-                _field_of_view,
-                _aspect_ratio,
-                _near_plane,
-                _far_plane
+            _field_of_view,
+            _aspect_ratio,
+            _near_plane,
+            _far_plane
         );
     }
 
@@ -67,14 +67,14 @@ public:
     }
 
 private:
-    float _aspect_ratio{1.0f};
-    float _field_of_view{1.0f};
-    float _near_plane{0.01f};
-    float _far_plane{1000.0f};
+    float _aspect_ratio { 1.0f };
+    float _field_of_view { 1.0f };
+    float _near_plane { 0.01f };
+    float _far_plane { 1000.0f };
 
-    glm::mat4 _view_matrix{1.0f};
-    glm::mat4 _projection_matrix{1.0f};
-    glm::mat4 _view_projection_matrix{1.0f};
+    glm::mat4 _view_matrix { 1.0f };
+    glm::mat4 _projection_matrix { 1.0f };
+    glm::mat4 _view_projection_matrix { 1.0f };
 };
 
 #endif

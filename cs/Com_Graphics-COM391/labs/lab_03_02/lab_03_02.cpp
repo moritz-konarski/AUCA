@@ -16,7 +16,7 @@ static const float TRIANGLE_ROT_SPEED{0.01f};
 static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
 
 int main(int argc, char **argv) {
-    SDLWindow window{"lab_03_01", 500, 500};
+    SDLWindow window{"lab_03_02", 500, 500};
 
     std::vector<Vertex> vertices{
             Vertex{{-0.5f, -0.5f, 0.0f},
@@ -90,12 +90,17 @@ int main(int argc, char **argv) {
                 }
             }
         }
-        triangle1->get_rotation().y += TRIANGLE_ROT_SPEED;
-        triangle2->get_rotation().y -= TRIANGLE_ROT_SPEED;
 
         renderer.render(scene, window);
     }
 
     end:
+    // Scene
+    // Mash
+    // Camera
+    // Geometry
+    // Material
+    // Mesh
+    // ES2 Renderer
     return 0;
 }

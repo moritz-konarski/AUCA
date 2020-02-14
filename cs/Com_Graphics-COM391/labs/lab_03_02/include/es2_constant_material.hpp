@@ -16,17 +16,13 @@ class ES2ConstantMaterial : public Material {
 public:
     ES2ConstantMaterial() {
         std::string vertex_shader_source =
-                FileUtilities::read_text_file(
-                        "../include/constant_shader.vert");
+                FileUtilities::read_text_file("../include/constant_shader.vert");
         std::string fragment_shader_source =
-                FileUtilities::read_text_file(
-                        "../include/constant_shader.frag");
-        std::vector<std::string> attributes{"position", "color"};
-        std::vector<std::string> uniforms{"model_view_projection_matrix"};
+                FileUtilities::read_text_file("../include/constant_shader.frag");
+        std::vector<std::string> attributes { "position", "color" };
+        std::vector<std::string> uniforms { "model_view_projection_matrix" };
 
-        _shader = std::shared_ptr<Shader>{
-                new ES2Shader(vertex_shader_source, fragment_shader_source,
-                              attributes, uniforms)};
+        _shader = std::shared_ptr<Shader> { new ES2Shader(vertex_shader_source, fragment_shader_source, attributes, uniforms) };
     }
 
     void update(glm::mat4 &mvp_matrix) final {
@@ -34,12 +30,11 @@ public:
             _shader->compile();
         }
 
-        int mvp_matrix_uniform_location{
-                _shader->get_uniforms().at("model_view_projection_matrix")};
+        int mvp_matrix_uniform_location { _shader->get_uniforms().at("model_view_projection_matrix") };
         glUniformMatrix4fv(
-                mvp_matrix_uniform_location,
-                1, GL_FALSE,
-                glm::value_ptr(mvp_matrix)
+            mvp_matrix_uniform_location,
+            1, GL_FALSE,
+            glm::value_ptr(mvp_matrix)
         );
     }
 

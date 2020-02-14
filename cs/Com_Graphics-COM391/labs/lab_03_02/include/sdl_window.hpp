@@ -9,22 +9,21 @@
 class SDLWindow : public Window {
 public:
     SDLWindow(const std::string &name, int width, int height)
-            : Window{name, width, height} {
+        : Window { name, width, height } {
         SDL_Init(SDL_INIT_VIDEO);
 
         _window =
-                SDL_CreateWindow(
-                        name.c_str(),
-                        SDL_WINDOWPOS_CENTERED,
-                        SDL_WINDOWPOS_CENTERED,
-                        width, height,
-                        SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI
-                );
+            SDL_CreateWindow(
+                name.c_str(),
+                SDL_WINDOWPOS_CENTERED,
+                SDL_WINDOWPOS_CENTERED,
+                width, height,
+                SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI
+            );
         SDL_GL_GetDrawableSize(_window, &_width, &_height);
 
         _gl_context = SDL_GL_CreateContext(_window);
-        glewExperimental = GL_TRUE;
-        glewInit();
+        glewExperimental = GL_TRUE; glewInit();
 
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);

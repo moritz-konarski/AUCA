@@ -7,8 +7,8 @@
 class Window {
 public:
     Window(std::string name, int width, int height) :
-            _name{std::move(name)},
-            _width{width}, _height{height} {}
+        _name { std::move(name) },
+        _width { width }, _height { height } { }
 
     virtual ~Window() = default;
 

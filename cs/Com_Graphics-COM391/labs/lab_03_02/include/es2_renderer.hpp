@@ -11,23 +11,21 @@ class ES2Renderer : public Renderer {
 public:
     void setup(Scene &scene, Window &window) final {
         glm::vec4 clear_color = scene.get_clear_color();
-        glClearColor(clear_color.r, clear_color.g, clear_color.b,
-                     clear_color.a);
+        glClearColor(clear_color.r, clear_color.g, clear_color.b, clear_color.a);
 
         for (auto &object : scene.get_objects()) {
             Mesh *mesh = dynamic_cast<Mesh *>(object.get());
 
-            const auto &geometry = mesh->get_geometry();
-            const auto &material = mesh->get_material();
-            glm::mat4 mvp_matrix{1.0f};
+            const auto& geometry = mesh->get_geometry();
+            const auto& material = mesh->get_material();
+            glm::mat4 mvp_matrix { 1.0f };
             material->update(mvp_matrix);
             geometry->update(*mesh->get_material());
         }
     }
 
     void render(Scene &scene, Window &window) final {
-        glViewport(0, 0, (GLsizei) window.get_width(),
-                   (GLsizei) window.get_height());
+        glViewport(0, 0, (GLsizei) window.get_width(), (GLsizei) window.get_height());
         glClear(GL_COLOR_BUFFER_BIT);
 
         Camera &camera = scene.get_camera();
@@ -42,8 +40,7 @@ public:
                 auto material = mesh->get_material();
 
                 mesh->update_model_matrix();
-                glm::mat4 mvp_matrix = camera.get_view_projection_matrix() *
-                                       object->get_model_matrix();
+                glm::mat4 mvp_matrix = camera.get_view_projection_matrix() * object->get_model_matrix();
                 material->update(mvp_matrix);
 
                 material->use();
@@ -51,8 +48,7 @@ public:
 
                 //glClear(GL_COLOR_BUFFER_BIT);
                 glLineWidth(geometry->get_line_width());
-                glDrawArrays(geometry->get_type(), 0,
-                             geometry->get_vertices().size());
+                glDrawArrays(geometry->get_type(), 0, geometry->get_vertices().size());
                 //window.swap();
             }
         }

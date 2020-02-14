@@ -12,9 +12,9 @@ public:
          const glm::vec3 &position = glm::vec4(0.0f),
          const glm::vec3 &rotation = glm::vec4(0.0f),
          const glm::vec3 &scale = glm::vec4(1.0f)) :
-            Object(position, rotation, scale),
-            _geometry{std::shared_ptr<Geometry>{geometry}},
-            _material{std::shared_ptr<Material>{material}} {}
+         Object(position, rotation, scale),
+        _geometry { std::shared_ptr<Geometry> { geometry } },
+        _material { std::shared_ptr<Material> { material } } { }
 
     const std::shared_ptr<Geometry> &get_geometry() const {
         return _geometry;

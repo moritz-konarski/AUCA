@@ -95,12 +95,5 @@ int main(int argc, char **argv) {
     }
 
     end:
-    // Scene
-    // Mash
-    // Camera
-    // Geometry
-    // Material
-    // Mesh
-    // ES2 Renderer
     return 0;
 }

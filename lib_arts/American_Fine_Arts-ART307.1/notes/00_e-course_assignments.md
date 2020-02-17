@@ -340,6 +340,35 @@ Leutze did not intend. Especially the flag being changed is very
 understandable because the historically accurate Grand Union Flag still had 
 the Union Jack on it, which would not have been popular at all.
 
+## Read the stories The Outcast of the Poker Flat by Bret Harte and Love of Life by Jack London. Which of these two stories can be described as an example of romanticism and which of realism/naturalism?
+
+Love of Life by Jack London can be called an example of romanticism because it 
+focuses on individualism, emotion, and nature. This is a contrast to the focus 
+on the realistic speech and life in the American West in The Outcasts of Poker 
+Flat. I don't think these text fit perfectly into these categories because 
+people like the protagonist in Love of Life would probably call starvation and 
+misfortune part of the life of gold seekers, while being expelled from a town 
+under the threat of death might not have been extremely common for most people.           
+
+All in all, The Outcasts of Poker flat does fit the label of realism because it 
+tell the tale of a gambler, a drunk (and suspected thief), and two possible 
+prostitutes that are expelled from their town after some money went missing 
+and a couple people got hanged. The use of slang in this story and the fact 
+that the outcasts meet two young people running away to get married after the 
+brides father does not give them his blessing makes if feel realistic.           
+
+In Love of Life, the gold seeker is stranded in the wilderness after he sprains 
+his ankle and his companion Bill deserts him. Through sheer force of will he 
+survives and soldiers on. The only thing that keeps him going is life itself, 
+he is no longer in control of his body. The difficulty of his journey forces 
+him to let go of the gold that he found because it is too heavy and at the end 
+he can only crawl towards a ship he spies on the horizon, trailed by a wolf as 
+close to death as he is. In the end he cannot think anymore and relies on his 
+instincts to survive, killing the wolf with his teeth and crawling towards the 
+ship whose crew find him and nurse him back to health. These elements of the 
+story fit the individualism, emotion, and focus on nature that romanticism had.
+
+
 
 [Church1851src]: https://upload.wikimedia.org/wikipedia/commons/b/ba/New_England_Scenery%2C_Frederic_Edwin_Church%2C_1851_-_Museum_of_Fine_Arts%2C_Springfield%2C_MA_-_DSC03984.JPG
 [ColePastoral]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg/1024px-Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg

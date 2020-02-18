@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 #define START  2
-#define LIMIT 10
+#define STOP  10
 
 void collatz(long int n);
 
 int main(int argc, char **argv){
-    long int start = START, stop = LIMIT;
+
+    long int start = START, 
+             stop  = STOP;
+
     switch (argc) {
         case 2:
             sscanf(argv[1], "%ld", &start);
@@ -29,9 +32,12 @@ int main(int argc, char **argv){
 }
 
 void collatz(long int n) {
+
     printf("%ld\n", n);
-    while (n > 1) {
-        n = (n % 2 == 0) ? n / 2 : 3 * n + 1;
+
+    while (n - 1) {
+        n = (n % 2 == 0) ? (n / 2) : (3 * n + 1);
         printf("%ld\n", n);
     }
+
 }

@@ -6,9 +6,9 @@ touch "./$1/$1.tex" "./$1/compile_latex.sh"
 
 echo "#!/bin/bash
 cd "./latex_build"
-latexmk -pdf "../$1"
+latexmk -pdf "../$1.tex"
 cd ..
-mv "./latex_build/$(basename "$1" .tex).pdf" "."
+mv "./latex_build/$(basename "$1" .tex).pdf" "./_$(basename "$1" .tex).pdf"
 " > "./$1/compile_latex.sh"
 
 echo "

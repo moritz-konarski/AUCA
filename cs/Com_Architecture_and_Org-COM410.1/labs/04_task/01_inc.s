@@ -8,8 +8,9 @@ output_format: .string "%ld\n"
 main:
         
     # align the stack
-    push %rbp
-    mov %rsp, %rbp
+    push %rbp      # save address of the previous stack frame (frame pointer)
+    mov %rsp, %rbp # move current stack frame address to frame pointer
+                   # enter function
 
     lea input_format(%rip), %rdi    
     lea number(%rip), %rsi          
@@ -23,7 +24,10 @@ main:
     xor %eax, %eax
     call printf@plt
 
-    leave
+#leave
+    # equivalent to 
+    mov %rbp, %rsp # undo the steps from above
+    pop %rbp
 
     xor %eax, %eax
     ret

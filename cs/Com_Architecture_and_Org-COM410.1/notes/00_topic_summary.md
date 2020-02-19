@@ -1,6 +1,6 @@
-# Topic Summary
+# Summary
 
-## Architecture
+## Lectures
 
 - registers
 - program counter
@@ -13,6 +13,12 @@
 - out-of-order execution
 
 ## Labs
+
+### Lab 01
+
+- `gcc <file> -o <ouput> -S`: produces an assembly files
+- `gcc <file> -o <ouput> -g`: produces a file that is useful for gdb
+- `gdb ./<exe> -tui`: start gdb with a graphical view of the code
 
 ### Lab 02
 
@@ -48,7 +54,7 @@ scanf is relative to the program, makes function reuse easier
 
 - `call <func>`, `ret`: call pushes the return address onto the stack, return
 pops it off again to return to where the function was entered
-- `cltq`: convert long to quad, basically a cast from `int` to `long` in c
+- `cltq`: convert long to quad, basically a cast from `int` to `long` in `C`
 
 ### Lab 07
 
@@ -57,24 +63,17 @@ pops it off again to return to where the function was entered
 to condition jump instructions
 - different from `call`, this does not push or pop addresses, it just jumps to
 different parts of the code
-- `test` vs `cmp`: `test` is a bitwise and while `cmp` is an arithmetic
-operation -- `test <reg>, <reg> == cmp <reg>, 0`
+- `test` vs `cmp`: `test` is a bitwise `and` while `cmp` is an arithmetic
+operation     
+`test <reg>, <reg> == cmp <reg>, 0`
 
-## Other Stuff
+## TODO
 
 - `.global` labels
-- `%eax` being set to zero
 - section of assembly code (`.section`)
-- why we need `push %rbp` to `call puts@plt`
-- `push %rbp` and then `mov %rsp, %rbp`
-- subtracting 8 from base pointer and then adding it back at the end
-- what does `lea var(%rip)` do exactly
-- what does `leave` do
-- what does `ret` do
 - order of registers for arguments to functions
 - multi-register operations
 - `int x 0, 0`
-- plt
 - position independent code
 - got (global offset table)
 - syscall vs call

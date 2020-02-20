@@ -18,7 +18,7 @@ $$
 $$T(x) = \left\{
     \begin{array}{ll}
         \frac{x}{2}  \quad &\text{if } x \equiv 1 \text{ (mod 2)} \\
-        \frac{3x+1}{x} \quad &\text{if } x \equiv 0 \text{ (mod 2)}
+        \frac{3x+1}{2} \quad &\text{if } x \equiv 0 \text{ (mod 2)}
     \end{array}
 \right.
 $$
@@ -46,9 +46,16 @@ $C^{(k)}(m)=1$
 - numbers up to $17 \times 2^{58} \approx 4.89 \times 10^{18}$ have been
 computationally verified
 
-## Related Questions
+## Why is the $3x+1$ Problem Interesting?
 
-- this is part of _number theory_: study of integers and integer valued
+- simple problem but it is not solved yet
+- maybe new areas of mathematics are needed to prove or disprove this
+conjecture
+- could lead to insights into prime factorization 
+
+## Related Information
+
+- part of _number theory_: study of integers and integer valued
 functions
 - two related questions
     - is there a divergent trajectory?
@@ -70,13 +77,6 @@ Cambridge, Mass. in 1950
 - Yamada 1981: had mathematical faults
 - Cadogan 2006: had incorrect indices in a function
 - Bruckman's 2008: proof would exclude the cycle starting at 1
-
-## Why is the $3x+1$ Problem Interesting?
-
-- simple problem but it is not solved yet
-- maybe new areas of mathematics are needed to prove or disprove this
-conjecture
-- could lead to insights into prime factorization 
 
 ## References
 

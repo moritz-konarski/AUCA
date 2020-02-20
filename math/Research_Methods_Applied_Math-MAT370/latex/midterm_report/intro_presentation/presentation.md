@@ -38,7 +38,7 @@ orbits_
 - _height_ $h(m)$: least $k$ for for which the _Collatz function_ $C(x)$ has
 $C^{(k)}(m)=1$
 
-## Examples of Collatz Sequences
+## Examples of Trajectories
 
 - $x=13 \rightarrow \{13,40,20,10,5,16,8,4,2,1,\dots\}$
 - $x=20 \rightarrow \{20,10,5,16,8,4,2,1,\dots\}$

@@ -8,8 +8,8 @@ namespace aur {
     class Window {
     public:
         Window(std::string name, unsigned int width, unsigned int height) :
-            _name{std::move(name)},
-            _width{width}, _height{height} {}
+                _name{std::move(name)},
+                _width{width}, _height{height} {}
 
         virtual ~Window() = default;
 

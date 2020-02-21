@@ -17,7 +17,7 @@ namespace aur {
     class Geometry {
     public:
         explicit Geometry(std::vector<Vertex> vertices) :
-            _vertices(std::move(vertices)) {}
+                _vertices(std::move(vertices)) {}
 
         virtual ~Geometry() = default;
 

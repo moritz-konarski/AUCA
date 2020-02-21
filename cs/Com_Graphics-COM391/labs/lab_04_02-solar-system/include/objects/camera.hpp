@@ -15,7 +15,8 @@ namespace aur {
             return _receive_aspect_ratio_from_renderer;
         }
 
-        void set_receive_aspect_ratio_from_renderer(bool receive_aspect_ratio_from_renderer) {
+        void set_receive_aspect_ratio_from_renderer(
+                bool receive_aspect_ratio_from_renderer) {
             _receive_aspect_ratio_from_renderer = receive_aspect_ratio_from_renderer;
         }
 
@@ -81,8 +82,10 @@ namespace aur {
             return _view_projection_matrix;
         }
 
-        void set_model_matrix_requires_update(bool model_matrix_requires_update) final {
-            Object::set_model_matrix_requires_update(model_matrix_requires_update);
+        void set_model_matrix_requires_update(
+                bool model_matrix_requires_update) final {
+            Object::set_model_matrix_requires_update(
+                    model_matrix_requires_update);
 
             if (model_matrix_requires_update) {
                 _view_matrix_requires_update = true;
@@ -90,8 +93,10 @@ namespace aur {
             }
         }
 
-        void set_world_matrix_requires_update(bool world_matrix_requires_update) final {
-            Object::set_world_matrix_requires_update(world_matrix_requires_update);
+        void set_world_matrix_requires_update(
+                bool world_matrix_requires_update) final {
+            Object::set_world_matrix_requires_update(
+                    world_matrix_requires_update);
 
             if (world_matrix_requires_update) {
                 _view_matrix_requires_update = true;
@@ -114,7 +119,8 @@ namespace aur {
             return _projection_matrix_requires_update;
         }
 
-        void set_projection_matrix_requires_update(bool projection_matrix_requires_update) {
+        void set_projection_matrix_requires_update(
+                bool projection_matrix_requires_update) {
             _projection_matrix_requires_update = projection_matrix_requires_update;
             if (_view_matrix_requires_update) {
                 _view_projection_matrix_requires_update = true;
@@ -125,7 +131,8 @@ namespace aur {
             return _view_projection_matrix_requires_update;
         }
 
-        void set_view_projection_matrix_requires_update(bool view_projection_matrix_requires_update) {
+        void set_view_projection_matrix_requires_update(
+                bool view_projection_matrix_requires_update) {
             _view_projection_matrix_requires_update = view_projection_matrix_requires_update;
         }
 
@@ -155,10 +162,10 @@ namespace aur {
         void _update_projection_matrix_if_necessary() {
             if (_projection_matrix_requires_update) {
                 _projection_matrix = glm::perspective<float>(
-                    _field_of_view,
-                    _aspect_ratio,
-                    _near_plane,
-                    _far_plane
+                        _field_of_view,
+                        _aspect_ratio,
+                        _near_plane,
+                        _far_plane
                 );
                 _projection_matrix_requires_update = false;
             }

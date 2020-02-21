@@ -2,48 +2,89 @@
 
 static const float CAMERA_SPEED{0.01f};
 static const float CAMERA_ROT_SPEED{0.01f};
-static const float TRIANGLE_ROT_SPEED{0.01f};
+// Sun constants
+static const float SUN_ROT_SPEED{0.015f};
+static const float SUN_RADIUS{0.2f};
+static const glm::vec3 SUN_POSITION{glm::vec3{0.0f, 0.0f, 0.0f}};
+static const glm::vec4 SUN_COLOR{glm::vec4{1.0f, 1.0f, 0.0f, 0.0f}};
+// Earth constants
+static const float EARTH_ROT_SPEED{0.05f};
+static const float EARTH_RADIUS{0.05f};
+static const glm::vec3 EARTH_POSITION{glm::vec3{1.3f, 0.0f, 0.0f}};
+static const glm::vec4 EARTH_COLOR{glm::vec4{0.0f, 0.0f, 1.0f, 0.0f}};
+// Moon constants
+static const float MOON_ROT_SPEED{0.01f};
+static const float MOON_RADIUS{0.02f};
+static const glm::vec3 MOON_POSITION{glm::vec3{0.3f, 0.0f, 0.0f}};
+static const glm::vec4 MOON_COLOR{glm::vec4{0.8f, 0.8f, 0.8f, 0.0f}};
+// Mars constants
+static const float MARS_ROT_SPEED{0.03f};
+static const float MARS_RADIUS{0.04f};
+static const glm::vec3 MARS_POSITION{glm::vec3{-2.0f, 0.0f, 0.0f}};
+static const glm::vec4 MARS_COLOR{glm::vec4{1.0f, 0.0f, 0.0f, 0.0f}};
+
+
+static const int VERTEX_COUNT{80};
 
 static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
+
+std::vector<aur::Vertex>
+createVertices(float radius, glm::vec4 color, int vertexCount) {
+
+    std::vector<aur::Vertex> vertices;
+    float scale = vertexCount / 2.0;
+    for (int i = 0; i < vertexCount; ++i) {
+        vertices.push_back(
+                aur::Vertex{{radius * cos(M_PI / scale * i),
+                                    radius * sin(M_PI / scale * i), 0.0f},
+                            {color}});
+    }
+
+    return vertices;
+}
 
 int main(int argc, char **argv) {
     using namespace aur;
 
-    auto window = std::make_shared<SDLWindow>("lab_04_02-solar-system", 500, 500);
+    auto window = std::make_shared<SDLWindow>("lab_04_02-solar-system", 500,
+                                              500);
 
-    std::vector<Vertex> triangleVertices{
-            Vertex{{-0.5f, -0.5f, 0.0f},
-                   {1.0f,  0.0f,  0.0f, 1.0f}},
-            Vertex{{0.0f, 0.5f, 0.0f},
-                   {0.0f, 1.0f, 0.0f, 1.0f}},
-            Vertex{{0.5f, -0.5f, 0.0f},
-                   {0.0f, 0.0f,  1.0f, 1.0f}}
-    };
-    auto triangleGeometry = std::make_shared<ES2Geometry>(triangleVertices);
-    std::vector<Vertex> rectangleVertices{
-            Vertex{{-0.5f, -0.5f, 0.0f},
-                   {1.0f,  0.0f,  0.0f, 1.0f}},
-            Vertex{{-0.5f, 0.5f, 0.0f},
-                   {0.0f,  1.0f, 0.0f, 1.0f}},
-            Vertex{{0.5f, 0.5f, 0.0f},
-                   {0.0f, 0.0f, 1.0f, 1.0f}},
-            Vertex{{0.5f, -0.5f, 0.0f},
-                   {1.0f, 1.0f,  0.0f, 1.0f}}
-    };
-    auto rectangleGeometry = std::make_shared<ES2Geometry>(rectangleVertices);
-    rectangleGeometry->set_type(GL_TRIANGLE_FAN);
     auto material = std::make_shared<ES2ConstantMaterial>();
 
-    auto triangle = std::make_shared<Mesh>(triangleGeometry, material,
-                                           glm::vec3{-1.0f, 0.0f, 0.0f});
-    triangle->set_name("triangle");
+    std::vector<Vertex> sunVertices =
+            createVertices(SUN_RADIUS, SUN_COLOR, VERTEX_COUNT);
+    auto sunGeometry = std::make_shared<ES2Geometry>(sunVertices);
+    sunGeometry->set_type(GL_TRIANGLE_FAN);
+    auto sun = std::make_shared<Mesh>(sunGeometry, material, SUN_POSITION);
+    sun->set_name("Sun");
 
-    auto rectangle = std::make_shared<Mesh>(rectangleGeometry, material,
-                                            glm::vec3{1.0f, 0.0f, 0.0f});
-    rectangle->set_name("rectangle");
-    triangle->add_child(rectangle);
+    std::vector<Vertex> earthVertices =
+            createVertices(EARTH_RADIUS, EARTH_COLOR, VERTEX_COUNT);
+    auto earthGeometry = std::make_shared<ES2Geometry>(earthVertices);
+    earthGeometry->set_type(GL_TRIANGLE_FAN);
+    auto earth = std::make_shared<Mesh>(earthGeometry, material,
+                                        EARTH_POSITION);
+    earth->set_name("Earth");
 
-    std::vector<std::shared_ptr<Object>> objects{triangle};//, rectangle};
+    std::vector<Vertex> moonVertices =
+            createVertices(MOON_RADIUS, MOON_COLOR, VERTEX_COUNT);
+    auto moonGeometry = std::make_shared<ES2Geometry>(moonVertices);
+    moonGeometry->set_type(GL_TRIANGLE_FAN);
+    auto moon = std::make_shared<Mesh>(moonGeometry, material, MOON_POSITION);
+    moon->set_name("Moon");
+
+    std::vector<Vertex> marsVertices =
+            createVertices(MARS_RADIUS, MARS_COLOR, VERTEX_COUNT);
+    auto marsGeometry = std::make_shared<ES2Geometry>(marsVertices);
+    marsGeometry->set_type(GL_TRIANGLE_FAN);
+    auto mars = std::make_shared<Mesh>(marsGeometry, material, MARS_POSITION);
+    mars->set_name("Mars");
+
+    sun->add_child(earth);
+    earth->add_child(moon);
+    sun->add_child(mars);
+
+    std::vector<std::shared_ptr<Object>> objects{sun};
     auto scene = std::make_shared<Scene>(objects);
 
     auto &camera = scene->get_camera();
@@ -60,7 +101,7 @@ int main(int argc, char **argv) {
                 switch (event.key.keysym.sym) {
                     case SDLK_w: {
                         camera.set_rotation_x(
-                                camera.get_rotation_x() - CAMERA_ROT_SPEED);
+                                camera.get_rotation_x() + CAMERA_ROT_SPEED);
                         break;
                     }
                     case SDLK_a: {
@@ -70,7 +111,7 @@ int main(int argc, char **argv) {
                     }
                     case SDLK_s: {
                         camera.set_rotation_x(
-                                camera.get_rotation_x() + CAMERA_ROT_SPEED);
+                                camera.get_rotation_x() - CAMERA_ROT_SPEED);
                         break;
                     }
                     case SDLK_d: {
@@ -102,12 +143,14 @@ int main(int argc, char **argv) {
             }
         }
 
-        triangle->set_rotation_y(
-                triangle->get_rotation_y() + TRIANGLE_ROT_SPEED);
-        rectangle->set_rotation_x(
-                rectangle->get_rotation_x() + TRIANGLE_ROT_SPEED);
-        rectangle->set_rotation_y(
-                rectangle->get_rotation_y() + TRIANGLE_ROT_SPEED);
+        sun->set_rotation_z(
+                sun->get_rotation_z() + SUN_ROT_SPEED);
+        earth->set_rotation_z(
+                earth->get_rotation_z() + EARTH_ROT_SPEED);
+        moon->set_rotation_z(
+                moon->get_rotation_z() + MOON_ROT_SPEED);
+        mars->set_rotation_z(
+                mars->get_rotation_z() + MARS_ROT_SPEED);
 
         renderer.render();
     }

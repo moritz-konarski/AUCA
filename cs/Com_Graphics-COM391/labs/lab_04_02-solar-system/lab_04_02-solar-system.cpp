@@ -29,7 +29,7 @@ static const int VERTEX_COUNT{80};
 static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
 
 std::vector<aur::Vertex>
-createVertices(float radius, glm::vec4 color, int vertexCount) {
+    createCircle(float radius, glm::vec4 color, int vertexCount) {
 
     std::vector<aur::Vertex> vertices;
     float scale = vertexCount / 2.0;
@@ -52,14 +52,14 @@ int main(int argc, char **argv) {
     auto material = std::make_shared<ES2ConstantMaterial>();
 
     std::vector<Vertex> sunVertices =
-            createVertices(SUN_RADIUS, SUN_COLOR, VERTEX_COUNT);
+            createCircle(SUN_RADIUS, SUN_COLOR, VERTEX_COUNT);
     auto sunGeometry = std::make_shared<ES2Geometry>(sunVertices);
     sunGeometry->set_type(GL_TRIANGLE_FAN);
     auto sun = std::make_shared<Mesh>(sunGeometry, material, SUN_POSITION);
     sun->set_name("Sun");
 
     std::vector<Vertex> earthVertices =
-            createVertices(EARTH_RADIUS, EARTH_COLOR, VERTEX_COUNT);
+            createCircle(EARTH_RADIUS, EARTH_COLOR, VERTEX_COUNT);
     auto earthGeometry = std::make_shared<ES2Geometry>(earthVertices);
     earthGeometry->set_type(GL_TRIANGLE_FAN);
     auto earth = std::make_shared<Mesh>(earthGeometry, material,
@@ -67,14 +67,14 @@ int main(int argc, char **argv) {
     earth->set_name("Earth");
 
     std::vector<Vertex> moonVertices =
-            createVertices(MOON_RADIUS, MOON_COLOR, VERTEX_COUNT);
+            createCircle(MOON_RADIUS, MOON_COLOR, VERTEX_COUNT);
     auto moonGeometry = std::make_shared<ES2Geometry>(moonVertices);
     moonGeometry->set_type(GL_TRIANGLE_FAN);
     auto moon = std::make_shared<Mesh>(moonGeometry, material, MOON_POSITION);
     moon->set_name("Moon");
 
     std::vector<Vertex> marsVertices =
-            createVertices(MARS_RADIUS, MARS_COLOR, VERTEX_COUNT);
+            createCircle(MARS_RADIUS, MARS_COLOR, VERTEX_COUNT);
     auto marsGeometry = std::make_shared<ES2Geometry>(marsVertices);
     marsGeometry->set_type(GL_TRIANGLE_FAN);
     auto mars = std::make_shared<Mesh>(marsGeometry, material, MARS_POSITION);

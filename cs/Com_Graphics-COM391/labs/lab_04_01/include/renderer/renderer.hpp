@@ -10,7 +10,7 @@ namespace aur {
     class Renderer {
     public:
         Renderer(std::shared_ptr<Scene> scene, std::shared_ptr<Window> window)
-            : scene(std::move(scene)), window(std::move(window)) { }
+                : scene(std::move(scene)), window(std::move(window)) {}
 
         virtual ~Renderer() = default;
 

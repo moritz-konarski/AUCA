@@ -13,7 +13,7 @@ namespace aur {
     class ES2Geometry : public Geometry {
     public:
         explicit ES2Geometry(const std::vector<Vertex> &vertices)
-            : Geometry(vertices) {}
+                : Geometry(vertices) {}
 
         void update(const Material &material) final {
             const auto *vertex_data = reinterpret_cast<const float *>(_vertices.data());
@@ -31,27 +31,32 @@ namespace aur {
             glGenBuffers(1, &vertex_buffer_object);
             glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_object);
             glBufferData(
-                GL_ARRAY_BUFFER,
-                size, vertex_data,
-                GL_STATIC_DRAW
+                    GL_ARRAY_BUFFER,
+                    size, vertex_data,
+                    GL_STATIC_DRAW
             );
 
-            GLuint position_attribute_location{static_cast<GLuint>(material.get_shader()->get_attributes().at("position"))};
+            GLuint position_attribute_location{
+                    static_cast<GLuint>(material.get_shader()->get_attributes().at(
+                            "position"))};
             if (position_attribute_location == -1) { return; }
 
-            GLuint color_attribute_location{static_cast<GLuint>(material.get_shader()->get_attributes().at("color"))};
+            GLuint color_attribute_location{
+                    static_cast<GLuint>(material.get_shader()->get_attributes().at(
+                            "color"))};
             if (color_attribute_location == -1) { return; }
 
             GLsizei stride{sizeof(GLfloat) * 7};
             glEnableVertexAttribArray(position_attribute_location);
             glVertexAttribPointer(
-                position_attribute_location,
-                3, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) nullptr
+                    position_attribute_location,
+                    3, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) nullptr
             );
             glEnableVertexAttribArray(color_attribute_location);
             glVertexAttribPointer(
-                color_attribute_location,
-                4, GL_FLOAT, GL_FALSE, stride, (const GLvoid *) (sizeof(GLfloat) * 3)
+                    color_attribute_location,
+                    4, GL_FLOAT, GL_FALSE, stride,
+                    (const GLvoid *) (sizeof(GLfloat) * 3)
             );
 #ifdef __APPLE__
             glBindVertexArrayAPPLE(0);

@@ -10,10 +10,10 @@ namespace aur {
     class Shader {
     public:
         Shader(
-            std::string vertex_shader_source,
-            std::string fragment_shader_source,
-            const std::vector<std::string> &attributes = {},
-            const std::vector<std::string> &uniforms = {}
+                std::string vertex_shader_source,
+                std::string fragment_shader_source,
+                const std::vector<std::string> &attributes = {},
+                const std::vector<std::string> &uniforms = {}
         ) : _vertex_shader_source{std::move(vertex_shader_source)},
             _fragment_shader_source{std::move(fragment_shader_source)} {
             for (const auto &uniform : uniforms) {

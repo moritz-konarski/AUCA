@@ -1,11 +1,11 @@
 #version 120
 
-uniform sampler2D texture_sampler;
+//uniform sampler2D texture_sampler;
 
 varying vec4 fragment_color;
 //TODO: figure this error out
 varying vec3 fragment_normal;
-varying vec2 fragment_texture_coordinates;
+//varying vec2 fragment_texture_coordinates;
 
 void main()
 {

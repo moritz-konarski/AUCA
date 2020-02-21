@@ -20,11 +20,11 @@ namespace aur {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
             for (int i = 0; i < segment_count; ++i) {
-                float angle =
-                        (float) i / (float) segment_count * 2.0f * (float) M_PI;
+                float angle = 4.0 * M_PI / (float) segment_count * i;
                 float x = cosf(angle) * radius;
                 float y = sinf(angle) * radius;
-                vertices.push_back(Vertex{{x, y, 0.0f}, {color}});
+                vertices.push_back(Vertex{{x, y, 0.0f},
+                                          {color}});
                 indices.push_back(static_cast<unsigned int>(i));
             }
 

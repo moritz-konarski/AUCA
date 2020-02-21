@@ -81,10 +81,10 @@ namespace aur {
                             GL_UNSIGNED_INT,
                             nullptr
                     );
+                    std::cout << "drawing " << object->get_name() << std::endl;
                 }
 
                 for (const auto &child: object->get_children()) {
-                    //std::cout << child->get_name() << std::endl;
                     queue.push(child);
                 }
             }

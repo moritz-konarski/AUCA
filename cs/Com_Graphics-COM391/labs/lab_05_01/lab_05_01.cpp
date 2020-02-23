@@ -7,7 +7,7 @@ static const float CAMERA_ROT_SPEED{0.05f};
 static const glm::vec4 COLOR_RED{1.0f, 0.0f, 0.0f, 0.0f};
 static const glm::vec4 COLOR_WHITE{1.0f, 1.0f, 1.0f, 1.0f};
 static const glm::vec3 POSITION{0.0f, 0.0f, 0.0f};
-static const int VERTEX_COUNT{90};
+static const int VERTEX_COUNT{30};
 static const float SMALL_RADIUS{0.05f};
 static const float MEDIUM_RADIUS{0.08f};
 
@@ -26,7 +26,12 @@ int main(int argc, char **argv) {
             SMALL_RADIUS, VERTEX_COUNT, COLOR_RED);
     auto smallCircleGeometry = std::make_shared<ES2Geometry>(
             smallCircleVertices.first, smallCircleVertices.second);
-    smallCircleGeometry->set_type(GL_LINE_LOOP);
+    std::cout << "Vertex count: " << smallCircleVertices.first.size()
+              << std::endl;
+    for (auto &i : smallCircleVertices.second) {
+        std::cout << "(" << i.position.x << ", " << i.position.y << "), ";
+    }
+    smallCircleGeometry->set_type(GL_TRIANGLE_STRIP);
     std::vector<std::shared_ptr<Object>> objects;
     for (int i = 0; i < 60; ++i) {
         if (i % 5 != 0) {

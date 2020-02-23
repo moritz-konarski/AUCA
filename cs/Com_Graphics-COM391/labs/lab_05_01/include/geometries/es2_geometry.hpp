@@ -59,7 +59,7 @@ namespace aur {
             if (position_attribute_location == -1) { return; }
 
             // TODO: fix -- old value was 14
-            GLsizei stride{sizeof(GLfloat) * 7};
+            GLsizei stride{sizeof(GLfloat) * 14};
             glEnableVertexAttribArray(position_attribute_location);
             glVertexAttribPointer(
                     position_attribute_location,
@@ -77,7 +77,6 @@ namespace aur {
                     (const GLvoid *) (sizeof(GLfloat) * 3)
             );
 
-            /*
             int normal_attribute_location{
                     material.get_shader()->get_attributes().at("normal")};
             if (normal_attribute_location == -1) { return; }
@@ -100,7 +99,7 @@ namespace aur {
                     4, GL_FLOAT, GL_FALSE, stride,
                     (const GLvoid *) (sizeof(GLfloat) * 10)
             );
-             */
+
 #ifdef __APPLE__
             glBindVertexArrayAPPLE(0);
 #else

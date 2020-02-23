@@ -81,7 +81,7 @@ namespace aur {
                             GL_UNSIGNED_INT,
                             nullptr
                     );
-                    std::cout << "drawing " << object->get_name() << std::endl;
+                    std::cout << geometry->get_indices().size() << std::endl;
                 }
 
                 for (const auto &child: object->get_children()) {

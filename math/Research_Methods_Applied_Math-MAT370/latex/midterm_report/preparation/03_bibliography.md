@@ -1,9 +1,31 @@
-# Bibliography
+# Terence Tao Paper
 
-## Sergio Albeverio, Danilo Merlini and Remiglio Tartini (1989), Una breve introduzione a diffusioni su insiemi frattali e ad alcuni essempi di sistemi dinamici semplici, Note di matematica e fisica, Edizioni Cerfim Locarno 3 (1989), 1–39.
+- 
 
-- Bib1 -- 1
+# Bibliography 1
+
+## 1
+
 - fractals and fractal dimensions
 - getting fractal sets from the collatz-esque thing
 
-## 
+## 3
+
+- some specific cases of a Collatz-like function 
+- results for variations of $\alpha,\beta,\gamma,\delta \in \{-1,1\}$
+
+## 5
+
+- to recursive algorithms
+
+## 8
+
+- leaves in $3x+1$ trees
+
+## 11
+
+- more information about general Collatz functions
+
+## 14 
+
+- basic properties of the function on binary integers

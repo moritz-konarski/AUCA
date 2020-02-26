@@ -9,3 +9,9 @@
 
 - compute this for some large numbers and see what happens
 - explore this conjecture a bit
+
+## plot or tabulate values
+
+- find stopping times and total stopping times for all ints below 100 and then
+compare them with the heuristics that the papers provide
+

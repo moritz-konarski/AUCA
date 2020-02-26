@@ -1,4 +1,4 @@
-# Tao, T. Almost All Orbits of the Collatz Map Attain Almost Bounded Values
+# 01 -- Tao, T. Almost All Orbits of the Collatz Map Attain Almost Bounded Values
 
 ## Abstract
 
@@ -45,15 +45,86 @@ number, $n << \log N$ then the n-Syracuse valuation vec a behaves like
 Geom(2)^n
 - basically, the heuristic is justified if 
 
-# Lagaris, J. C. The $3x+1$ Problem: An Annotated Bibliography (1963-1999)
+# 05 -- Chamberland, M. An Update on the $3x+1$ Problem
 
-# Lagaris, J. C. The $3x+1$ Problem: An Annotated Bibliography, II (2000-2009)
+## Introduction
 
-# Lagaris, J. C. The $3x+1$ Problem and Its Generalizations
+- Paul Erdos stated "Mathematics is not ready for such problems", as cited by
+Chamberland
+- many names
+- Collatz function, conjecture, and map T
+- even more streamlined function, but it's difficult to analyze
 
-# Chamberland, M. An Update on the $3x+1$ Problem
+## Numerics and Stopping time
 
-# Lagaris, J. C. The $3x+1$ Problem: An Overview
+- T has the options
+    1. trivial cycle {1,2}
+    2. a non-trivial cycle
+    3. infinity
+- the claim is that 1. is always the case
+- verified to now outdated numbers
+- non-trivial cycle length must be no less than 272,500,658
+- stopping time $\sigma (n)$ is a good algorithm for showing that n goes to one
+because it assumes that all below n do and stops as soon as C(n) < n
+- total stopping time to iterate to one
+- height of n as the largest number one iterates to
+- as long as these are not infinity, conjecture holds
+
+### Stopping Time
+
+- conjecture is true of every in has finite stopping time
+- _graph an orbit that looks kinda cool_ -- inspired by the graphs in lagarias
+and chamberland
+- divergent trajectories should diverge relatively quickly
+- often probabilistic because after many iterations even and odd can be seen
+like a coin flip
+- average stoppin time for an odd number $n \approx 9.477955$
+
+### Total Stopping time
+
+- stopping time ratio $\gamma (n) := \sigma \infty (n) / \log n$
+- ones-ratio $\rho (n)$ ratio of odd terms in total stopping time to total
+stopping time
+- we have the average value of the stopping time ratio and the upper bound (p.7)
+
+### Collatz Graph and Predecessor Sets
+
+- collatz map T and graph are obviously connected to each other
+
+### Representations of Iterates
+
+## 5 - Cycles
+
+- have received much attention
+- sum of the even integers equals sum of the odd integers plus the number of
+odd integers
+
+## 6 - Extending T to Larger Spaces
+
+### Integers Z
+
+- three new cycles: {0}, {-5}, {-17}
+- also attainable by $T'(n)=-T(-n)$
+- conjecture is that these are all the cycles of __Z__
+
+Also applied to rational numbers and 2-adic integers, Gaussian Integers
+
+### Real line __R__
+
+### Complex Plane C
+
+## Generalizations of $3x+1$ Dynamics
+
+- "$3x+d$" is conjectured to become periodic for $d \geq -1$
+- "$qx+1$" for 5 there is only one non-trivial cricuit, for 7 there are none
+- conjectured that all $q \geq 5$ have iterates that never reach 1
+- Wirsching says that we either get divergence or different periodic orbits
+
+## Misc
+
+- histograms might be nice to make
+
+# 06 -- Lagaris, J. C. The $3x+1$ Problem: An Overview
 
 ## Introduction
 
@@ -237,7 +308,7 @@ difficult to decide
 - the "World Records" can certainly be improved upon
 - a bunch of unproven conjectures on page 20
 
-# Garner, L. E. On the Collatz $3n+1$ Algorithm
+# 07 -- Garner, L. E. On the Collatz $3n+1$ Algorithm
 
 ## Abstract
 
@@ -302,9 +373,7 @@ least 105,000 terms
 - find how long a cycle would need to be for the numbers that are currently
 verified, that would be a cool piece of math
 
-# Motta, F. C. An Analysis of the Collatz Conjecture
-
-# Crandall, R. E. On the $3x+1$ Problem
+# 09 -- Crandall, R. E. On the $3x+1$ Problem
 
 ## Abstract
 

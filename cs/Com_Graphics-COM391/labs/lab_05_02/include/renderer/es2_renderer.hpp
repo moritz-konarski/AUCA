@@ -15,10 +15,12 @@
 namespace aur {
     class ES2Renderer : public Renderer {
     public:
-        ES2Renderer(const std::shared_ptr<Scene> &scene, const std::shared_ptr<Window> &window)
-            : Renderer(scene, window) {
+        ES2Renderer(const std::shared_ptr<Scene> &scene,
+                    const std::shared_ptr<Window> &window)
+                : Renderer(scene, window) {
             glm::vec4 clear_color = scene->get_clear_color();
-            glClearColor(clear_color.r, clear_color.g, clear_color.b, clear_color.a);
+            glClearColor(clear_color.r, clear_color.g, clear_color.b,
+                         clear_color.a);
 
             glEnable(GL_DEPTH_TEST);
             glDepthFunc(GL_LESS);
@@ -37,17 +39,23 @@ namespace aur {
                     geometry->update(*mesh->get_material());
                 }
 
-                for (const auto &child: object->get_children()) { queue.push(child); }
+                for (const auto &child: object->get_children()) {
+                    queue.push(child);
+                }
             }
         }
 
         void render() final {
-            glViewport(0, 0, (GLsizei) window->get_width(), (GLsizei) window->get_height());
-            glClear(static_cast<unsigned int>(GL_COLOR_BUFFER_BIT) | static_cast<unsigned int>(GL_DEPTH_BUFFER_BIT));
+            glViewport(0, 0, (GLsizei) window->get_width(),
+                       (GLsizei) window->get_height());
+            glClear(static_cast<unsigned int>(GL_COLOR_BUFFER_BIT) |
+                    static_cast<unsigned int>(GL_DEPTH_BUFFER_BIT));
 
             auto &camera = scene->get_camera();
             if (camera.should_receive_aspect_ratio_from_renderer()) {
-                float aspect_ratio = fabsf(static_cast<float>(window->get_width()) / static_cast<float>(window->get_height()));
+                float aspect_ratio = fabsf(
+                        static_cast<float>(window->get_width()) /
+                        static_cast<float>(window->get_height()));
                 camera.set_aspect_ratio(aspect_ratio);
             }
 
@@ -60,21 +68,24 @@ namespace aur {
                     auto geometry = mesh->get_geometry();
                     auto material = mesh->get_material();
 
-                    glm::mat4 mvp_matrix = camera.get_view_projection_matrix() * object->get_world_matrix();
+                    glm::mat4 mvp_matrix = camera.get_view_projection_matrix() *
+                                           object->get_world_matrix();
                     material->use();
                     material->update(mvp_matrix);
                     geometry->bind();
 
                     glLineWidth(geometry->get_line_width());
                     glDrawElements(
-                        static_cast<GLenum>(geometry->get_type()),
-                        static_cast<GLsizei>(geometry->get_indices().size()),
-                        GL_UNSIGNED_INT,
-                        nullptr
+                            static_cast<GLenum>(geometry->get_type()),
+                            static_cast<GLsizei>(geometry->get_indices().size()),
+                            GL_UNSIGNED_INT,
+                            nullptr
                     );
                 }
 
-                for (const auto &child: object->get_children()) { queue.push(child); }
+                for (const auto &child: object->get_children()) {
+                    queue.push(child);
+                }
             }
 
             window->swap();

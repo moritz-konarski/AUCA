@@ -8,8 +8,10 @@
 namespace aur {
     class Texture {
     public:
-        Texture(std::vector<uint8_t> image_data, unsigned int width, unsigned int height, unsigned int channels)
-            : _image_data { std::move(image_data) }, _width { width }, _height { height }, _channels { channels } { }
+        Texture(std::vector<uint8_t> image_data, unsigned int width,
+                unsigned int height, unsigned int channels)
+                : _image_data{std::move(image_data)}, _width{width},
+                  _height{height}, _channels{channels} {}
 
         virtual ~Texture() = default;
 
@@ -72,14 +74,14 @@ namespace aur {
         virtual void use() = 0;
 
     protected:
-        bool _requires_update { true };
+        bool _requires_update{true};
         std::vector<uint8_t> _image_data;
 
         unsigned int _width;
         unsigned int _height;
         unsigned int _channels;
 
-        int _texture { -1 };
+        int _texture{-1};
     };
 }
 

@@ -11,27 +11,36 @@
 
 namespace aur {
     namespace geometry_generators {
-        std::pair<std::vector<unsigned int>, std::vector<Vertex>> generate_circle_geometry_data(
-            float radius,
-            unsigned int segment_count
+        std::pair<std::vector<unsigned int>, std::vector<Vertex>>
+        generate_circle_geometry_data(
+                float radius,
+                unsigned int segment_count
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
             for (int i = 0; i < segment_count; ++i) {
-                float angle = (float) i / (float) segment_count * 2.0f * (float) M_PI;
+                float angle =
+                        (float) i / (float) segment_count * 2.0f * (float) M_PI;
                 float x = cosf(angle) * radius;
                 float y = sinf(angle) * radius;
-                vertices.push_back(Vertex{{x, y, 0.0f}});
+                //vertices.push_back(Vertex{{x, y, 0.0f}});
                 indices.push_back(static_cast<unsigned int>(i));
+                vertices.push_back(Vertex{
+                        glm::vec3{x, y, 0.0f},
+                        glm::vec4{1.0f},
+                        glm::vec3{0.0f, 0.0f, 1.0f},
+                        glm::vec4{0.0f, 0.0f, 0.0f, 1.0f}
+                });
             }
 
             return std::make_pair(indices, vertices);
         }
 
-        std::pair<std::vector<unsigned int>, std::vector<Vertex>> generate_plane_geometry_data(
-            float width, float height,
-            unsigned int width_segments_count,
-            unsigned int height_segments_count
+        std::pair<std::vector<unsigned int>, std::vector<Vertex>>
+        generate_plane_geometry_data(
+                float width, float height,
+                unsigned int width_segments_count,
+                unsigned int height_segments_count
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
@@ -51,11 +60,11 @@ namespace aur {
                     float x = (float) j * segment_width - half_width;
                     float u = (float) j / (float) width_segments_count;
 
-                    vertices.push_back(Vertex {
-                        glm::vec3 { x, y, 0.0f },
-                        glm::vec4 { 1.0f },
-                        glm::vec3 { 0.0f, 0.0f, 1.0f },
-                        glm::vec4 { u, v, 0.0f, 1.0f }
+                    vertices.push_back(Vertex{
+                            glm::vec3{x, y, 0.0f},
+                            glm::vec4{1.0f},
+                            glm::vec3{0.0f, 0.0f, 1.0f},
+                            glm::vec4{u, v, 0.0f, 1.0f}
                     });
                 }
             }
@@ -80,17 +89,19 @@ namespace aur {
             return std::make_pair(indices, vertices);
         }
 
-        std::pair<std::vector<unsigned int>, std::vector<Vertex>> generate_sphere_geometry_data(
-            float radius,
-            unsigned int segment_count,
-            unsigned int ring_count
+        std::pair<std::vector<unsigned int>, std::vector<Vertex>>
+        generate_sphere_geometry_data(
+                float radius,
+                unsigned int segment_count,
+                unsigned int ring_count
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
 
             for (unsigned int ring = 0; ring <= ring_count; ++ring) {
                 float v = (float) ring / (float) ring_count;
-                for (unsigned int segment = 0; segment <= segment_count; ++segment) {
+                for (unsigned int segment = 0;
+                     segment <= segment_count; ++segment) {
                     float u = (float) segment / (float) segment_count;
 
                     float theta = u * (float) M_PI * 2.0f;
@@ -105,17 +116,18 @@ namespace aur {
                     float y = cos_phi;
                     float z = sin_theta * sin_phi;
 
-                    vertices.push_back(Vertex {
-                        glm::vec3 { x * radius, y * radius, z * radius },
-                        glm::vec4 { 1.0f },
-                        glm::vec3 { x, y, z },
-                        glm::vec4 { u, 1.0f - v, 0.0f, 1.0f }
+                    vertices.push_back(Vertex{
+                            glm::vec3{x * radius, y * radius, z * radius},
+                            glm::vec4{1.0f},
+                            glm::vec3{x, y, z},
+                            glm::vec4{u, 1.0f - v, 0.0f, 1.0f}
                     });
                 }
             }
 
             for (unsigned int ring = 0; ring < ring_count; ++ring) {
-                for (unsigned int segment = 0; segment < segment_count; ++segment) {
+                for (unsigned int segment = 0;
+                     segment < segment_count; ++segment) {
                     unsigned int index_a = ring * (segment_count + 1) + segment;
                     unsigned int index_b = index_a + (segment_count + 1);
                     unsigned int index_c = index_a + 1;

@@ -14,7 +14,7 @@ namespace aur {
     class Scene {
     public:
         explicit Scene(const std::vector<std::shared_ptr<Object>> &objects)
-            : _root{std::make_shared<Object>()} {
+                : _root{std::make_shared<Object>()} {
             for (const auto &object : objects) {
                 _root->add_child(object);
             }
@@ -49,7 +49,7 @@ namespace aur {
         }
 
     private:
-        glm::vec4 _clear_color{ 0.0f };
+        glm::vec4 _clear_color{0.0f};
 
         std::shared_ptr<Object> _root;
         Camera _camera;

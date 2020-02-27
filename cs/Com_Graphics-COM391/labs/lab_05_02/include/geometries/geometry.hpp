@@ -12,8 +12,10 @@
 namespace aur {
     class Geometry {
     public:
-        explicit Geometry(std::vector<unsigned int> indices, std::vector<Vertex> vertices)
-            : _indices(std::move(indices)), _vertices(std::move(vertices)) {}
+        explicit Geometry(std::vector<unsigned int> indices,
+                          std::vector<Vertex> vertices)
+                : _indices(std::move(indices)),
+                  _vertices(std::move(vertices)) {}
 
         virtual ~Geometry() = default;
 
@@ -43,7 +45,8 @@ namespace aur {
 
         void transform(glm::mat4 transformation_matrix) {
             for (auto &vertex : _vertices) {
-                vertex.position = glm::vec3(transformation_matrix * glm::vec4(vertex.position, 1.0f));
+                vertex.position = glm::vec3(transformation_matrix *
+                                            glm::vec4(vertex.position, 1.0f));
             }
         }
 
@@ -52,8 +55,8 @@ namespace aur {
         virtual void bind() = 0;
 
     protected:
-        int _type { 0x0004 };
-        float _line_width { 1.0f };
+        int _type{0x0004};
+        float _line_width{1.0f};
 
         std::vector<unsigned int> _indices;
         std::vector<Vertex> _vertices;

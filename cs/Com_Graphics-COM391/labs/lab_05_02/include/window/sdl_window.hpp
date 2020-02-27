@@ -12,13 +12,13 @@ namespace aur {
     class SDLWindow : public Window {
     public:
         SDLWindow(
-            const std::string &name,
-            unsigned int width, unsigned int height,
-            bool msaa_enabled = true,
-            int msaa_samples = 16
+                const std::string &name,
+                unsigned int width, unsigned int height,
+                bool msaa_enabled = true,
+                int msaa_samples = 16
         ) : Window{name, width, height} {
             _on_exit = [&]() { exit(0); };
-            _on_key = [&](int key) { };
+            _on_key = [&](int key) {};
 
             SDL_Init(SDL_INIT_VIDEO);
             SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
@@ -29,22 +29,23 @@ namespace aur {
             }
 
             unsigned int flags =
-                static_cast<unsigned int>(SDL_WINDOW_OPENGL) |
-                static_cast<unsigned int>(SDL_WINDOW_ALLOW_HIGHDPI);
+                    static_cast<unsigned int>(SDL_WINDOW_OPENGL) |
+                    static_cast<unsigned int>(SDL_WINDOW_ALLOW_HIGHDPI);
             if (width <= 0 || height <= 0) {
                 flags |= static_cast<unsigned int>(SDL_WINDOW_FULLSCREEN_DESKTOP);
             }
 
             _window =
-                SDL_CreateWindow(
-                    name.c_str(),
-                    SDL_WINDOWPOS_CENTERED,
-                    SDL_WINDOWPOS_CENTERED,
-                    static_cast<int>(width),
-                    static_cast<int>(height),
-                    flags
-                );
-            SDL_GL_GetDrawableSize(_window, reinterpret_cast<int *>(&_width), reinterpret_cast<int *>(&_height));
+                    SDL_CreateWindow(
+                            name.c_str(),
+                            SDL_WINDOWPOS_CENTERED,
+                            SDL_WINDOWPOS_CENTERED,
+                            static_cast<int>(width),
+                            static_cast<int>(height),
+                            flags
+                    );
+            SDL_GL_GetDrawableSize(_window, reinterpret_cast<int *>(&_width),
+                                   reinterpret_cast<int *>(&_height));
 
             _gl_context = SDL_GL_CreateContext(_window);
             glewInit();

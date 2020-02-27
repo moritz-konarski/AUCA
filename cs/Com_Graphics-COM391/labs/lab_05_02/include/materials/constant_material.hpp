@@ -37,8 +37,8 @@ namespace aur {
         }
 
     protected:
-        glm::vec4 _emission_color { 1.0f };
-        float _point_size { 1.0f };
+        glm::vec4 _emission_color{1.0f};
+        float _point_size{1.0f};
 
         std::shared_ptr<Texture> _texture;
     };

@@ -13,7 +13,8 @@ namespace aur {
         static std::string read_text_file(const std::string &path) {
             std::ifstream file_stream{path};
             if (!file_stream.is_open()) {
-                std::cerr << "Failed to open the file: '" << path << "'" << std::endl;
+                std::cerr << "Failed to open the file: '" << path << "'"
+                          << std::endl;
                 exit(-1);
             }
 

@@ -13,14 +13,14 @@ namespace aur {
     class Object : public std::enable_shared_from_this<Object> {
     public:
         explicit Object(
-            std::string name = "",
-            const glm::vec3 &position = glm::vec4(0.0f),
-            const glm::vec3 &rotation = glm::vec4(0.0f),
-            const glm::vec3 &scale = glm::vec4(1.0f),
-            std::weak_ptr<Object> parent = {})
-            : _name{std::move(name)},
-              _position{position}, _rotation{rotation}, _scale{scale},
-              _parent{std::move(parent)} {}
+                std::string name = "",
+                const glm::vec3 &position = glm::vec4(0.0f),
+                const glm::vec3 &rotation = glm::vec4(0.0f),
+                const glm::vec3 &scale = glm::vec4(1.0f),
+                std::weak_ptr<Object> parent = {})
+                : _name{std::move(name)},
+                  _position{position}, _rotation{rotation}, _scale{scale},
+                  _parent{std::move(parent)} {}
 
         virtual ~Object() = default;
 
@@ -48,11 +48,13 @@ namespace aur {
             _children.push_back(child);
         }
 
-        std::shared_ptr<Object> get_child(std::vector<std::shared_ptr<Object>>::size_type position) const {
+        std::shared_ptr<Object> get_child(
+                std::vector<std::shared_ptr<Object>>::size_type position) const {
             return _children[position];
         }
 
-        void remove_child(std::vector<std::shared_ptr<Object>>::size_type position) {
+        void
+        remove_child(std::vector<std::shared_ptr<Object>>::size_type position) {
             _children.erase(_children.begin() + position);
         }
 
@@ -208,7 +210,8 @@ namespace aur {
             return _model_matrix_requires_update;
         }
 
-        virtual void set_model_matrix_requires_update(bool model_matrix_requires_update) {
+        virtual void
+        set_model_matrix_requires_update(bool model_matrix_requires_update) {
             _model_matrix_requires_update = model_matrix_requires_update;
             if (_model_matrix_requires_update) {
                 _world_matrix_requires_update = true;
@@ -224,7 +227,8 @@ namespace aur {
             return _world_matrix_requires_update;
         }
 
-        virtual void set_world_matrix_requires_update(bool world_matrix_requires_update) {
+        virtual void
+        set_world_matrix_requires_update(bool world_matrix_requires_update) {
             _world_matrix_requires_update = world_matrix_requires_update;
             if (_world_matrix_requires_update) {
                 for (const auto &child : _children) {
@@ -251,9 +255,12 @@ namespace aur {
         void _update_model_matrix_if_necessary() {
             if (_model_matrix_requires_update) {
                 _model_matrix = glm::translate(glm::mat4(1.0f), _position);
-                _model_matrix = glm::rotate(_model_matrix, _rotation.y, glm::vec3(0, 1, 0));
-                _model_matrix = glm::rotate(_model_matrix, _rotation.x, glm::vec3(1, 0, 0));
-                _model_matrix = glm::rotate(_model_matrix, _rotation.z, glm::vec3(0, 0, 1));
+                _model_matrix = glm::rotate(_model_matrix, _rotation.y,
+                                            glm::vec3(0, 1, 0));
+                _model_matrix = glm::rotate(_model_matrix, _rotation.x,
+                                            glm::vec3(1, 0, 0));
+                _model_matrix = glm::rotate(_model_matrix, _rotation.z,
+                                            glm::vec3(0, 0, 1));
                 _model_matrix = glm::scale(_model_matrix, _scale);
                 _model_matrix_requires_update = false;
             }

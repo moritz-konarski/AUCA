@@ -62,24 +62,26 @@ $$\sigma_{\infty}(x)=\inf\{k:T^{(k)}(x)=1\}$$
 ### Trajectory of $x$ Under $T$
 
 - also called the _forward orbit_ of $x$ under $T$
-- defined as the sequence of it forward iterates $^{[3]}$
+- defined as the sequence of its forward iterates $^{[3]}$
 $$\{x, T(x), T^{(2)}(x), T^{(3)}(x),\dots\}$$ 
 
 ## The Collatz Conjecture
 
 ### Possible behaviors of $T$
 
-1. the trivial cycle $\{4,2,1,4,2,1,\dots\}$ (reaching 1)
-2. a non-trivial cycle
-3. infinity, having a divergent orbit $^{[1]}$
+The function $T(x)$ can 
+
+1. enter the trivial cycle $\{2,1,2,\dots\}$ (reach 1)
+2. enter a non-trivial cycle
+3. diverge to infinity, have a divergent orbit $^{[1]}$
 
 ### The Conjecture
 
 - beginning at any positve integer $x$, iterations of $T(x)$ will eventually
 reach 1 and enter the trivial cycle $^{[3]}$
 - equivalent to stating that the total stopping time 
-$\sigma_{\infty}(x)$ are finite $^{[1]}$
-- if a trajectory of $T(x)$ does _not_ contain 1 it is infinite $^{[2]}$
+$\sigma_{\infty}(x)$ is finite $^{[1]}$
+- every trajectory of $T(x)$ contains 1 and is finite $^{[2]}$
 
 ## What Makes This Problem Interesting?
 
@@ -90,19 +92,19 @@ $\sigma_{\infty}(x)$ are finite $^{[1]}$
 
 ### 
 
-- the problem itself is not important, it has no immediate applications
-- represents a class of iterative mappings that are interesting
 - it is simple to state but hard to prove
 - part of the difficulty comes from its pseudorandom nature of iterations of 
-$T(x)$ $^{[3]}$
+$T(x)$ 
+- the problem itself is not really important, it has no immediate applications
+- represents a class of iterative mappings that are interesting $^{[3]}$
 
 ## History of the Collatz Conjecture
 
 ### Beginnings
 
+- named after Lothar Collatz who formulated similar problems in the 1930s
 - also known as Syracuse Problem, Hasse's Algorithm, Kakutani's Problem, and
 Ulam's Problem after other people that studied it
-- named after Lothar Collatz who formulated similar problems in the 1930s
 - academic publishing about it began in the 1970s $^{[3]}$
 
 ### Recent Developments
@@ -116,7 +118,7 @@ Almost Bounded Values" made progress
 
 ### Cycles of the Function
 
-- the $3x+1$ function has a trivial cycle $\{4,2,1,4,2,\dots\}$ at 1 $^{[1]}$
+- the $3x+1$ function has a trivial cycle $\{2,1,2,\dots\}$ at 1 $^{[1]}$
 - if $T(x)$ is applied to all integers, three more cycles emerge at -1, -5, and -17
 - these cycles are conjectured to be the only ones $^{[1]}$
 - if non-trivial cycles of the $3x+1$ problem exist, they have been proven to
@@ -124,7 +126,7 @@ be at least 10,439,860,591 numbers long $^{[3]}$
 
 ### Stochastic Approximations
 
-- number of odd and even integers in an orbit is approximately equal
+- number of odd and even integers in an orbit is approximately equal $^{[3]}$
 - behavior is seen as pseudorandom, if the numbers are large enough they almost
 behave like random variables $^{[2]}$
 - probabilistic models describe the behavior of the $3x+1$ problem
@@ -140,12 +142,39 @@ sequences are finite $^{[3]}$
 
 ## Conclusion
 
-###
+### The $3x+1$ Problem and Collatz Conjecture
 
-- The $3x+1$ Problem and Collatz Conjecture
-- What Makes This Problem Interesting?
-- History of the Collatz Conjecture
-- Interesting Attributes of the $3x+1$ Problem
+For every $x \in \mathbb{N} + 1$ and the function
+$$T(x)= \left\{
+    \begin{array}{ll}
+        (3x+1)/2 \quad &\text{if } x \equiv 1 \text{ (mod 2),} \\
+        x/2 \quad &\text{if } x \equiv 0 \text{ (mod 2).}
+    \end{array}
+\right.
+$$
+there is some $k \in \mathbb{N} + 1$ such that $T^{(k)}(x)=1$.
+
+### What Makes This Problem Interesting?
+
+- simple to state but hard to prove
+- represents a class of iterative mappings that are interesting $^{[3]}$
+- maybe mathematics right now cannot solve that problem
+
+### History of the Collatz Conjecture
+
+- named after Lothar Collatz, from the 1930s
+- academic publishing began in the 1970s $^{[3]}$
+- $>10^{20}$ numbers have been verified to fit the conjecture $^{[4]}$
+- research is still actively ongoing
+
+### Interesting Attributes of the $3x+1$ Problem
+
+- the $3x+1$ function has a trivial cycle $\{2,1,2,\dots\}$ at 1 $^{[1]}$
+- non-trivial cycles of the $3x+1$ problem have been proven to
+be at least 10,439,860,591 numbers long $^{[3]}$
+- behavior is seen as pseudorandom, if the numbers are large enough they almost
+behave like random variables $^{[2]}$
+- total stopping time for most trajectories is about $6.95212 \log n$ steps
 
 ## Any questions?
 

@@ -17,12 +17,9 @@
 static const float CAMERA_SPEED{0.1f};
 static const float CAMERA_ROT_SPEED{0.05f};
 
-static const glm::vec4 COLOR_RED{1.0f, 0.0f, 0.0f, 0.0f};
-static const glm::vec4 COLOR_WHITE{1.0f, 1.0f, 1.0f, 1.0f};
-static const glm::vec4 COLOR_GREY{0.5f, 0.5f, 0.5f, 0.5f};
+static const glm::vec4 COLOR_GREY{0.5f, 0.5f, 0.5f, 1.0f};
 static const glm::vec4 BACKGROUND_COLOR{COLOR_GREY};
 
-static const glm::vec3 ORIGIN_POS{0.0f, 0.0f, 0.0f};
 
 static const int WINDOW_DIMENSIONS{0};
 static const int VERTEX_COUNT{30};
@@ -36,118 +33,32 @@ static const float RADIUS_CIRCLE_SMALL{0.02f};
 static const float RADIUS_CIRCLE_MEDIUM{0.04f};
 static const float SPHERE_RADIUS{RADIUS_CIRCLE_MEDIUM};
 static const float SIDE_LENGTH_SQUARE{2.0f * RADIUS_CIRCLE_MEDIUM};
-static const float ROT_SPEED_CLOCK{0.01f};
+static const float ROT_SPEED_CLOCK{0.005f};
 static const float ROT_SPEED_MINUTE_HAND{-1.0f / 360.0f};
 static const float ROT_SPEED_HOUR_HAND_RATIO{1.0f / 6.0f};
 
 static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
 
-void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
-                           std::shared_ptr<aur::ES2ConstantMaterial> material,
-                           const float mainCircleRadius, const int circleCount,
-                           const float circleRadius, const int modulusValue,
-                           const int vertexCount,
-                           const int meshType) {
-    using namespace aur;
 
-    float angle, angleRatio = 2.0f * M_PI / circleCount;
-
-    auto circVert = geometry_generators::generate_circle_geometry_data(
-            circleRadius, vertexCount);
-    auto circGeom = std::make_shared<ES2Geometry>(
-            circVert.first, circVert.second);
-    circGeom->set_type(meshType);
-    for (int i = 0; i < circleCount; ++i) {
-        if (i % modulusValue != 0) {
-            angle = angleRatio * i;
-            auto circle = std::make_shared<Mesh>(circGeom, material,
-                                                 glm::vec3{mainCircleRadius *
-                                                           cos(angle),
-                                                           mainCircleRadius *
-                                                           sin(angle), 0.0f
-                                                 });
-            char name[15];
-            sprintf(name, "circle %d", i);
-            circle->set_name(name);
-            mainObject->add_child(circle);
-        }
-    }
-}
-
-void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
-                           std::shared_ptr<aur::ES2ConstantMaterial> material,
-                           const float mainCircleRadius, const int squareCount,
-                           const float sideLengthA, const float sideLengthB,
-                           const int vertexCount,
-                           const int meshType) {
-    using namespace aur;
-
-    float angle, angleRatio = 2.0f * M_PI / squareCount;
-
-    auto squareVertices = geometry_generators::generate_plane_geometry_data(
-            sideLengthA, sideLengthB, vertexCount, vertexCount);
-    auto squareGeometry = std::make_shared<ES2Geometry>(
-            squareVertices.first, squareVertices.second);
-    squareGeometry->set_type(meshType);
-    for (int i = 0; i < squareCount; ++i) {
-        angle = angleRatio * i;
-        auto square = std::make_shared<Mesh>(squareGeometry, material,
-                                             glm::vec3{mainCircleRadius *
-                                                       cos(angle),
-                                                       mainCircleRadius *
-                                                       sin(angle),
-                                                       0.0f});
-        char name[15];
-        sprintf(name, "square %d", i);
-        square->set_rotation_z(M_PI / 4.0f);
-        square->set_name(name);
-        mainObject->add_child(square);
-    }
-
-
-}
+std::shared_ptr<aur::Mesh>
+generateSphere(std::shared_ptr<aur::ES2ConstantMaterial> material, const std::string name,
+               const float radius,
+               const int ringCount);
 
 std::shared_ptr<aur::Mesh> generateClockHand(
         std::shared_ptr<aur::ES2ConstantMaterial> material,
         const std::string name, const float sideA,
-        const float sideB,
-        const int vertexCount, const int meshType) {
+        const float sideB);
 
-    using namespace aur;
+void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
+                           std::shared_ptr<aur::ES2ConstantMaterial> material,
+                           const float mainCircleRadius, const int squareCount,
+                           const float sideLengthA, const float sideLengthB);
 
-    auto handVertices = geometry_generators::generate_plane_geometry_data(
-            sideA, sideB, vertexCount, vertexCount);
-    auto handGeometry = std::make_shared<ES2Geometry>(
-            handVertices.first, handVertices.second);
-    handGeometry->set_type(meshType);
-    auto hand = std::make_shared<Mesh>(handGeometry, material,
-                                       glm::vec3{0.0f, 0.0f, 0.0f});
-    hand->set_name(name);
-
-    return hand;
-}
-
-std::shared_ptr<aur::Mesh> generateSphere(
-        std::shared_ptr<aur::ES2ConstantMaterial> material,
-        const std::string name, const float radius,
-        const int ringCount,
-        const int vertexCount, const int meshType) {
-
-    using namespace aur;
-
-    auto sphereVertices = geometry_generators::generate_sphere_geometry_data(
-            radius, vertexCount, ringCount);
-    auto sphereGeometry = std::make_shared<ES2Geometry>(
-            sphereVertices.first, sphereVertices.second);
-    sphereGeometry->
-            set_type(meshType);
-    auto sphere = std::make_shared<Mesh>(sphereGeometry, material,
-                                         glm::vec3{0.0f, 0.0f, 0.0f});
-    sphere->set_name(name);
-
-    return sphere;
-}
-
+void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
+                           std::shared_ptr<aur::ES2ConstantMaterial> material,
+                           const float mainCircleRadius, const int circleCount,
+                           const float circleRadius, const int modulusValue);
 
 [[noreturn]]
 int main(int argc, char **argv) {
@@ -159,35 +70,31 @@ int main(int argc, char **argv) {
 
     // sphere in the center
     auto mainSphere = generateSphere(material, "center sphere", SPHERE_RADIUS,
-                                     SPHERE_RING_COUNT, VERTEX_COUNT,
-                                     MESH_TYPE);
+                                     SPHERE_RING_COUNT);
     mainSphere->set_rotation_z(M_PI / 2.0f);
 
     // small minute marks
     generateRingOfCircles(mainSphere, material, CLOCK_RADIUS, 60,
-                          RADIUS_CIRCLE_SMALL, 60, VERTEX_COUNT, MESH_TYPE);
+                          RADIUS_CIRCLE_SMALL, 60);
 
     // 5 minute marks
-    generateRingOfCircles(mainSphere, material, CLOCK_RADIUS + 0.05f, 12,
-                          RADIUS_CIRCLE_MEDIUM, 3, VERTEX_COUNT, MESH_TYPE);
+    generateRingOfCircles(mainSphere, material, CLOCK_RADIUS, 12,
+                          RADIUS_CIRCLE_MEDIUM, 3);
 
     // 15 minute marks
-    generateRingOfSquares(mainSphere, material, CLOCK_RADIUS + 0.05f, 4,
-                          SIDE_LENGTH_SQUARE, SIDE_LENGTH_SQUARE, VERTEX_COUNT,
-                          MESH_TYPE);
+    generateRingOfSquares(mainSphere, material, CLOCK_RADIUS, 4,
+                          SIDE_LENGTH_SQUARE, SIDE_LENGTH_SQUARE);
 
     // add minute hand
     auto minuteHand = generateClockHand(material, "minute hand",
                                         SIDE_LENGTH_SQUARE / 2.0f,
-                                        LENGTH_MINUTE_HAND, VERTEX_COUNT,
-                                        MESH_TYPE);
+                                        LENGTH_MINUTE_HAND);
     mainSphere->add_child(minuteHand);
 
     // add hour hand
     auto hourHand = generateClockHand(material, "hour hand",
                                       SIDE_LENGTH_SQUARE / 1.5f,
-                                      LENGTH_HOUR_HAND, VERTEX_COUNT,
-                                      MESH_TYPE);
+                                      LENGTH_HOUR_HAND);
     mainSphere->add_child(hourHand);
 
     std::vector<std::shared_ptr<Object>> clock{mainSphere};
@@ -270,4 +177,101 @@ int main(int argc, char **argv) {
 
         renderer.render();
     }
+}
+
+void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
+                           std::shared_ptr<aur::ES2ConstantMaterial> material,
+                           const float mainCircleRadius, const int circleCount,
+                           const float circleRadius, const int modulusValue) {
+    using namespace aur;
+
+    float angle, angleRatio = 2.0f * M_PI / circleCount;
+
+    auto circVert = geometry_generators::generate_circle_geometry_data(
+            circleRadius, VERTEX_COUNT);
+    auto circGeom = std::make_shared<ES2Geometry>(
+            circVert.first, circVert.second);
+    circGeom->set_type(MESH_TYPE);
+    for (int i = 0; i < circleCount; ++i) {
+        if (i % modulusValue != 0) {
+            angle = angleRatio * i;
+            auto circle = std::make_shared<Mesh>(circGeom, material,
+                                                 glm::vec3{mainCircleRadius *
+                                                           cos(angle),
+                                                           mainCircleRadius *
+                                                           sin(angle), 0.0f
+                                                 });
+            char name[15];
+            sprintf(name, "circle %d", i);
+            circle->set_name(name);
+            mainObject->add_child(circle);
+        }
+    }
+}
+
+void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
+                           std::shared_ptr<aur::ES2ConstantMaterial> material,
+                           const float mainCircleRadius, const int squareCount,
+                           const float sideLengthA, const float sideLengthB) {
+    using namespace aur;
+
+    float angle, angleRatio = 2.0f * M_PI / squareCount;
+
+    auto squareVertices = geometry_generators::generate_plane_geometry_data(
+            sideLengthA, sideLengthB, VERTEX_COUNT, VERTEX_COUNT);
+    auto squareGeometry = std::make_shared<ES2Geometry>(
+            squareVertices.first, squareVertices.second);
+    squareGeometry->set_type(MESH_TYPE);
+    for (int i = 0; i < squareCount; ++i) {
+        angle = angleRatio * i;
+        auto square = std::make_shared<Mesh>(squareGeometry, material,
+                                             glm::vec3{mainCircleRadius *
+                                                       cos(angle),
+                                                       mainCircleRadius *
+                                                       sin(angle),
+                                                       0.0f});
+        char name[15];
+        sprintf(name, "square %d", i);
+        square->set_rotation_z(M_PI / 4.0f);
+        square->set_name(name);
+        mainObject->add_child(square);
+    }
+}
+
+std::shared_ptr<aur::Mesh> generateClockHand(
+        std::shared_ptr<aur::ES2ConstantMaterial> material,
+        const std::string name, const float sideA,
+        const float sideB) {
+
+    using namespace aur;
+
+    auto handVertices = geometry_generators::generate_plane_geometry_data(
+            sideA, sideB, VERTEX_COUNT, VERTEX_COUNT);
+    auto handGeometry = std::make_shared<ES2Geometry>(
+            handVertices.first, handVertices.second);
+    handGeometry->set_type(MESH_TYPE);
+    auto hand = std::make_shared<Mesh>(handGeometry, material,
+                                       glm::vec3{0.0f, 0.0f, 0.0f});
+    hand->set_name(name);
+
+    return hand;
+}
+
+std::shared_ptr<aur::Mesh> generateSphere(
+        std::shared_ptr<aur::ES2ConstantMaterial> material,
+        const std::string name, const float radius,
+        const int ringCount) {
+
+    using namespace aur;
+
+    auto sphereVertices = geometry_generators::generate_sphere_geometry_data(
+            radius, VERTEX_COUNT, ringCount);
+    auto sphereGeometry = std::make_shared<ES2Geometry>(
+            sphereVertices.first, sphereVertices.second);
+    sphereGeometry->set_type(MESH_TYPE);
+    auto sphere = std::make_shared<Mesh>(sphereGeometry, material,
+                                         glm::vec3{0.0f, 0.0f, 0.0f});
+    sphere->set_name(name);
+
+    return sphere;
 }

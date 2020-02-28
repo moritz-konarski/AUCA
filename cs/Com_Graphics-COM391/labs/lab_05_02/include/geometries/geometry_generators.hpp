@@ -23,14 +23,8 @@ namespace aur {
                         (float) i / (float) segment_count * 2.0f * (float) M_PI;
                 float x = cosf(angle) * radius;
                 float y = sinf(angle) * radius;
-                //vertices.push_back(Vertex{{x, y, 0.0f}});
+                vertices.push_back(Vertex{{x, y, 0.0f}, glm::vec4{1.0f}});
                 indices.push_back(static_cast<unsigned int>(i));
-                vertices.push_back(Vertex{
-                        glm::vec3{x, y, 0.0f},
-                        glm::vec4{1.0f},
-                        glm::vec3{0.0f, 0.0f, 1.0f},
-                        glm::vec4{0.0f, 0.0f, 0.0f, 1.0f}
-                });
             }
 
             return std::make_pair(indices, vertices);

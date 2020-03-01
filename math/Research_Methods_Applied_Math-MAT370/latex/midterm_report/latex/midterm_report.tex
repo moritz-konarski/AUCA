@@ -1,11 +1,22 @@
-% Midterm report paper Moritz Konarski -- The 3x+1 Problem
-\documentclass[12pt, a4paper, reqno]{amsart}
+% Report on the 3x+1 Problem for Research Methods in Applied Maths
+% 03.03.2020, Moritz Konarski, AUCA
 
-% included packages
-\usepackage{amsfonts}
+%==============================================================================
+% SETUP
+
+\documentclass[12pt,a4paper,reqno]{amsart}
+
+% packages used
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{anysize}
+\usepackage{textcomp}
 \usepackage{graphicx}
+\graphicspath{{../graphics/}}
+\usepackage{epstopdf}
 \usepackage[utf8]{inputenc}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
@@ -14,44 +25,53 @@
     allcolors=black,
     final
 }
-% set line spacing
-\renewcommand{\baselinestretch}{1.3}
-% set margin size
-\marginsize{1in}{1in}{1in}{1in}
 
-\title{The $3x+1$ Problem}
-\author{Moritz Konarski}
-\date{27.02.2020}
+% set line spacing
+\renewcommand{\baselinestretch}{1.4}
+% set margin size
+\marginsize{1.25in}{1.25in}{1.25in}{1.25in}
+
+%==============================================================================
+% REPORT
+
+%------------------------------------------------------------------------------
+% GENERAL INFORMATION
+
+\title{An Overview of the $3x+1$ Problem}
+\author{Moritz M. Konarski}
+\date{01.02.2020}
 
 \begin{document}
 
+%TODO: update the abstract
 \begin{abstract}
-    This paper gives an overview of the Collatz function and conjecture.
-    Furthermore, its history and some interesting attributes are discussed.
+    This paper gives an overview of the Collatz function, a function that takes
+    a positive integer as input and divides it by 2 if is even or multiplies
+    it by 3 and adds 1. The Collatz conjecture states that this function, when
+    repeatedly applied to itself, will eventually yield 1. This conjecture has
+    been computationally verified to be correct for very large numbers, but the
+    proof is still outstanding. The background and reasons to study the
+    conjecture will be discussed. Furthermore, details of the $3x+1$ problem
+    will be illustrated. Those details are trajectories, cycles, stopping time,
+    and stochastic approximations. 
 \end{abstract}
 
 \maketitle
 \tableofcontents
 
+%------------------------------------------------------------------------------
+% INTRODUCTION
+
 \section{Introduction}
 
-\begin{itemize}
-    \item The $3x+1$ Problem and Collatz Conjecture
-    \item  What Makes This Problem Interesting?
-    \item  History of the Collatz Conjecture
-    \item  Interesting Attributes of the $3x+1$ Problem
-    \begin{itemize}
-        \item  Cycles of the Function
-        \item  Stochastic Approximations
-        \item  Stopping Time of the Function
-    \end{itemize}
-\end{itemize}
+The $3x+1$ Problem is a number theoretical problem that has been studied by 
+mathematicians since the 1950s, but still
+today it remains unsolved \cite{src:03}. This problem is defined in terms of
+the \textit{Collatz function}, which, for any positive integer $x$, returns
+$x/2$ if $x$ is even and $3x+1$ if $x$ is odd. Mathematicians study the
+behavior of this function when it is repeatedly iterated, meaning it is applied
+to itself. Following Lagarias \cite{src:03}, the Collatz function is defined as 
 
-\subsection{What is the $3x+1$ Problem?}
-
-\subsubsection{The Function}
-
-Based on the Collatz function $^{[3]}$
 \begin{equation}
 C(x)= \left\{
     \begin{array}{ll}
@@ -59,211 +79,305 @@ C(x)= \left\{
         x/2 \quad &\text{if } x \equiv 0 \text{ (mod 2).}
     \end{array}
 \right.
+\label{eq:01}
 \end{equation}
-Is equivalent to the $3x+1$ function $^{[3]}$
+
+When the $3x+1$ Problem is studied, the \textit{$3x+1$ function} 
+
 \begin{equation}
 T(x)= \left\{
     \begin{array}{ll}
         (3x+1)/2 \quad &\text{if } x \equiv 1 \text{ (mod 2),} \\
-        x/2 \quad &\text{if } x \equiv 0 \text{ (mod 2).}
+        x/2 \quad &\text{if } x \equiv 0 \text{ (mod 2)}.
     \end{array}
 \right.
+\label{eq:02}
 \end{equation}
 
-\subsubsection{Details}
+The $3x+1$ function $T(x)$ 
+takes integers as input and yields integers as outputs, making it a number
+theoretic function like $C(x)$. More specifically, its
+domain are all positive integers and its range are also the positive integers.
+As such, $T(x)$ can be seen as the mapping of 
+$\mathbb{N} + 1 \rightarrow \mathbb{N} + 1$, where $\mathbb{N} + 1$ represents
+the positive integers \cite{src:04}. The $3x+1$ 
+function is, like the Collatz function, repeatedly applied to itself and has 
+a \textit{stopping time}, \textit{total stopping time}, and a 
+\textit{trajectory} for each $x \in \mathbb{N} + 1$. \\
+The $3x+1$ function is used instead of the Collatz function because it is more 
+predictable \cite{src:03}. 
+If $x$ is odd, $3x+1$ yields an even number that number is then 
+immediately divided by 2. This has the effect that an otherwise following
+iteration of $C(x)$ is not needed. Furthermore, the function cannot grow as
+quickly because the factor is now $3/2$ instead of 3. These two changes make
+the function easier to study \cite{src:03}.
+Accordingly, $T(x)$ can alternatively be defined in terms of equation 
+(\ref{eq:01}) as $C(x)$ if $x$ is even and as $C(C(x))$ if $x$ is odd:
 
-\begin{itemize}
-    \item it is conjectured that for some $x,k \in \mathbb{N} + 1$ we attain 
-        $T^{(k)}(x)=1$ $^{[1]}$
-    \item the $3x+1$ function $T(x)$ maps 
-        $\mathbb{N} + 1 \rightarrow \mathbb{N} + 1$ $^{[4]}$
-    \item the function has a \emph{stopping time}, \emph{total stopping time}, 
-        and a \emph{trajectory} for each $m$
-\end{itemize}
-
-\subsubsection{Stopping Time for $x$}
-
-\begin{itemize}
-    \item check that every positive integer up to $x - 1$ iterates to one $^{[1]}$
-    \item if $T^{(k)}(x) < x$, we know it will iterate to 1
-    \item thus the stopping time is 
-        \begin{equation}
-            \sigma(x)=\inf\{k:T^{(k)}(x) < x\}
-        \end{equation}
-\end{itemize}
-
-\subsubsection{Total Stopping Time for $x$}
-
-Total stopping time is the number of steps needed to iterate to 1 $^{[1]}$
 \begin{equation}
-    \sigma_{\infty}(x)=\inf\{k:T^{(k)}(x)=1\}
-\end{equation}
-
-\subsubsection{Trajectory of $x$ Under $T$}
-
-Also called the \emph{forward orbit} of $x$ under $T$, defined as the sequence 
-of it forward iterates $^{[3]}$
-\begin{equation}
-    \{x, T(x), T^{(2)}(x), T^{(3)}(x),\dots\}
+T(x)= \left\{
+\nonumber
+    \begin{array}{ll}
+        C(C(x))\quad &\text{if } x \equiv 1 \text{ (mod 2),} \\
+        C(x) \quad &\text{if } x \equiv 0 \text{ (mod 2).}
+    \end{array}
+\right.
+\label{eq:03}
 \end{equation}
 
 \subsection{The Collatz Conjecture}
 
-\subsubsection{Possible behaviors of $T$}
-
+\textit{For all $x \in \mathbb{N} + 1$ there is a $k \in \mathbb{N} + 1$ such 
+that $T^{(k)}(x)=1$. For any positive integer $x$, $k$ iterations of the $3x+1$ 
+function will yield the result 1.} \\
+This conjecture has not yet been proven and remains of interest to
+mathematicians who continue to study it to this day \cite{src:03}. According to 
+Chamberland \cite{src:02}, because $T(x)$ is a number theoretical function, 
+successive applications of $T(x)$ can have the following results:
 \begin{enumerate}
-    \item the trivial cycle $\{4,2,1,4,2,1,\dots\}$ (reaching 1)
-    \item a non-trivial cycle
-    \item infinity, having a divergent orbit $^{[1]}$
+    \item reach 1, which is equivalent to entering the trivial cycle,
+        $\{2,1,2,1,\dots\}$
+    \item enter a non-trivial cycle that does not include 1, or
+    \item diverge to infinity and not enter any type of cycle.
 \end{enumerate}
+The Collatz conjecture states that point (1) is the only possible result and 
+happens regardless of the positive integer that the iteration starts with.
 
-\subsubsection{The Conjecture}
+\subsection{Background Information}
 
-\begin{itemize}
-    \item beginning at any positive integer $x$, iterations of $T(x)$ will 
-        eventually reach 1 and enter the trivial cycle $^{[3]}$
-    \item equivalent to stating that the total stopping time 
-        $\sigma_{\infty}(x)$ are finite $^{[1]}$
-    \item if a trajectory of $T(x)$ does \textit{not} contain 1 it is infinite $^{[2]}$
-\end{itemize}
+The Collatz conjecture and function are named after the German mathematician
+Lothar Collatz. Collatz worked on problems similar to the $3x+1$ problem in the
+early 1930s, according to Lagarias \cite{src:03}. The problem is also known as 
+Hasse's Algorithm, Kakutani's Problem, and Ulam's Problem 
+after other scientists who studied it or similar problems. During the 1950s 
+the problem was circulated in various mathematical circles and the first 
+publication was written about it in 1971 \cite{src:03}. \\
+Today, the conjecture has been verified for over $10^{20}$ numbers using the 
+help of computers to check if iterations of the $3x+1$ function eventually
+reach 1 \cite{src:04}. A number that does not iterate to 1 has not yet been
+found. \\
+One of the most recent papers on the $3x+1$ problem, "\textit{Almost All Orbits
+of the Collatz Map Attain Almost Bounded Values}" by Terence Tao \cite{src:04},
+was published in September of 2019. He proved that almost all iterations of the
+Collatz function are bounded, bringing mathematics one step closer to proving 
+the Collatz conjecture. Currently, the problem is being actively researched.
 
-\subsection{What Makes This Problem Interesting?}
+\subsection{Reasons the Study the $3x+1$ Problem}
 
-\begin{quote}Mathematics is not ready for such problems. --- Paul Erdös $^{[1]}$\end{quote}
-\begin{itemize}
-    \item the problem itself is not important, it has no immediate applications
-    \item represents a class of iterative mappings that are interesting
-    \item it is simple to state but hard to prove
-    \item part of the difficulty comes from its pseudorandom nature of 
-        iterations of $T(x)$ $^{[3]}$
-\end{itemize}
+According to Lagarias \cite{src:03}, the fact that the problem is easy to state 
+but hard to prove makes it an interesting challenge for mathematicians.
+The fact that the $3x+1$ problem has remained unsolved after over 50 years
+despite much research being done about it underlines the challenge. \\
+One of the challenging aspects of this problem is the pseudo-random nature of 
+the $T(x)$ function. The function is difficult to predict when it comes to how 
+iterations of it will behave. Because mathematical proofs tend to rely on 
+patterns, this pseudo-randomness makes a proof of the conjecture very
+challenging. \\
+Another reason for studying the $3x+1$ problem is that it can be studied as an 
+iterative mapping of positive integers to positive integers. These kinds of
+mappings are currently a popular research topic, according to Lagarias
+\cite{src:03}. \\
+Computer scientists also have an interest in the Collatz conjecture because 
+the computational testing of its correctness is an important part of 
+current research. Since the 1960s, computers have been used to verify if
+positive integers follow the Collatz conjecture.
+Because these calculations have verified the conjecture for over $10^{20}$ 
+numbers \cite{src:04}, finding and optimizing computer algorithms is important. 
+Furthermore, whether or not a given positive integer will iterate to 1 can be 
+studied as a decision problem in computer science \cite{src:04}. \\
+The study of prime numbers is also connected to the $3x+1$ problem and the
+Collatz conjecture. If it were to be proven to be current, the proof may
+further the understanding of prime factorization of integers. This is because 
+the Collatz function, in a way, factors integers when dividing by 2. When odd 
+numbers are multiplied by 3, another prime factor is introduced to the number.
+The addition of 1 then can drastically change the way an integer can be
+factored and accordingly this behavior is interesting to study \cite{src:03}.\\
+Finally, when talking about this problem, mathematician Paul Erdös said that
+\begin{quote}
+Mathematics is not ready for such problems.
+\end{quote}
+If he is right and mathematics is indeed not ready for problems such as the
+$3x+1$ problem, that could mean that new areas of mathematics are required to
+prove or disprove it. A proof of the Collatz conjecture may thus involve new 
+areas of mathematics or maybe require old areas to be applied in new and
+different ways. Whatever the case may be, the $3x+1$ problem is an interesting
+and challenging problem in mathematics and has connections to multiple other
+areas of mathematics and computer science. If it were to be proven or
+disproven, the effects could have wide-ranging implications \cite{src:03}.
 
-\section{History of the Collatz Conjecture}
+\section{The $3x+1$ Problem in Detail}
 
-\subsection{Beginnings}
+\subsection{Trajectories}
 
-\begin{itemize}
-    \item also known as Syracuse Problem, Hasse's Algorithm, Kakutani's 
-        Problem, and Ulam's Problem after other people that studied it
-    \item named after Lothar Collatz who formulated similar problems in the 
-        1930s
-    \item academic publishing about it began in the 1970s $^{[3]}$
-\end{itemize}
+The trajectory of $x$ under $T(x)$ is the set of the successive iterations of 
+$T(x)$ that ends when $T^{(k)}(x)=1$. Accordingly, the trajectory of $T(x)$ has
+the length $k+1$ because the first element of the trajectory is $x$ whose
+iteration number is 0. Trajectories are also called forward orbits 
+$O^+(x)$ of $x$ under $T(x)$. The trajectory is defined as 
 
-\subsection{Recent Developments}
+\begin{equation}
+    \nonumber
+    O^+(x):=\{x, T(x), T^{(2)}(x), T^{(3)}(x),\dots\}
+\end{equation}
 
-\begin{itemize}
-    \item $>10^{20}$ numbers have been verified to fit the conjecture $^{[4]}$
-    \item a September 2019 paper by Terence Tao "Almost All Orbits of the 
-        Collatz Map Attain Almost Bounded Values" made progress
-    \item research is still actively ongoing
-\end{itemize}
+These trajectories can be graphed to illustrate what $T(x)$ does when
+repeatedly iterated. 
 
-\section{Interesting Attributes of the $3x+1$ Problem}
+\subsubsection{The trajectory of $T(39)$}
 
-\subsection{Cycles of the Function}
+The trajectory of $T(39)$ is
+\begin{align}
+    \nonumber
+    O^+(39):=\{&39,59,89,134,67,101,152,76,38,19,29,\\
+    \nonumber
+               &44,22,11,17,26,13,20,10,5,8,4,2,1\}
+\end{align}
+When graphed, one can see that $T^{(k)}(39)$ increases and decreases in
+a seemingly random manner.
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{39-8-23}
+    \caption{The trajectory of $T^{(k)}(39)$ by number of iterations}
+\label{fig:01}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{27-59-70}
+    \caption{The trajectory of $T^{(k)}(27)$ by number of iterations}
+\label{fig:02}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{489-2-33}
+    \caption{The trajectory of $T^{(k)}(489)$ by number of iterations}
+\label{fig:03}
+\end{figure}
+% TODO: graph the trajectory of 27
 
-\begin{itemize}
-    \item the $3x+1$ function has a trivial cycle $\{4,2,1,4,2,\dots\}$ at 1 $^{[1]}$
-    \item if $T(x)$ is applied to all integers, three more cycles emerge at -1, -5, and -17
-    \item these cycles are conjectured to be the only ones $^{[1]}$
-    \item if non-trivial cycles of the $3x+1$ problem exist, they have been 
-        proven to be at least 10,439,860,591 numbers long $^{[3]}$
-\end{itemize}
+\subsection{Cycles}
+
+Cycles of $T(x)$ are parts of trajectories that periodically repeat. It is
+known that $T(x)$ has the trivial cycle $\{2,1,2,\dots\}$, which is equivalent 
+to reaching 1. The Collatz conjecture states that any initial positive integer
+$x$ will, after $k$ iterations of $T(x)$, enter this trivial cycle. This means
+that the trivial cycle is the only cycle that exist for the positive integers.
+It has additionally been proven that if non-trivial cycles exist, they must be
+more than 10.4 billion numbers long. \\
+When applied to all integers, we get three more cycles, which are also
+conjectured to be the only ones. These cycles start at -1, -5, and -17.
+%TODO: demonstrate and list these three cycles
+-5, -7, -10, -5
+-1, -1, -1, -1
+-17, -25, -37, -55, -82, -41, -61, -91, -136, -68, -34, -17, -25
+
+
+\subsection{Stopping Time}
+
+The stopping time of $T(x)$ is the number of iterations of $T(x)$ that it takes
+for the result to be less than $x$. To do this, first all numbers up to and
+including $x-1$ have to be verified to iterate to 1. Then, if $T^{(k)}(x) < x$, 
+it is obvious that $T(x)$ will also iterate to 1. This abbreviation makes it
+simple to check if a particular number iterates to 1. If the Collatz Conjecture 
+is true, all $x \in \mathbb{N} + 1$ have a finite stopping time, meaning they
+iterate to 1 eventually. The stopping time of $x$ is called $\sigma(x)$ and
+defined as
+% TODO: rephrase
+
+\begin{equation}
+    \nonumber
+    \sigma(x)=\inf\{k:T^{(k)}(x) < x\}.
+\end{equation}
+
+\subsubsection{The stopping time of $T(39)$}
+
+With the trajectory of $T(39)$ being
+
+\begin{align}
+    \nonumber
+    O^+(39):=\{&39,59,89,134,67,101,152,76,\textbf{38},19,29,\\
+    \nonumber
+               &44,22,11,17,26,13,20,10,5,8,4,2,1\},
+\end{align}
+
+we see that 38 is the first number <39. If we have previously shown that
+$T(38)$ iterates to 1, we can infer that $T(39)$ does so too. Thus 
+$\sigma(39) = 8$, as 38 is the result of the 8th iteration.
+% TODO: give stopping time for 27
+
+\subsection{Total Stopping Time}
+
+The total stopping time of $x$ is the total number of steps needed for $T(x)$ 
+to iterate to 1. It is defined as
+
+\begin{equation}
+    \nonumber
+    \sigma_{\infty}(x)=\inf\{k:T^{(k)}(x)=1\} 
+\end{equation}
+
+For $T(39)$, which we considered above, 
+\begin{align}
+    \nonumber
+    O^+(39):=\{&39,59,89,134,67,101,152,76,38,19,29,\\
+    \nonumber
+               &44,22,11,17,26,13,20,10,5,8,4,2,1\}
+\end{align}
+and we see that $T^{(23)}(39)=1$, this means that it takes 23 iterations of
+$T(x)$ to iterate to one. Accordingly, $\sigma_{\infty}(39)=23$.
+% TODO: add total stopping time for 27
 
 \subsection{Stochastic Approximations}
 
-\begin{itemize}
-    \item number of odd and even integers in an orbit is approximately equal
-    \item behavior is seen as pseudorandom, if the numbers are large enough 
-        they almost behave like random variables $^{[2]}$
-    \item probabilistic models describe the behavior of the $3x+1$ problem
-    \item models describe groups of trajectories, not individual ones $^{[3]}$
-\end{itemize}
+When looking at the values that individual iterations of $T(x)$ yielded,
+mathematicians noticed that for the trajectories of large numbers, the number
+of odd and even numbers is approximately the same. Furthermore, they observed
+that $T(x)$ behaves pseudo-randomly, meaning that it is hard to predict which
+value the function will take on in one or two iterations. Mathematicians use
+this property of $T(x)$ to make probabilistic statements about groups of
+trajectories and study their behaviors in this way. For example, the upper
+bound of for the total stopping time has been proven to be $41.677647 \log x$
+% TODO: give examples of the orbits and the number of even and odd numbers,
+% show a graph to illustrate how psedo-random it is
 
-\subsection{Stopping Time of the Function}
+\subsubsection{Stopping Time Approximation}
 
-\begin{itemize}
-    \item stopping time for odd numbers is $\approx 9.477955$ for $C(x)$ $^{[1]}$
-    \item total stopping time for most trajectories is about $6.95212 \log n$ steps
-    \item number of even integers in an orbit equal to stopping time
-    \item upper bound for total stopping time $41.677647 \log n$, suggests all
-        sequences are finite $^{[3]}$
-\end{itemize}
-
-\subsection{Conclusion}
-
-\subsubsection{The $3x+1$ Problem and Collatz Conjecture}
-
-For every $x \in \mathbb{N} + 1$ and the function
-\begin{equation}
-T(x)= \left\{
-    \begin{array}{ll}
-        (3x+1)/2 \quad &\text{if } x \equiv 1 \text{ (mod 2),} \\
-        x/2 \quad &\text{if } x \equiv 0 \text{ (mod 2).}
-    \end{array}
-\right.
+The total stopping time for most trajectories is approximated to be 
+$6.95212 \log x$ steps. For $T(39)$ we have the approximation
+\begin{equation}\nonumber
+    6.95212 \log 39 \approx 25.4952
 \end{equation}
-there is some $k \in \mathbb{N} + 1$ such that $T^{(k)}(x)=1$.
+Compared to the known $\sigma_{\infty}(39)=23$ this is not bad.
+% TODO: make a table of some approximations and measurements for multiple
+% values of x
 
-\subsubsection{What Makes This Problem Interesting?}
-
-\begin{itemize}
-    \item simple to state but hard to prove
-    \item represents a class of iterative mappings that are interesting $^{[3]}$
-    \item maybe mathematics right now cannot solve that problem
-\end{itemize}
-
-\subsubsection{History of the Collatz Conjecture}
+\section{Conclusion}
 
 \begin{itemize}
-    \item named after Lothar Collatz, from the 1930s
-    \item academic publishing began in the 1970s $^{[3]}$
-    \item $>10^{20}$ numbers have been verified to fit the conjecture $^{[4]}$
-    \item research is still actively ongoing
-\end{itemize}
-
-\subsubsection{Interesting Attributes of the $3x+1$ Problem}
-
-\begin{itemize}
-    \item the $3x+1$ function has a trivial cycle $\{2,1,2,\dots\}$ at 1 $^{[1]}$
-    \item non-trivial cycles of the $3x+1$ problem have been proven to
-        be at least 10,439,860,591 numbers long $^{[3]}$
-    \item behavior is seen as pseudorandom, if the numbers are large enough they almost
-        behave like random variables $^{[2]}$
-    \item total stopping time for most trajectories is about $6.95212 \log n$ steps
+    \item the Collatz Conjecture states that for $x,k \in \mathbb{N} + 1$
+        $T^{(k)}(x)=1$
+    \item the conjecture has not been proven, but verified for $10^{20}$
+        numbers
+    \item all orbits of $T(x)$ should reach the trivial cycle
+    \item $T(x)$ can be probabilistically described because of pseudorandomness
 \end{itemize}
 
 
-\begin{equation}
-    \pi(x) \approx \rho \times \dagger c^2
-\end{equation}
+%==============================================================================
+% BIBLIOGRAPHY
 
-The above equation eq01 refers to some mathematical concept that
-I have made up.
-
-
-
-
-
-
-% define the elements of the bibliography
-% TODO: fix references
 \begin{thebibliography}{4}
 
-\bibitem{chamberland} Marc Chamberland, \textit{An Update on the $3x+1$ Problem},
-   % \texttt{http://www.math.grinnell.edu/{\textasciitilde{}}chamberl/papers/3x_survey_eng.pdf},
-    2005.
+\bibitem{src:01} Marc Chamberland, 
+    \textit{An Update on the $3x+1$ Problem},
+    \texttt{http://www.math.grinnell.edu/\\
+        \~{}chamberl/papers/3x\_survey\_eng.pdf}, 2005.
 
-\bibitem{crandall} R. E. Crandall, \textit{On the "$3x+1$" Problem}, 
-    Mathematics of Computation, \textbf{32} (1978), no. 144, 1281-1292
+\bibitem{src:02} R. E. Crandall, \textit{On the "$3x+1$" Problem},
+    Mathematics of Computation, \textbf{32} (1978), no. 144, 1281-1292.
 
-\bibitem{lagarias} Jeffrey C.Lagarias, \textit{The $3x+1$ Problem: An Overview},
-    \\\texttt{https://pdfs.semanticscholar.org/100046dd8b4ee901bc71043da7d42f5d87ca0224.pdf}, 
-    2010
+\bibitem{src:03} Jeffrey C.Lagarias, 
+    \textit{The $3x+1$ Problem: An Overview},
+    \texttt{https://pdfs.semanticscholar.\\
+        org/100046dd8b4ee901bc71043da7d42f5d87ca0224.pdf}, 2010.
 
-\bibitem{tao} Terence Tao, \textit{Almost All Orbits of the Collatz Map Attain 
-    Almost Bounded Values}, arXiv:1909.03562v2 [math.PR], 2019
-        
+\bibitem{src:04} Terence Tao, \textit{Almost All Orbits of the Collatz Map Attain
+    Almost Bounded Values}, arXiv:1909.03562v2 [math.PR], 2019.
+
 \end{thebibliography}
 \end{document}

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #define START  2
 #define STOP  10
@@ -33,14 +34,32 @@ int main(int argc, char **argv){
 
 void collatz(long int n) {
 
-    int count = 0;
+    bool first_time = true;
+    long int org = n;
+    int tst = 0, st = 0;
     printf("%ld\n", n);
 
+    if (n > 0) {
     while (n - 1) {
-        ++count;
         n = (n % 2 == 0) ? (n / 2) : (3 * n + 1)/2;
         printf("%ld\n", n);
+        ++tst;
+        if (first_time && n < org) {
+            first_time = false;
+            st = tst;
+        }
+    }
+    } else if (n < 0) {
+    while (-n - 1) {
+        n = (n % 2 == 0) ? (n / 2) : (3 * n + 1)/2;
+        printf("%ld\n", n);
+        ++tst;
+        if (first_time && n < org) {
+            first_time = false;
+            st = tst;
+        }
+    }
     }
 
-    printf("\n\n%d\n", count);
+    printf("\nst: %d\ntst: %d\n", st, tst);
 }

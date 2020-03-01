@@ -33,11 +33,14 @@ int main(int argc, char **argv){
 
 void collatz(long int n) {
 
+    int count = 0;
     printf("%ld\n", n);
 
     while (n - 1) {
-        n = (n % 2 == 0) ? (n / 2) : (3 * n + 1);
+        ++count;
+        n = (n % 2 == 0) ? (n / 2) : (3 * n + 1)/2;
         printf("%ld\n", n);
     }
 
+    printf("\n\n%d\n", count);
 }

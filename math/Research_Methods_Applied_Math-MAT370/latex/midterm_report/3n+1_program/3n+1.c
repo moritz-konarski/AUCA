@@ -37,28 +37,16 @@ void collatz(long int n) {
     bool first_time = true;
     long int org = n;
     int tst = 0, st = 0;
-    printf("%ld\n", n);
+    printf("%ld", n);
 
-    if (n > 0) {
     while (n - 1) {
         n = (n % 2 == 0) ? (n / 2) : (3 * n + 1)/2;
-        printf("%ld\n", n);
+        printf(", %ld", n);
         ++tst;
         if (first_time && n < org) {
             first_time = false;
             st = tst;
         }
-    }
-    } else if (n < 0) {
-    while (-n - 1) {
-        n = (n % 2 == 0) ? (n / 2) : (3 * n + 1)/2;
-        printf("%ld\n", n);
-        ++tst;
-        if (first_time && n < org) {
-            first_time = false;
-            st = tst;
-        }
-    }
     }
 
     printf("\nst: %d\ntst: %d\n", st, tst);

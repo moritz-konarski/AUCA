@@ -18,6 +18,8 @@
 \graphicspath{{../graphics/}}
 \usepackage{epstopdf}
 \usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -26,26 +28,75 @@
     final
 }
 
+% this command was found at:
+% https://tex.stackexchange.com/questions/51851/change-distance-between-page-number-and-bottom-edge-of-page
+
+\usepackage{calc}
+\setlength{\footskip}{\paperheight
+  -(1.25in+\voffset+\topmargin+\headheight+\headsep+\textheight)
+  -1in}
+\setlength{\headsep}{\voffset+\topmargin+\headheight + 0.3in}
+
 % set line spacing
 \renewcommand{\baselinestretch}{1.4}
 % set margin size
-\marginsize{1.25in}{1.25in}{1.25in}{1.25in}
+\marginsize{1.25in}{1.25in}{1in}{1.5in}
 
 %==============================================================================
 % REPORT
 
 %------------------------------------------------------------------------------
-% GENERAL INFORMATION
-
-\title{An Overview of the $3x+1$ Problem}
-\author{Moritz M. Konarski}
-\date{01.02.2020}
+% TITLE PAGE AND ABSTRACT
+% template can be found at:
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_5):_Customising_Your_Title_Page_and_Abstract
 
 \begin{document}
 
-%TODO: update the abstract
-\begin{abstract}
-    This paper gives an overview of the Collatz function, a function that takes
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{An Overview of the $3x+1$ Problem}
+            
+        \vspace{0.5cm}
+            
+        \vspace{1.5cm}
+            
+        \LARGE
+        \textbf{Moritz M. Konarski}
+            
+        \vfill
+            
+            
+        \vspace{0.8cm}
+            
+        %\includegraphics[width=0.4\textwidth]{university}
+            
+        \Large
+        Applied Mathematics Department\\
+        American University of Central Asia\\
+        Kyrgyzstan\\
+        03.03.2020
+            
+    \end{center}
+\end{titlepage}
+
+\thispagestyle{plain}
+\begin{center}
+    \Large
+    \textbf{An Overview of the $3x+1$ Problem}
+        
+    \vspace{0.4cm}
+    \large
+        
+    \vspace{0.4cm}
+    \textbf{Moritz M. Konarski}
+       
+    \vspace{0.9cm}
+\end{center}
+    \textsc{Abstract.} This paper gives an overview of the Collatz function, a 
+    function that takes
     a positive integer as input and divides it by 2 if is even or multiplies
     it by 3 and adds 1. The Collatz conjecture states that this function, when
     repeatedly applied to itself, will eventually yield 1. This conjecture has
@@ -54,10 +105,19 @@
     conjecture will be discussed. Furthermore, details of the $3x+1$ problem
     will be illustrated. Those details are trajectories, cycles, stopping time,
     and stochastic approximations. 
-\end{abstract}
 
-\maketitle
 \tableofcontents
+
+% this command was found at:
+% https://tug.org/pipermail/texhax/2009-August/013136.html
+
+\thispagestyle{empty}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyhead{}
+\fancyhead[CE]{\textsc{Moritz M. Konarski}}
+\fancyhead[CO]{\textsc{An Overview of the $3x+1$ Problem}}
 
 %------------------------------------------------------------------------------
 % INTRODUCTION

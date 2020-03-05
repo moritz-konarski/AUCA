@@ -14,7 +14,8 @@ namespace aur {
         std::pair<std::vector<unsigned int>, std::vector<Vertex>>
         generate_circle_geometry_data(
                 float radius,
-                unsigned int segment_count
+                unsigned int segment_count,
+                glm::vec4 color
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
@@ -23,7 +24,7 @@ namespace aur {
                         (float) i / (float) segment_count * 2.0f * (float) M_PI;
                 float x = cosf(angle) * radius;
                 float y = sinf(angle) * radius;
-                vertices.push_back(Vertex{{x, y, 0.0f}, glm::vec4{1.0f}});
+                vertices.push_back(Vertex{{x, y, 0.0f}, color});
                 indices.push_back(static_cast<unsigned int>(i));
             }
 
@@ -34,7 +35,8 @@ namespace aur {
         generate_plane_geometry_data(
                 float width, float height,
                 unsigned int width_segments_count,
-                unsigned int height_segments_count
+                unsigned int height_segments_count,
+                glm::vec4 color
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
@@ -56,7 +58,7 @@ namespace aur {
 
                     vertices.push_back(Vertex{
                             glm::vec3{x, y, 0.0f},
-                            glm::vec4{1.0f},
+                            color,
                             glm::vec3{0.0f, 0.0f, 1.0f},
                             glm::vec4{u, v, 0.0f, 1.0f}
                     });
@@ -87,7 +89,8 @@ namespace aur {
         generate_sphere_geometry_data(
                 float radius,
                 unsigned int segment_count,
-                unsigned int ring_count
+                unsigned int ring_count,
+                glm::vec4 color
         ) {
             std::vector<unsigned int> indices;
             std::vector<Vertex> vertices;
@@ -112,7 +115,7 @@ namespace aur {
 
                     vertices.push_back(Vertex{
                             glm::vec3{x * radius, y * radius, z * radius},
-                            glm::vec4{1.0f},
+                            color,
                             glm::vec3{x, y, z},
                             glm::vec4{u, 1.0f - v, 0.0f, 1.0f}
                     });

@@ -1,61 +1,73 @@
-/*TODO:
- * add more colors according to recording
- */
-
 #include "aur.hpp"
 #include <time.h>
 
-static const float CAMERA_SPEED{0.1f};
-static const float CAMERA_ROT_SPEED{0.05f};
+static const float SPEED_CAMERA{0.1f};
+static const float ROTATION_SPEED_CAMERA{0.05f};
 
-static const glm::vec4 COLOR_GREY{0.5f, 0.5f, 0.5f, 1.0f};
+static const glm::vec3 POSITION_ORIGIN{0.0f, 0.0f, 0.0f};
+static const glm::vec3 POSITION_OFFSET_SQUARES{0.0f, 0.0f, 0.05f};
+static const glm::vec3 POSITION_OFFSET_MEDIUM_CIRCLES{0.0f, 0.0f, -0.05f};
+
+static const glm::vec4 COLOR_BLUE{0.0f, 0.0f, 1.0f, 1.0f};
 static const glm::vec4 COLOR_BLACK{0.0f, 0.0f, 0.0f, 1.0f};
 static const glm::vec4 COLOR_RED{1.0f, 0.0f, 0.0f, 1.0f};
-static const glm::vec4 BACKGROUND_COLOR{COLOR_BLACK};
-static const glm::vec4 SQUARE_COLOR{COLOR_RED};
-static const glm::vec4 SPHERE_COLOR{COLOR_RED};
-static const glm::vec4 CIRCLE_COLOR{COLOR_RED};
-static const glm::vec4 HAND_COLOR{COLOR_RED};
+static const glm::vec4 COLOR_BACKGROUND{COLOR_BLACK};
+static const glm::vec4 COLOR_SQUARE{COLOR_BLUE};
+static const glm::vec4 COLOR_MAIN_SPHERE{COLOR_RED};
+static const glm::vec4 COLOR_SMALL_CIRCLE{COLOR_RED};
+static const glm::vec4 COLOR_MEDIUM_CIRCLE{COLOR_RED};
+static const glm::vec4 COLOR_SECOND_HAND{COLOR_BLUE};
+static const glm::vec4 COLOR_MINUTE_HAND{COLOR_RED};
+static const glm::vec4 COLOR_HOUR_HAND{COLOR_RED};
 
-static const int WINDOW_DIMENSIONS{0};
-static const int VERTEX_COUNT{30};
-static const int SPHERE_RING_COUNT{12};
 static const int MESH_TYPE{GL_TRIANGLE_FAN};
+static const int WINDOW_DIMENSIONS{0};
+static const int COUNT_VERTEX{30};
+static const int COUNT_SPHERE_RING{12};
+static const int COUNT_SMALL_CIRCLES{60};
+static const int COUNT_MEDIUM_CIRCLES{12};
+static const int COUNT_SQUARES{4};
 
-static const float CLOCK_RADIUS{1.5f};
-static const float LENGTH_HOUR_HAND{0.5f * CLOCK_RADIUS};
-static const float LENGTH_MINUTE_HAND{0.75f * CLOCK_RADIUS};
-static const float LENGTH_SECOND_HAND{0.95f * CLOCK_RADIUS};
+static const int MODULUS_SMALL_CIRCLES{COUNT_SMALL_CIRCLES + 1};
+static const int MODULUS_MEDIUM_CIRCLES{COUNT_MEDIUM_CIRCLES / COUNT_SQUARES};
+
+static const float RADIUS_CLOCK{1.5f};
 static const float RADIUS_CIRCLE_SMALL{0.02f};
 static const float RADIUS_CIRCLE_MEDIUM{0.04f};
-static const float SPHERE_RADIUS{RADIUS_CIRCLE_MEDIUM};
-static const float SIDE_LENGTH_SQUARE{2.0f * RADIUS_CIRCLE_MEDIUM};
-static const float SQUARE_Z_OFFSET{0.05f};
-static const float SQUARE_RADIUS_OFFSET{0.1f};
-static const float ROT_SPEED_CLOCK{0.005f};
+static const float RADIUS_MAIN_SPHERE{RADIUS_CIRCLE_MEDIUM};
+static const float LENGTH_SQUARE_SIDE{2.0f * RADIUS_CIRCLE_MEDIUM};
+static const float LENGTH_HOUR_HAND{0.5f * RADIUS_CLOCK};
+static const float LENGTH_MINUTE_HAND{0.75f * RADIUS_CLOCK};
+static const float LENGTH_SECOND_HAND{0.95f * RADIUS_CLOCK};
+static const float WIDTH_SECOND_HAND{LENGTH_SQUARE_SIDE / 3.0f};
+static const float WIDTH_MINUTE_HAND{LENGTH_SQUARE_SIDE / 2.0f};
+static const float WIDTH_HOUR_HAND{LENGTH_SQUARE_SIDE / 1.5f};
+static const float RADIUS_OFFSET_SQUARE{0.1f};
+static const float Y_ROTATION_SPEED_CLOCK{0.002f};
 
 static const glm::vec4 FORWARD{0.0f, 0.0f, 1.0f, 0.0f};
-
 
 std::shared_ptr<aur::Mesh>
 generateSphere(std::shared_ptr<aur::ES2ConstantMaterial> material, const std::string name,
                const float radius,
-               const int ringCount);
+               const int ringCount, glm::vec4 color, glm::vec3 position);
 
 std::shared_ptr<aur::Mesh> generateClockHand(
         std::shared_ptr<aur::ES2ConstantMaterial> material,
         const std::string name, const float sideA,
-        const float sideB);
+        const float sideB, glm::vec4 color, glm::vec3 position);
 
 void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
                            std::shared_ptr<aur::ES2ConstantMaterial> material,
                            const float mainCircleRadius, const int squareCount,
-                           const float sideLengthA, const float sideLengthB);
+                           const float sideLengthA, const float sideLengthB, glm::vec4 color,
+                           glm::vec3 position);
 
 void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
                            std::shared_ptr<aur::ES2ConstantMaterial> material,
                            const float mainCircleRadius, const int circleCount,
-                           const float circleRadius, const int modulusValue);
+                           const float circleRadius, const int modulusValue, glm::vec4 color,
+                           glm::vec3 position);
 
 void updateHandAngles(struct tm *time_struct, float *secondHandAngle, float *minuteHandAngle,
                       float *hourHandAngle);
@@ -73,43 +85,48 @@ int main(int argc, char **argv) {
     auto material = std::make_shared<ES2ConstantMaterial>();
 
     // sphere in the center
-    auto mainSphere = generateSphere(material, "center sphere", SPHERE_RADIUS,
-                                     SPHERE_RING_COUNT);
+    auto mainSphere = generateSphere(material, "center sphere", RADIUS_MAIN_SPHERE,
+                                     COUNT_SPHERE_RING, COLOR_MAIN_SPHERE, POSITION_ORIGIN);
+    // rotate sphere so 0 degrees is straight up
     mainSphere->set_rotation_z(M_PI / 2.0f);
 
     // small minute marks
-    generateRingOfCircles(mainSphere, material, CLOCK_RADIUS, 60,
-                          RADIUS_CIRCLE_SMALL, 70);
+    generateRingOfCircles(mainSphere, material, RADIUS_CLOCK, COUNT_SMALL_CIRCLES,
+                          RADIUS_CIRCLE_SMALL, MODULUS_SMALL_CIRCLES, COLOR_SMALL_CIRCLE,
+                          POSITION_ORIGIN);
 
     // 5 minute marks
-    generateRingOfCircles(mainSphere, material, CLOCK_RADIUS, 12,
-                          RADIUS_CIRCLE_MEDIUM, 3);
+    generateRingOfCircles(mainSphere, material, RADIUS_CLOCK, COUNT_MEDIUM_CIRCLES,
+                          RADIUS_CIRCLE_MEDIUM, MODULUS_MEDIUM_CIRCLES, COLOR_MEDIUM_CIRCLE,
+                          POSITION_OFFSET_MEDIUM_CIRCLES);
 
     // 15 minute marks
-    generateRingOfSquares(mainSphere, material, CLOCK_RADIUS, 4,
-                          SIDE_LENGTH_SQUARE, SIDE_LENGTH_SQUARE);
+    generateRingOfSquares(mainSphere, material, RADIUS_CLOCK, COUNT_SQUARES,
+                          LENGTH_SQUARE_SIDE, LENGTH_SQUARE_SIDE, COLOR_SQUARE,
+                          POSITION_OFFSET_SQUARES);
+
+    // add second hand
+    auto secondHand = generateClockHand(material, "second hand",
+                                        WIDTH_SECOND_HAND,
+                                        LENGTH_SECOND_HAND, COLOR_SECOND_HAND, POSITION_ORIGIN);
+    mainSphere->add_child(secondHand);
 
     // add minute hand
     auto minuteHand = generateClockHand(material, "minute hand",
-                                        SIDE_LENGTH_SQUARE / 2.0f,
-                                        LENGTH_MINUTE_HAND);
+                                        WIDTH_MINUTE_HAND,
+                                        LENGTH_MINUTE_HAND, COLOR_MINUTE_HAND, POSITION_ORIGIN);
     mainSphere->add_child(minuteHand);
 
     // add hour hand
     auto hourHand = generateClockHand(material, "hour hand",
-                                      SIDE_LENGTH_SQUARE / 1.5f,
-                                      LENGTH_HOUR_HAND);
+                                      WIDTH_HOUR_HAND,
+                                      LENGTH_HOUR_HAND, COLOR_HOUR_HAND, POSITION_ORIGIN);
     mainSphere->add_child(hourHand);
-
-    auto secondHand = generateClockHand(material, "second hand",
-                                        SIDE_LENGTH_SQUARE / 3.0f,
-                                        LENGTH_SECOND_HAND);
-    mainSphere->add_child(secondHand);
 
     std::vector<std::shared_ptr<Object>> clock{mainSphere};
 
     auto scene = std::make_shared<Scene>(clock);
-    scene->set_clear_color(BACKGROUND_COLOR);
+    scene->set_clear_color(COLOR_BACKGROUND);
     auto root = scene->get_root();
 
     auto &camera = scene->get_camera();
@@ -119,33 +136,33 @@ int main(int argc, char **argv) {
         switch (key) {
             case SDLK_w:
                 camera.set_rotation_x(
-                        camera.get_rotation_x() - CAMERA_ROT_SPEED);
+                        camera.get_rotation_x() - ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_a:
                 camera.set_rotation_y(
-                        camera.get_rotation_y() + CAMERA_ROT_SPEED);
+                        camera.get_rotation_y() + ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_s:
                 camera.set_rotation_x(
-                        camera.get_rotation_x() + CAMERA_ROT_SPEED);
+                        camera.get_rotation_x() + ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_d:
                 camera.set_rotation_y(
-                        camera.get_rotation_y() - CAMERA_ROT_SPEED);
+                        camera.get_rotation_y() - ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_e:
-                camera.set_y(camera.get_y() + CAMERA_ROT_SPEED);
+                camera.set_y(camera.get_y() + ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_q:
-                camera.set_y(camera.get_y() - CAMERA_ROT_SPEED);
+                camera.set_y(camera.get_y() - ROTATION_SPEED_CAMERA);
                 break;
             case SDLK_UP:
                 camera.set_position(camera.get_position() - glm::vec3(
-                        camera.get_model_matrix() * FORWARD * CAMERA_SPEED));
+                        camera.get_model_matrix() * FORWARD * SPEED_CAMERA));
                 break;
             case SDLK_DOWN:
                 camera.set_position(camera.get_position() + glm::vec3(
-                        camera.get_model_matrix() * FORWARD * CAMERA_SPEED));
+                        camera.get_model_matrix() * FORWARD * SPEED_CAMERA));
                 break;
             case SDLK_ESCAPE:
                 exit(0);
@@ -164,7 +181,7 @@ int main(int argc, char **argv) {
 
         updateHandAngles(time_struct, &secondHandAngle, &minuteHandAngle, &hourHandAngle);
 
-        rotateY(mainSphere, ROT_SPEED_CLOCK);
+        rotateY(mainSphere, Y_ROTATION_SPEED_CLOCK);
 
         setHandAngle(secondHand, secondHandAngle, LENGTH_SECOND_HAND);
         setHandAngle(minuteHand, minuteHandAngle, LENGTH_MINUTE_HAND);
@@ -178,9 +195,9 @@ void updateHandAngles(struct tm *time_struct, float *secondHandAngle, float *min
                       float *hourHandAngle) {
     time_t t = time(NULL);
     time_struct = localtime(&t);
-    *secondHandAngle = -2.0f * M_PI / 60.0f * time_struct->tm_sec;
-    *minuteHandAngle = -2.0f * M_PI / 60.0f * time_struct->tm_min;
-    *hourHandAngle = -2.0f * M_PI / 12.0f * (time_struct->tm_hour % 12) + *minuteHandAngle / 12.0f;
+    *secondHandAngle = -2.0f * M_PI/ 60.0f * time_struct->tm_sec;
+    *minuteHandAngle = -2.0f * M_PI/ 60.0f * time_struct->tm_min;
+    *hourHandAngle = -2.0f * M_PI/ 12.0f * (time_struct->tm_hour % 12) + *minuteHandAngle / 12.0f;
 }
 
 void rotateY(std::shared_ptr<aur::Mesh> element, float rotationSpeed) {
@@ -196,13 +213,14 @@ void setHandAngle(std::shared_ptr<aur::Mesh> clockHand, float angle, float lengt
 void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
                            std::shared_ptr<aur::ES2ConstantMaterial> material,
                            const float mainCircleRadius, const int circleCount,
-                           const float circleRadius, const int modulusValue) {
+                           const float circleRadius, const int modulusValue, glm::vec4 color,
+                           glm::vec3 position) {
     using namespace aur;
 
-    float angle, angleRatio = 2.0f * M_PI / circleCount;
+    float angle, angleRatio = 2.0f * M_PI/ circleCount;
 
     auto circVert = geometry_generators::generate_circle_geometry_data(
-            circleRadius, VERTEX_COUNT, CIRCLE_COLOR);
+            circleRadius, COUNT_VERTEX, color);
     auto circGeom = std::make_shared<ES2Geometry>(
             circVert.first, circVert.second);
     circGeom->set_type(MESH_TYPE);
@@ -211,9 +229,10 @@ void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
             angle = angleRatio * i;
             auto circle = std::make_shared<Mesh>(circGeom, material,
                                                  glm::vec3{mainCircleRadius *
-                                                           cos(angle),
+                                                           cos(angle) + position.x,
                                                            mainCircleRadius *
-                                                           sin(angle), 0.0f
+                                                           sin(angle) + position.y,
+                                                           position.z
                                                  });
             char name[15];
             sprintf(name, "circle %d", i);
@@ -226,24 +245,25 @@ void generateRingOfCircles(std::shared_ptr<aur::Mesh> mainObject,
 void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
                            std::shared_ptr<aur::ES2ConstantMaterial> material,
                            const float mainCircleRadius, const int squareCount,
-                           const float sideLengthA, const float sideLengthB) {
+                           const float sideLengthA, const float sideLengthB, glm::vec4 color,
+                           glm::vec3 position) {
     using namespace aur;
 
-    float angle, angleRatio = 2.0f * M_PI / squareCount;
+    float angle, angleRatio = 2.0f * M_PI/ squareCount;
 
     auto squareVertices = geometry_generators::generate_plane_geometry_data(
-            sideLengthA, sideLengthB, VERTEX_COUNT, VERTEX_COUNT, SQUARE_COLOR);
+            sideLengthA, sideLengthB, COUNT_VERTEX, COUNT_VERTEX, color);
     auto squareGeometry = std::make_shared<ES2Geometry>(
             squareVertices.first, squareVertices.second);
     squareGeometry->set_type(MESH_TYPE);
     for (int i = 1; i <= squareCount; ++i) {
         angle = angleRatio * i;
         auto square = std::make_shared<Mesh>(squareGeometry, material,
-                                             glm::vec3{(SQUARE_RADIUS_OFFSET + mainCircleRadius) *
-                                                       cos(angle),
-                                                       (SQUARE_RADIUS_OFFSET + mainCircleRadius) *
-                                                       sin(angle),
-                                                       SQUARE_Z_OFFSET});
+                                             glm::vec3{(RADIUS_OFFSET_SQUARE + mainCircleRadius) *
+                                                       cos(angle) + position.x,
+                                                       (RADIUS_OFFSET_SQUARE + mainCircleRadius) *
+                                                       sin(angle) + position.y,
+                                                       position.z});
         char name[15];
         sprintf(name, "square %d", i);
         square->set_rotation_z(M_PI / 4.0f);
@@ -255,17 +275,16 @@ void generateRingOfSquares(std::shared_ptr<aur::Mesh> mainObject,
 std::shared_ptr<aur::Mesh> generateClockHand(
         std::shared_ptr<aur::ES2ConstantMaterial> material,
         const std::string name, const float sideA,
-        const float sideB) {
+        const float sideB, glm::vec4 color, glm::vec3 position) {
 
     using namespace aur;
 
     auto handVertices = geometry_generators::generate_plane_geometry_data(
-            sideA, sideB, VERTEX_COUNT, VERTEX_COUNT, HAND_COLOR);
+            sideA, sideB, COUNT_VERTEX, COUNT_VERTEX, color);
     auto handGeometry = std::make_shared<ES2Geometry>(
             handVertices.first, handVertices.second);
     handGeometry->set_type(MESH_TYPE);
-    auto hand = std::make_shared<Mesh>(handGeometry, material,
-                                       glm::vec3{0.0f, 0.0f, 0.0f});
+    auto hand = std::make_shared<Mesh>(handGeometry, material, position);
     hand->set_name(name);
 
     return hand;
@@ -274,17 +293,16 @@ std::shared_ptr<aur::Mesh> generateClockHand(
 std::shared_ptr<aur::Mesh> generateSphere(
         std::shared_ptr<aur::ES2ConstantMaterial> material,
         const std::string name, const float radius,
-        const int ringCount) {
+        const int ringCount, glm::vec4 color, glm::vec3 position) {
 
     using namespace aur;
 
     auto sphereVertices = geometry_generators::generate_sphere_geometry_data(
-            radius, VERTEX_COUNT, ringCount, SPHERE_COLOR);
+            radius, COUNT_VERTEX, ringCount, color);
     auto sphereGeometry = std::make_shared<ES2Geometry>(
             sphereVertices.first, sphereVertices.second);
     sphereGeometry->set_type(MESH_TYPE);
-    auto sphere = std::make_shared<Mesh>(sphereGeometry, material,
-                                         glm::vec3{0.0f, 0.0f, 0.0f});
+    auto sphere = std::make_shared<Mesh>(sphereGeometry, material, position);
     sphere->set_name(name);
 
     return sphere;

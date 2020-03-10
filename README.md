@@ -6,8 +6,11 @@ Asia][1], 2017 to February 2020.
 __This repository is discontinued.__     
 
 For the current repositories, see:
-- `auca_cs` for computer science
-- `auca_la` for liberal arts
-- `auca_math` for mathematics
+- [`auca_cs`][2] for computer science
+- [`auca_la`][3] for liberal arts
+- [`auca_math`][4] for mathematics
 
 [1]: https://www.auca.kg/
+[2]: https://github.com/moritz-konarski/auca_cs
+[3]: https://github.com/moritz-konarski/auca_la
+[4]: https://github.com/moritz-konarski/auca_math

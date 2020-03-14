@@ -3,7 +3,7 @@
 My data and notes for my courses at the [American University of Central
 Asia][1], 2017 to February 2020.        
 
-__This repository is discontinued.__     
+__This repository is archived.__     
 
 For the current repositories, see:
 - [`auca_cs`][2] for computer science
